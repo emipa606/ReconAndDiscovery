@@ -2,9 +2,9 @@
 using RimWorld.BaseGen;
 using Verse;
 
-namespace ReconAndDiscovery.Maps
+namespace ReconAndDiscovery.Maps.SymbolResolver
 {
-    public class SymbolResolver_WallDoor : SymbolResolver
+    public class SymbolResolver_WallDoor : RimWorld.BaseGen.SymbolResolver
     {
         public override void Resolve(ResolveParams rp)
         {

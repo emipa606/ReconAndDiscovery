@@ -66,7 +66,7 @@ namespace ReconAndDiscovery.Missions
                 GenSpawn.Spawn(pawn, loc, map);
             }
         }
-
+        
         public override void PostMapGenerate(Map map)
         {
             base.PostMapGenerate(map);
@@ -78,27 +78,22 @@ namespace ReconAndDiscovery.Missions
                 return;
             }
 
-            var source = from p in map.mapPawns.FreeColonistsSpawned
-                where p.story.traits.HasTrait(TraitDef.Named("PsychicSensitivity"))
-                select p;
-            if (source.Any())
-            {
-                var pawn = source.RandomElement();
-                Find.LetterStack.ReceiveLetter("RD_ManhunterDanger".Translate(),
-                    "RD_MalevolentPsychicDesc"
-                        .Translate(pawn
-                            .Named("PAWN")) //"{0} believes that a malevolent psychic energy is massing, and that this peaceful herd of muffalo are on the brink of a mass insanity."
-                    , LetterDefOf.ThreatSmall, null);
-            }
-
-            //TODO: check if it works 
             var incidentParms = StorytellerUtility.DefaultParmsNow(IncidentCategoryDefOf.FactionArrival, map);
             incidentParms.forced = true;
             incidentParms.points = 100f;
-            var qi = new QueuedIncident(
+
+            var madMuffaloWarningIncident = new QueuedIncident( 
+                new FiringIncident(IncidentDef.Named("RD_MuffaloMassInsanityWarning"), null, incidentParms),
+                Find.TickManager.TicksGame + 10
+            );
+            Find.Storyteller.incidentQueue.Add(madMuffaloWarningIncident);
+
+            var madMuffaloIncident = new QueuedIncident(
                 new FiringIncident(IncidentDef.Named("RD_MuffaloMassInsanity"), null, incidentParms),
-                Find.TickManager.TicksGame + Rand.RangeInclusive(10000, 45000));
-            Find.Storyteller.incidentQueue.Add(qi);
+                Find.TickManager.TicksGame + Rand.RangeInclusive(10000, 45000)
+            );
+            
+            Find.Storyteller.incidentQueue.Add(madMuffaloIncident);
         }
     }
 }

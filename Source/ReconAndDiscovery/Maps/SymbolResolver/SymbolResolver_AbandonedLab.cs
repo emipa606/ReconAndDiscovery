@@ -3,9 +3,9 @@ using RimWorld;
 using RimWorld.BaseGen;
 using Verse;
 
-namespace ReconAndDiscovery.Maps
+namespace ReconAndDiscovery.Maps.SymbolResolver
 {
-    public class SymbolResolver_AbandonedLab : SymbolResolver
+    public class SymbolResolver_AbandonedLab : RimWorld.BaseGen.SymbolResolver
     {
         public override void Resolve(ResolveParams rp)
         {
@@ -48,6 +48,7 @@ namespace ReconAndDiscovery.Maps
                 resolveParams3.rect = new CellRect(resolveParams3.rect.minX + 1, resolveParams3.rect.minZ + 1, 1, 1);
                 resolveParams3.thingRot = Rot4.West;
                 resolveParams3.singleThingDef = list.RandomElement();
+                BaseGen.symbolStack.Push("wireOutline", resolveParams2);
                 BaseGen.symbolStack.Push("insertFurnishing", resolveParams3);
                 BaseGen.symbolStack.Push("roomWithDoor", resolveParams2);
                 resolveParams2.rect.minZ = resolveParams2.rect.maxZ;
@@ -98,6 +99,7 @@ namespace ReconAndDiscovery.Maps
 
                 resolveParams3.thingRot = rot;
                 resolveParams3.singleThingDef = list.RandomElement();
+                BaseGen.symbolStack.Push("wireOutline", resolveParams2);
                 BaseGen.symbolStack.Push("insertFurnishing", resolveParams3);
                 BaseGen.symbolStack.Push("roomWithDoor", resolveParams2);
                 resolveParams2.rect.minX = resolveParams2.rect.maxX;
@@ -116,24 +118,29 @@ namespace ReconAndDiscovery.Maps
                 resolveParams4.thingRot = Rot4.East;
                 BaseGen.symbolStack.Push("insertFurnishing", resolveParams4);
             }
-
-            BaseGen.symbolStack.Push("roomWithDoor", resolveParams);
+            
             resolveParams.chanceToSkipWallBlock = 0.05f;
             BaseGen.symbolStack.Push("wireOutline", resolveParams);
+            BaseGen.symbolStack.Push("roomWithDoor", resolveParams);
             var resolveParams5 = rp;
-            resolveParams5.rect = rp.rect.ContractedBy(2);
+            // resolveParams5.rect = rp.rect.ContractedBy(2);
             resolveParams5.rect = new CellRect(resolveParams5.rect.minX, resolveParams5.rect.minZ, 6, 5);
             resolveParams5.wallStuff = ThingDef.Named("BlocksLimestone");
             resolveParams5.SetCustom("hasDoor", new[]
             {
                 'N'
             });
-            BaseGen.symbolStack.Push("roomWithDoor", resolveParams5);
+
+
+            var resolveParams6 = resolveParams5;
+            resolveParams6.rect = resolveParams6.rect.ContractedBy(1);
+            resolveParams6.singleThingDef = ThingDef.Named("ChemfuelPoweredGenerator");
+            resolveParams6.thingRot = Rot4.North; 
+            resolveParams6.rect = new CellRect(resolveParams5.rect.minX + 1, resolveParams5.rect.minZ + 1, 3, 3);
+            BaseGen.symbolStack.Push("insertFurnishing", resolveParams6);
             BaseGen.symbolStack.Push("wireOutline", resolveParams5);
-            resolveParams5.rect = resolveParams5.rect.ContractedBy(1);
-            resolveParams5.singleThingDef = ThingDef.Named("ChemfuelPoweredGenerator");
-            resolveParams5.thingRot = Rot4.North;
-            BaseGen.symbolStack.Push("insertFurnishing", resolveParams5);
+            BaseGen.symbolStack.Push("roomWithDoor", resolveParams5);
+
             BaseGen.symbolStack.Push("edgeFence", rp);
             BaseGen.symbolStack.Push("floor", rp);
             BaseGen.symbolStack.Push("clear", rp);

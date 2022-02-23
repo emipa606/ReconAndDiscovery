@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using ReconAndDiscovery.Missions.QuestComp;
 using RimWorld;
 using UnityEngine;
 using Verse;
@@ -9,32 +10,9 @@ namespace ReconAndDiscovery.Missions
 {
     public class SitePartWorker_Festival : SitePartWorker
     {
-        private List<Faction> factions;
-
         private Faction hostFaction;
 
-        private List<Faction> Factions
-        {
-            get
-            {
-                if (!factions.NullOrEmpty())
-                {
-                    return factions;
-                }
-
-                factions = Find.FactionManager.AllFactionsVisible.ToList();
-                if (factions.Contains(hostFaction))
-                {
-                    factions.Remove(hostFaction);
-                }
-
-                factions = (from f in factions
-                    where f != Faction.OfPlayer && f.GoodwillWith(hostFaction) >= 0f
-                    select f).ToList();
-
-                return factions;
-            }
-        }
+        private List<Faction> Factions;
 
         private void IncrementAllGoodwills()
         {
@@ -135,7 +113,9 @@ namespace ReconAndDiscovery.Missions
         public override void PostMapGenerate(Map map)
         {
             base.PostMapGenerate(map);
-            hostFaction = Find.WorldObjects.MapParentAt(map.Tile).Faction;
+            hostFaction = Find.WorldObjects.MapParentAt(map.Tile).GetComponent<Festival>().HostFaction;
+            Factions = Find.WorldObjects.MapParentAt(map.Tile).GetComponent<Festival>().AttendingFactions;
+            
             MakeTradeCaravans(map);
             MakePartyGroups(map);
             IncrementAllGoodwills();

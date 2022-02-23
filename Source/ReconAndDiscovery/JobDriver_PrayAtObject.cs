@@ -37,7 +37,7 @@ namespace ReconAndDiscovery
                 {
                     return;
                 }
-
+                
                 comp.mana += num;
                 if (comp.mana < 0f)
                 {

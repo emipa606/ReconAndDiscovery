@@ -189,52 +189,44 @@ namespace ReconAndDiscovery
             Log.Message("Checking for link");
             var drafted = p.Drafted;
             var flag = Find.Selector.IsSelected(p);
-            bool result;
-            if (LinkedGate == null)
-            {
-                if (LinkedSite == null)
-                {
-                    Messages.Message("RD_StargateNotLinked".Translate(),
-                        MessageTypeDefOf.RejectInput); //"Stargate is not linked to a destination!"
-                    result = false;
-                }
-                else if (LinkedSite.HasMap)
-                {
-                    IEnumerable<Thing> source = LinkedSite.Map.listerThings.ThingsOfDef(ThingDef.Named("RD_Stargate"));
-                    if (!source.Any())
-                    {
-                        Messages.Message("RD_StargateNotLinked".Translate(), MessageTypeDefOf.RejectInput);
-                        result = false;
-                    }
-                    else
-                    {
-                        MakeLink(source.FirstOrDefault());
-                        Log.Message("Linked extant, unlinked gate!");
-                        result = true;
-                    }
-                }
-                else
-                {
-                    var pawns = new List<Pawn>
-                    {
-                        p
-                    };
-                    LongEventHandler.QueueLongEvent(delegate
-                    {
-                        SitePartWorker_Stargate.tmpPawnsToSpawn.AddRange(pawns);
-                        var unused =
-                            GetOrGenerateMapUtility.GetOrGenerateMap(LinkedSite.Tile, LinkedSite.Map.Size, null);
-                    }, "GeneratingMapForNewEncounter", false, null);
-                    result = false;
-                }
-            }
-            else
+            if (LinkedGate != null)
             {
                 Log.Message("Linked already!");
-                result = true;
+                return true;
+            }
+            
+            if (LinkedSite == null)
+            {
+                Messages.Message("RD_StargateNotLinked".Translate(),
+                    MessageTypeDefOf.RejectInput); //"Stargate is not linked to a destination!"
+                return false;
             }
 
-            return result;
+            if (!LinkedSite.HasMap)
+            {
+                var pawns = new List<Pawn>
+                {
+                    p
+                };
+                
+                LongEventHandler.QueueLongEvent(delegate
+                {
+                    SitePartWorker_Stargate.tmpPawnsToSpawn.AddRange(pawns);
+                   GetOrGenerateMapUtility.GetOrGenerateMap(LinkedSite.Tile, null);
+                }, "GeneratingMapForNewEncounter", false, null);
+                return false;
+            }
+            
+            IEnumerable<Thing> source = LinkedSite.Map.listerThings.ThingsOfDef(ThingDef.Named("RD_Stargate"));
+            if (!source.Any())
+            {
+                Messages.Message("RD_StargateNotLinked".Translate(), MessageTypeDefOf.RejectInput);
+                return false;
+            }
+
+            MakeLink(source.FirstOrDefault());
+            Log.Message("Linked extant, unlinked gate!");
+            return true;
         }
 
         public void SendPawnThroughStargate(Pawn p)

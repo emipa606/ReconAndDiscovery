@@ -45,6 +45,8 @@ namespace ReconAndDiscovery
 
         public static WorldObjectDef RD_AdventureThingCounter;
 
+        public static WorldObjectDef RD_FestivalMap;
+
         public static SitePartDef RD_AbandonedCastle;
 
         public static SitePartDef RD_AbandonedColony;

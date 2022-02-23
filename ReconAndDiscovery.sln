@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29209.62
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReconAndDiscovery", "ReconAndDiscovery\ReconAndDiscovery.csproj", "{7433D26A-FFD9-4C4C-ADBB-030ED71AFF95}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReconAndDiscovery", "Source\ReconAndDiscovery\ReconAndDiscovery.csproj", "{7433D26A-FFD9-4C4C-ADBB-030ED71AFF95}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -8,9 +8,11 @@
       <li>Map_PlayerHome</li>
     </targetTags>
     <workerClass>ReconAndDiscovery.Missions.IncidentWorker_RaidEnemyQuest</workerClass>
+<!--    <workerClass>IncidentWorker_RaidEnemy</workerClass>-->
     <baseChance>0.0</baseChance>
     <category>ThreatBig</category>
     <pointsScaleable>true</pointsScaleable>
+    <tale>Raid</tale>
   </IncidentDef>
   <IncidentDef>
     <defName>RD_DiscoveredStargate</defName>

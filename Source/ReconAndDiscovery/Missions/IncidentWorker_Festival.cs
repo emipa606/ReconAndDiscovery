@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ReconAndDiscovery.Missions.QuestComp;
+using ReconAndDiscovery.Utils;
 using RimWorld;
 using RimWorld.Planet;
 using Verse;
@@ -41,9 +43,8 @@ namespace ReconAndDiscovery.Missions
             return list.Count;
         }
 
-        private bool TryFindFaction(out Faction faction, Predicate<Faction> validator)
+        private List<Faction> GetFactions(Predicate<Faction> validator)
         {
-            faction = null;
             var list = Find.FactionManager.AllFactionsVisible.ToList();
             if (list.Contains(Faction.OfPlayer))
             {
@@ -53,57 +54,43 @@ namespace ReconAndDiscovery.Missions
             list = (from f in list
                 where validator(f)
                 select f).ToList();
-            bool result;
-            if (list.Any())
-            {
-                faction = list.RandomElement();
-                result = true;
-            }
-            else
-            {
-                result = false;
-            }
 
-            return result;
+            return list;
         }
 
         protected override bool TryExecuteWorker(IncidentParms parms)
         {
-            if ((from wo in Find.WorldObjects.AllWorldObjects
-                where wo.def == SiteDefOfReconAndDiscovery.RD_AdventurePeaceTalks
-                select wo).Any())
+            if ((from existingTradeFestivals in Find.WorldObjects.AllWorldObjects
+                    where existingTradeFestivals.def == SiteDefOfReconAndDiscovery.RD_AdventurePeaceTalks
+                    select existingTradeFestivals).Any())
             {
                 return false;
             }
 
-            if (!TryFindFaction(out var faction, f => f != Faction.OfPlayer && f.PlayerGoodwill >= 0))
+            var friendlyFactions = GetFactions(f => f != Faction.OfPlayer && f.PlayerGoodwill >= 0);
+            if (!friendlyFactions.Any())
             {
                 return false;
             }
+
+            var hostFaction = friendlyFactions.RandomElement();
 
             if (!TileFinder.TryFindNewSiteTile(out var tile))
             {
                 return false;
             }
 
-            var site = (Site) WorldObjectMaker.MakeWorldObject(WorldObjectDefOf.Site);
+            var site = (Site) WorldObjectMaker.MakeWorldObject(SiteDefOfReconAndDiscovery.RD_FestivalMap);
             site.Tile = tile;
-            site.SetFaction(faction);
-            site.AddPart(new SitePart(site, SiteDefOfReconAndDiscovery.RD_Festival,
-                SiteDefOfReconAndDiscovery.RD_Festival.Worker.GenerateDefaultParams(
-                    StorytellerUtility.DefaultSiteThreatPointsNow(), tile, faction)));
+            site.doorsAlwaysOpenForPlayerPawns = true;
+            
+            site.AddPart(GetSitePartUtil.WithDefaultParams(SiteDefOfReconAndDiscovery.RD_Festival, site, tile, hostFaction));
+            site.AddPart(GetSitePartUtil.WithDefaultParams(SiteDefOfReconAndDiscovery.RD_AbandonedColony, site, tile, hostFaction, true));
 
-            // TODO: check if this works correctly
-            var outpost = new SitePart(site, SitePartDefOf.Outpost,
-                SitePartDefOf.Outpost.Worker.GenerateDefaultParams(
-                    StorytellerUtility.DefaultSiteThreatPointsNow(), tile, faction))
-            {
-                hidden = true
-            };
-            site.parts.Add(outpost);
-            var num = 8;
-            site.GetComponent<TimeoutComp>().StartTimeout(num * 60000);
-            SendStandardLetter(parms, site, faction.Name);
+            var timeoutDays = 8;
+            site.GetComponent<Festival>().SetupFactions(hostFaction, friendlyFactions);
+            site.GetComponent<TimeoutComp>().StartTimeout(timeoutDays * 60000);
+            SendStandardLetter(parms, site, hostFaction.Name);
             Find.WorldObjects.Add(site);
             return true;
         }

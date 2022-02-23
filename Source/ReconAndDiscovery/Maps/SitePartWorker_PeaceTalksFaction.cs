@@ -14,8 +14,9 @@ namespace ReconAndDiscovery.Maps
         public override void PostMapGenerate(Map map)
         {
             base.PostMapGenerate(map);
+            map.fogGrid.ClearAllFog();
             var mapParent = Find.World.worldObjects.MapParentAt(map.Tile);
-            var faction = mapParent.Faction;
+            var faction = mapParent.GetComponent<QuestComp_PeaceTalks>().Faction;
             //TODO: check if it works
             var incidentParms = StorytellerUtility.DefaultParmsNow(IncidentCategoryDefOf.FactionArrival, map);
             incidentParms.points = Mathf.Max(incidentParms.points, 250f);

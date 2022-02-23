@@ -17,6 +17,11 @@ namespace ReconAndDiscovery.Missions
 
         private Faction requestingFaction;
 
+        public Faction Faction
+        {
+            get => requestingFaction;
+        }
+        
         public Pawn Negotiator
         {
             get
@@ -59,8 +64,7 @@ namespace ReconAndDiscovery.Missions
                 {
                     return;
                 }
-
-                Negotiator.mindState.wantsToTradeWithColony = true;
+                
                 if (Negotiator.GetComp<CompNegotiator>() != null)
                 {
                     return;
@@ -90,68 +94,69 @@ namespace ReconAndDiscovery.Missions
 
         public void ResolveNegotiations(Pawn playerNegotiator, Pawn otherNegotiator)
         {
-            if (Rand.Chance(0.95f))
+            if (Rand.Chance(0.05f))
             {
-                var qualityCategory =
-                    QualityUtility.GenerateQualityCreatedByPawn(
-                        playerNegotiator.skills.GetSkill(SkillDefOf.Social).Level, false);
-                var num = 0;
-                var text = "";
-                switch (qualityCategory)
-                {
-                    case QualityCategory.Awful:
-                        num = -5;
-                        text = "RD_DiplomacyAwful".Translate(playerNegotiator.Label, requestingFaction.Name,
-                            num); //"The flailing diplomatic "strategy" of {0} seemed chiefly to involve wild swings between aggression and panic, peppered liberally with lewd insults involving the negotiator for {1}'s antecedents. Your already strained relations have, understandably, worsened ({2} to relations).";
-                        break;
-                    case QualityCategory.Poor:
-                        num = -1;
-                        text = "RD_DiplomacyPoor".Translate(playerNegotiator.Label, requestingFaction.Name, num);
-                        break;
-                    case QualityCategory.Normal:
-                    case QualityCategory.Good:
-                        num = 8;
-                        text = "RD_DiplomacyNormalGood".Translate(playerNegotiator.Label, requestingFaction.Name, num);
-                        break;
-                    case QualityCategory.Excellent:
-                        num = 16;
-                        text = "RD_DiplomacyExcellent".Translate(playerNegotiator.Label, requestingFaction.Name, num);
-                        break;
-                    case QualityCategory.Masterwork:
-                    case QualityCategory.Legendary:
-                        num = 32;
-                        text = "RD_DiplomacyMasterWorkLegendary".Translate(playerNegotiator.Label,
-                            requestingFaction.Name, num);
-                        break;
-                }
-
-                var diaNode = new DiaNode(text);
-                var diaOption = new DiaOption("OK".Translate())
-                {
-                    resolveTree = true
-                };
-                diaNode.options.Add(diaOption);
-                var window = new Dialog_NodeTree(diaNode);
-                Find.WindowStack.Add(window);
-                facOriginalRelationship += num;
-                active = false;
-                ThingComp comp = Negotiator.GetComp<CompNegotiator>();
-                if (comp != null)
-                {
-                    Negotiator.AllComps.Remove(comp);
-                }
-            }
-            else
-            {
-                var diaNode2 = new DiaNode("RD_NegotiationsTrap".Translate()); //"The negotiations are a trap!"
+                var trapDialogue = new DiaNode("RD_NegotiationsTrap".Translate()); //"The negotiations are a trap!"
                 var diaOption2 = new DiaOption("OK".Translate())
                 {
                     resolveTree = true
                 };
-                diaNode2.options.Add(diaOption2);
-                var window2 = new Dialog_NodeTree(diaNode2);
+                trapDialogue.options.Add(diaOption2);
+                var window2 = new Dialog_NodeTree(trapDialogue);
                 Find.WindowStack.Add(window2);
                 requestingFaction.TryAffectGoodwillWith(Faction.OfPlayer, -101);
+                facOriginalRelationship = -101;
+                return;
+            }
+
+            var qualityCategory =
+                QualityUtility.GenerateQualityCreatedByPawn(
+                    playerNegotiator.skills.GetSkill(SkillDefOf.Social).Level, false);
+            var num = 0;
+            var text = "";
+            switch (qualityCategory)
+            {
+                case QualityCategory.Awful:
+                    num = -5;
+                    text = "RD_DiplomacyAwful".Translate(playerNegotiator.Label, requestingFaction.Name,
+                        num); //"The flailing diplomatic "strategy" of {0} seemed chiefly to involve wild swings between aggression and panic, peppered liberally with lewd insults involving the negotiator for {1}'s antecedents. Your already strained relations have, understandably, worsened ({2} to relations).";
+                    break;
+                case QualityCategory.Poor:
+                    num = -1;
+                    text = "RD_DiplomacyPoor".Translate(playerNegotiator.Label, requestingFaction.Name, num);
+                    break;
+                case QualityCategory.Normal:
+                case QualityCategory.Good:
+                    num = 12;
+                    text = "RD_DiplomacyNormalGood".Translate(playerNegotiator.Label, requestingFaction.Name, num);
+                    break;
+                case QualityCategory.Excellent:
+                    num = 23;
+                    text = "RD_DiplomacyExcellent".Translate(playerNegotiator.Label, requestingFaction.Name, num);
+                    break;
+                case QualityCategory.Masterwork:
+                case QualityCategory.Legendary:
+                    num = 40;
+                    text = "RD_DiplomacyMasterWorkLegendary".Translate(playerNegotiator.Label,
+                        requestingFaction.Name, num);
+                    break;
+            }
+
+            var diaNode = new DiaNode(text);
+            var diaOption = new DiaOption("OK".Translate())
+            {
+                resolveTree = true
+            };
+            diaNode.options.Add(diaOption);
+            var window = new Dialog_NodeTree(diaNode);
+            Find.WindowStack.Add(window);
+
+            facOriginalRelationship += num;
+            active = false;
+            ThingComp comp = Negotiator.GetComp<CompNegotiator>();
+            if (comp != null)
+            {
+                Negotiator.AllComps.Remove(comp);
             }
         }
 
@@ -166,8 +171,7 @@ namespace ReconAndDiscovery.Missions
         private void StopQuest()
         {
             active = false;
-            var num = requestingFaction.PlayerGoodwill - facOriginalRelationship;
-            requestingFaction.TryAffectGoodwillWith(Faction.OfPlayer, num);
+            requestingFaction.TryAffectGoodwillWith(Faction.OfPlayer, facOriginalRelationship - requestingFaction.PlayerGoodwill);
             requestingFaction = null;
         }
 

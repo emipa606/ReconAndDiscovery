@@ -20,6 +20,14 @@ namespace ReconAndDiscovery
                 list.Add(new FloatMenuOption("RD_EndExtremeWeather".Translate(), // End Extreme Weather (10 mana)
                     delegate
                     {
+                        if (map.weatherManager.curWeather == WeatherDefOf.Clear
+                            && !manager.ConditionIsActive(GameConditionDefOf.ColdSnap)
+                            && !manager.ConditionIsActive(GameConditionDefOf.Flashstorm)
+                            && !manager.ConditionIsActive(GameConditionDefOf.HeatWave))
+                        {
+                            return;
+                        }
+
                         mana -= 10f;
                         map.weatherManager.TransitionTo(WeatherDefOf.Clear);
                         if (manager.ConditionIsActive(GameConditionDefOf.ColdSnap))
@@ -68,12 +76,14 @@ namespace ReconAndDiscovery
                         var source = from p in map.mapPawns.AllPawnsSpawned
                             where p.HostileTo(Faction.OfPlayer)
                             select p;
-                        mana -= 40f;
+                        
                         if (!source.Any())
                         {
                             return;
                         }
-
+                        
+                        mana -= 40f;
+                        
                         var gameCondition_TargetedStorm =
                             (GameCondition_TargetedStorm) GameConditionMaker.MakeCondition(
                                 GameConditionDef.Named("RD_TargetedStorm"), 12000);

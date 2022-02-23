@@ -2,9 +2,9 @@
 using RimWorld.BaseGen;
 using Verse;
 
-namespace ReconAndDiscovery.Maps
+namespace ReconAndDiscovery.Maps.SymbolResolver
 {
-    public class SymbolResolver_NestedRoomMaze : SymbolResolver
+    public class SymbolResolver_NestedRoomMaze : RimWorld.BaseGen.SymbolResolver
     {
         public override void Resolve(ResolveParams rp)
         {

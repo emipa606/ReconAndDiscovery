@@ -29,25 +29,22 @@ namespace ReconAndDiscovery
         {
             if (thing is HoloEmitter)
             {
-                if (pawn.Corpse.holdingOwner != null)
+                ResurrectionUtility.Resurrect(pawn);
+                PawnDiedOrDownedThoughtsUtility.RemoveDiedThoughts(pawn);
+                PawnComponentsUtility.AddAndRemoveDynamicComponents(pawn);
+                FixPawnRelationships(pawn);
+                pawn.health.Reset();
+                if (pawn.Corpse != null && pawn.Corpse.Spawned)
                 {
-                    pawn.Corpse.GetDirectlyHeldThings().TryTransferToContainer(pawn, pawn.Corpse.holdingOwner);
+                    pawn.Corpse.DeSpawn();
                 }
-                else if (pawn.Corpse.Spawned)
-                {
-                    ResurrectionUtility.Resurrect(pawn);
-                    PawnDiedOrDownedThoughtsUtility.RemoveDiedThoughts(pawn);
-                    PawnComponentsUtility.AddAndRemoveDynamicComponents(pawn);
-                    FixPawnRelationships(pawn);
-                    pawn.health.Reset();
-                    if (pawn.Corpse != null && pawn.Corpse.Spawned)
-                    {
-                        pawn.Corpse.DeSpawn();
-                    }
 
-                    GenSpawn.Spawn(pawn, pawn.Corpse.Position, pawn.Corpse.Map);
-                    GiveSideEffects(pawn);
+                if (!pawn.Spawned)
+                {
+                    GenSpawn.Spawn(pawn, thing.Position, thing.Map);
                 }
+
+                GiveSideEffects(pawn);
 
                 pawn.Corpse?.Destroy();
             }
@@ -239,7 +236,7 @@ namespace ReconAndDiscovery
             if (Rand.Chance(0.8f))
             {
                 foreach (var bodyPartRecord in pawn.health.hediffSet.GetNotMissingParts()
-                    .Where(x => x.def == BodyPartDefOf.Eye))
+                             .Where(x => x.def == BodyPartDefOf.Eye))
                 {
                     var hediff3 = HediffMaker.MakeHediff(HediffDefOf.Blindness, pawn, bodyPartRecord);
                     pawn.health.AddHediff(hediff3);

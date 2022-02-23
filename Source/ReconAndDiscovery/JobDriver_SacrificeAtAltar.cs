@@ -22,13 +22,13 @@ namespace ReconAndDiscovery
 
         public override bool TryMakePreToilReservations(bool errorOnFailed)
         {
-            return pawn.Reserve(job.targetA, job, 1, -1, null, errorOnFailed);
+            return pawn.Reserve(job.targetA, job, errorOnFailed: errorOnFailed) && pawn.Reserve(job.targetB, job, errorOnFailed: errorOnFailed);
         }
 
         protected override IEnumerable<Toil> MakeNewToils()
         {
-            yield return Toils_Reserve.Reserve(TargetIndex.A, 1, 1);
-            yield return Toils_Reserve.Reserve(TargetIndex.B, 1, 1);
+            yield return Toils_Reserve.Reserve(TargetIndex.A);
+            yield return Toils_Reserve.Reserve(TargetIndex.B);
             yield return Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.ClosestTouch);
             yield return Toils_Haul.StartCarryThing(TargetIndex.A);
             yield return Toils_Haul.CarryHauledThingToCell(TargetIndex.B);

@@ -3,9 +3,9 @@ using RimWorld;
 using RimWorld.BaseGen;
 using Verse;
 
-namespace ReconAndDiscovery.Maps
+namespace ReconAndDiscovery.Maps.SymbolResolver
 {
-    public class SymbolResolver_CrashedShip : SymbolResolver
+    public class SymbolResolver_CrashedShip : RimWorld.BaseGen.SymbolResolver
     {
         public override void Resolve(ResolveParams rp)
         {

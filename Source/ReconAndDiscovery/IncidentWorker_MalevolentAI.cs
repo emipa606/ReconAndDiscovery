@@ -8,48 +8,40 @@ namespace ReconAndDiscovery
     {
         protected override bool TryExecuteWorker(IncidentParms parms)
         {
-            var map = (Map) parms.target;
-            bool result;
-            if (map == null)
+            if (parms.target is not Map map)
             {
-                result = false;
-            }
-            else
-            {
-                var source = from p in map.mapPawns.AllPawnsSpawned
-                    where p.Faction.HostileTo(Faction.OfPlayer)
-                          && GenHostility.IsActiveThreatTo(p, Faction.OfPlayer)
-                    select p;
-
-                if (!source.Any())
-                {
-                    result = false;
-                }
-                else
-                {
-                    var pawn = source.RandomElement();
-                    var list = (from b in map.listerBuildings.allBuildingsColonist
-                        where b.def.building.ai_combatDangerous && b.GetComp<CompPowerTrader>() != null &&
-                              b.GetComp<CompPowerTrader>().PowerOn
-                        select b).ToList();
-                    if (!list.Any())
-                    {
-                        result = false;
-                    }
-                    else
-                    {
-                        foreach (var building in list)
-                        {
-                            building.SetFaction(pawn.Faction);
-                        }
-
-                        SendStandardLetter(parms, list.FirstOrDefault(), pawn.Faction.Name);
-                        result = true;
-                    }
-                }
+                return false;
             }
 
-            return result;
+            var activelyHostilePawns = from p in map.mapPawns.AllPawnsSpawned
+                where p.Faction.HostileTo(Faction.OfPlayer)
+                      && GenHostility.IsActiveThreatTo(p, Faction.OfPlayer)
+                select p;
+
+            if (!activelyHostilePawns.Any())
+            {
+                return false;
+            }
+
+            var pawn = activelyHostilePawns.RandomElement();
+            
+            var poweredHackableBuildings = (from b in map.listerBuildings.allBuildingsColonist
+                where b.def.building.ai_combatDangerous && b.GetComp<CompPowerTrader>() != null &&
+                      b.GetComp<CompPowerTrader>().PowerOn
+                select b).ToList();
+            if (!poweredHackableBuildings.Any())
+            {
+                return false;
+            }
+
+            foreach (var building in poweredHackableBuildings)
+            {
+                building.SetFaction(pawn.Faction);
+            }
+
+            SendStandardLetter(parms, poweredHackableBuildings.FirstOrDefault(), pawn.Faction.Name);
+
+            return true;
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using RimWorld;
 using Verse;
 
 namespace ReconAndDiscovery.Things
@@ -72,28 +73,25 @@ namespace ReconAndDiscovery.Things
 
         public virtual bool TryAcceptThing(Thing thing, bool allowSpecialEffects = true)
         {
-            bool result;
-            if (!(thing is Corpse) && !(thing is Pawn))
+            if (thing is not Corpse && thing is not Pawn)
             {
-                result = false;
-            }
-            else
-            {
-                bool flag;
-                if (thing.holdingOwner != null)
-                {
-                    thing.holdingOwner.TryTransferToContainer(thing, innerContainer, thing.stackCount);
-                    flag = true;
-                }
-                else
-                {
-                    flag = innerContainer.TryAdd(thing);
-                }
-
-                result = flag;
+                return false;
             }
 
-            return result;
+            if (thing.holdingOwner == null)
+            {
+                return innerContainer.TryAdd(thing);
+            }
+
+            if (thing.holdingOwner.Owner is Map)
+            {
+                thing.holdingOwner.Remove(thing);
+                innerContainer.TryAdd(thing);
+                return true;
+            }
+
+            thing.holdingOwner.TryTransferToContainer(thing, innerContainer, thing.stackCount);
+            return true;
         }
     }
 }

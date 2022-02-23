@@ -8,7 +8,19 @@
     <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
     <expandingIconTexture>World/WorldObjects/MuffaloMigrate</expandingIconTexture>
     <forceExitAndRemoveMapCountdownDurationDays>2</forceExitAndRemoveMapCountdownDurationDays>
+    <disallowsAutomaticDetectionTimerStart>true</disallowsAutomaticDetectionTimerStart>
   </SitePartDef>
+  <IncidentDef>
+    <defName>RD_MuffaloMassInsanityWarning</defName>
+    <label>muffalo mass instant (warning)y</label>
+    <category>Misc</category>
+    <targetTags>
+      <li>Map_TempIncident</li>
+    </targetTags>
+    <workerClass>ReconAndDiscovery.Missions.IncidentWorker_MuffaloMassInsanityWarning</workerClass>
+    <baseChance>0.00</baseChance>
+    <minRefireDays>30</minRefireDays>
+  </IncidentDef>
   <IncidentDef>
     <defName>RD_MuffaloMassInsanity</defName>
     <label>muffalo mass instanty</label>

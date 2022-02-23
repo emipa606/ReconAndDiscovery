@@ -1,8 +1,8 @@
 ﻿using RimWorld.BaseGen;
 
-namespace ReconAndDiscovery.Maps
+namespace ReconAndDiscovery.Maps.SymbolResolver
 {
-    public class SymbolResolver_PathOfDestruction : SymbolResolver
+    public class SymbolResolver_PathOfDestruction : RimWorld.BaseGen.SymbolResolver
     {
         public override void Resolve(ResolveParams rp)
         {

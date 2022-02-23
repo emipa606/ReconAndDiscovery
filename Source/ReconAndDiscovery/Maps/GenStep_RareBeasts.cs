@@ -14,16 +14,16 @@ namespace ReconAndDiscovery.Maps
             {
                 pawnKindDef = ThingDefOfReconAndDiscovery.RD_Nitralope;
             }
-
+            
             var request = new PawnGenerationRequest(pawnKindDef, null,
-                PawnGenerationContext.NonPlayer, -1, true, true, false, false, false, false,
+                PawnGenerationContext.NonPlayer, parms.sitePart.site.Tile, true, true, false, false, false, false,
                 1f, false, false,
                 false, true, true, true,
                 false, false, 0f, 0f, null, 1f, null, null, null,
                 null, 0f, 1f, 1f, Gender.Male);
 
             var request2 = new PawnGenerationRequest(pawnKindDef, null,
-                PawnGenerationContext.NonPlayer, -1, true, true, false, false, false, false, 1f, false, false,
+                PawnGenerationContext.NonPlayer, parms.sitePart.site.Tile, true, true, false, false, false, false, 1f, false, false,
                 false, false, false, false, false, false, 0f, 0f, null, 1f, null, null, null,
                 null, 0f, 0f, 1f, Gender.Female);
 

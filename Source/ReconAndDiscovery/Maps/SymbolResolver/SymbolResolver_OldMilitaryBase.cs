@@ -1,9 +1,9 @@
 ﻿using RimWorld;
 using RimWorld.BaseGen;
 
-namespace ReconAndDiscovery.Maps
+namespace ReconAndDiscovery.Maps.SymbolResolver
 {
-    public class SymbolResolver_OldMilitaryBase : SymbolResolver
+    public class SymbolResolver_OldMilitaryBase : RimWorld.BaseGen.SymbolResolver
     {
         public override void Resolve(ResolveParams rp)
         {

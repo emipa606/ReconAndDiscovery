@@ -2,9 +2,9 @@
 using RimWorld.BaseGen;
 using Verse;
 
-namespace ReconAndDiscovery.Maps
+namespace ReconAndDiscovery.Maps.SymbolResolver
 {
-    public class SymbolResolver_EdgeFence : SymbolResolver
+    public class SymbolResolver_EdgeShields : RimWorld.BaseGen.SymbolResolver
     {
         public override void Resolve(ResolveParams rp)
         {
@@ -15,17 +15,18 @@ namespace ReconAndDiscovery.Maps
                 rp.wallStuff = BaseGenUtility.RandomCheapWallStuff(Faction.OfPlayer);
             }
 
-            var num = -1;
+            var num = 1;
             foreach (var loc in rect.EdgeCells)
             {
-                num++;
-                if (num % 3 != 0)
+                var def = ThingDefOf.Wall;
+                var newThing = ThingMaker.MakeThing(def, rp.wallStuff);
+                if (num % 3 == 0)
                 {
-                    continue;
+                    def = ThingDefOf.Sandbags;
+                    newThing = ThingMaker.MakeThing(def, GenStuff.DefaultStuffFor(def));
                 }
 
-                var wall = ThingDefOf.Wall;
-                var newThing = ThingMaker.MakeThing(wall, rp.wallStuff);
+                num++;
                 GenSpawn.Spawn(newThing, loc, map);
             }
         }

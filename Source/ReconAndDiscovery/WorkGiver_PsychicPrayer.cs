@@ -6,8 +6,7 @@ namespace ReconAndDiscovery
 {
     public class WorkGiver_PsychicPrayer : WorkGiver_Scanner
     {
-        public override ThingRequest PotentialWorkThingRequest =>
-            ThingRequest.ForDef(ThingDef.Named("RD_PsionicEmanator"));
+        public override ThingRequest PotentialWorkThingRequest => ThingRequest.ForDef(ThingDef.Named("RD_PsionicEmanator"));
 
         public override bool Prioritized => true;
 
@@ -16,25 +15,21 @@ namespace ReconAndDiscovery
             return 0f;
         }
 
-        public override bool HasJobOnThing(Pawn pawn, Thing t, bool forced = false)
+        public override bool HasJobOnThing(Pawn pawn, Thing pschicEmanator, bool forced = false)
         {
-            bool result;
-            if (!(t is Building))
+            if (pschicEmanator is not Building)
             {
-                result = false;
+                return false;
             }
-            else if (!pawn.story.traits.HasTrait(TraitDef.Named("PsychicSensitivity")))
+
+            if (!pawn.story.traits.HasTrait(TraitDef.Named("PsychicSensitivity")))
             {
                 JobFailReason.Is("RD_OnlyPsychicCanBroadcast"
                     .Translate()); //"Only psychic pawns can broadcast a battle prayer"
-                result = false;
-            }
-            else
-            {
-                result = pawn.CanReserveAndReach(t, PathEndMode.Touch, Danger.Some, 1, -1, null, forced);
+                return false;
             }
 
-            return result;
+            return pawn.CanReserveAndReach(pschicEmanator, PathEndMode.Touch, Danger.Some, 1, -1, null, forced);
         }
 
         public override Job JobOnThing(Pawn pawn, Thing t, bool forced = false)

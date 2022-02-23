@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using RimWorld;
 using Verse;
 
@@ -6,38 +7,30 @@ namespace ReconAndDiscovery.Things
 {
     public class HediffComp_Seraphites : HediffComp
     {
-        private readonly List<Hediff> toRemove = new List<Hediff>();
+        private bool hasBeenRemoved = false;
 
         public HediffCompProperties_Seraphites Props => (HediffCompProperties_Seraphites) props;
 
         public override void CompPostTick(ref float severityAdjustment)
         {
-            if (parent.ageTicks % 100 == 0)
-            {
-                FixLuciferumHediffs();
-            }
+            if (hasBeenRemoved) return;
+            
+            FixLuciferumHediffs();
         }
 
         private void FixLuciferumHediffs()
         {
-            toRemove.Clear();
-            foreach (var hediff in Pawn.health.hediffSet.hediffs)
-            {
-                if (hediff is Hediff_Addiction)
-                {
-                    toRemove.Add(hediff);
-                }
+            // Only fix one type of hediff per tick, starting with the addiction and then fixing the high
+            var hediff = Pawn.health.hediffSet.hediffs.Find(hediff => hediff.def == HediffDef.Named("LuciferiumAddiction"))
+                ?? Pawn.health.hediffSet.hediffs.Find(hediff => hediff.def == HediffDef.Named("LuciferiumHigh"));
 
-                if (hediff.def == HediffDef.Named("LuciferiumHigh"))
-                {
-                    toRemove.Add(hediff);
-                }
-            }
-
-            foreach (var hediff2 in toRemove)
+            if (hediff == null)
             {
-                Pawn.health.RemoveHediff(hediff2);
+                hasBeenRemoved = true;
+                return;
             }
+            
+            Pawn.health.RemoveHediff(hediff);
         }
     }
 }

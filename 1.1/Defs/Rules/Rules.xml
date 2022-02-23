@@ -4,7 +4,7 @@
     <defName>RD_CrashedShip</defName>
     <symbol>crashedShip</symbol>
     <resolvers>
-      <li Class="ReconAndDiscovery.Maps.SymbolResolver_CrashedShip">
+      <li Class="ReconAndDiscovery.Maps.SymbolResolver.SymbolResolver_CrashedShip">
         <minRectSize>(2, 2)</minRectSize>
       </li>
     </resolvers>
@@ -13,7 +13,7 @@
     <defName>RD_TriangularRoom</defName>
     <symbol>triangularRoom</symbol>
     <resolvers>
-      <li Class="ReconAndDiscovery.Maps.SymbolResolver_TriangularRoom">
+      <li Class="ReconAndDiscovery.Maps.SymbolResolver.SymbolResolver_TriangularRoom">
         <minRectSize>(2, 2)</minRectSize>
       </li>
     </resolvers>
@@ -22,7 +22,7 @@
     <defName>RD_InsertFurnishing</defName>
     <symbol>insertFurnishing</symbol>
     <resolvers>
-      <li Class="ReconAndDiscovery.Maps.SymbolResolver_InsertFurnishing">
+      <li Class="ReconAndDiscovery.Maps.SymbolResolver.SymbolResolver_InsertFurnishing">
         <minRectSize>(1, 1)</minRectSize>
       </li>
     </resolvers>
@@ -31,7 +31,7 @@
     <defName>RD_MakeMainAdventureTrigger</defName>
     <symbol>makeMainAdventureTrigger</symbol>
     <resolvers>
-      <li Class="ReconAndDiscovery.Maps.SymbolResolver_MakeMainAdventureTrigger">
+      <li Class="ReconAndDiscovery.Maps.SymbolResolver.SymbolResolver_MakeMainAdventureTrigger">
         <minRectSize>(0, 0)</minRectSize>
       </li>
     </resolvers>
@@ -40,7 +40,7 @@
     <defName>RD_PathOfDestruction</defName>
     <symbol>pathOfDestruction</symbol>
     <resolvers>
-      <li Class="ReconAndDiscovery.Maps.SymbolResolver_PathOfDestruction">
+      <li Class="ReconAndDiscovery.Maps.SymbolResolver.SymbolResolver_PathOfDestruction">
         <minRectSize>(1, 1)</minRectSize>
       </li>
     </resolvers>
@@ -49,7 +49,7 @@
     <defName>RD_EdgeFence</defName>
     <symbol>edgeFence</symbol>
     <resolvers>
-      <li Class="ReconAndDiscovery.Maps.SymbolResolver_EdgeFence">
+      <li Class="ReconAndDiscovery.Maps.SymbolResolver.SymbolResolver_EdgeFence">
         <minRectSize>(5, 5)</minRectSize>
       </li>
     </resolvers>
@@ -58,7 +58,7 @@
     <defName>RD_WireOutline</defName>
     <symbol>wireOutline</symbol>
     <resolvers>
-      <li Class="ReconAndDiscovery.Maps.SymbolResolver_WireOutline">
+      <li Class="ReconAndDiscovery.Maps.SymbolResolver.SymbolResolver_WireOutline">
         <minRectSize>(1, 1)</minRectSize>
       </li>
     </resolvers>
@@ -67,7 +67,7 @@
     <defName>RD_RoomWithDoor</defName>
     <symbol>roomWithDoor</symbol>
     <resolvers>
-      <li Class="ReconAndDiscovery.Maps.SymbolResolver_RoomWithDoor">
+      <li Class="ReconAndDiscovery.Maps.SymbolResolver.SymbolResolver_RoomWithDoor">
         <minRectSize>(3, 3)</minRectSize>
       </li>
     </resolvers>
@@ -76,7 +76,7 @@
     <defName>RD_WallDoor</defName>
     <symbol>wallDoor</symbol>
     <resolvers>
-      <li Class="ReconAndDiscovery.Maps.SymbolResolver_WallDoor">
+      <li Class="ReconAndDiscovery.Maps.SymbolResolver.SymbolResolver_WallDoor">
         <minRectSize>(1, 1)</minRectSize>
       </li>
     </resolvers>
@@ -85,7 +85,7 @@
     <defName>RD_AbandonedLab</defName>
     <symbol>abandonedLab</symbol>
     <resolvers>
-      <li Class="ReconAndDiscovery.Maps.SymbolResolver_AbandonedLab">
+      <li Class="ReconAndDiscovery.Maps.SymbolResolver.SymbolResolver_AbandonedLab">
         <minRectSize>(5, 5)</minRectSize>
       </li>
     </resolvers>
@@ -94,7 +94,7 @@
     <defName>RD_OldMilitaryBase</defName>
     <symbol>oldMilitaryBase</symbol>
     <resolvers>
-      <li Class="ReconAndDiscovery.Maps.SymbolResolver_OldMilitaryBase">
+      <li Class="ReconAndDiscovery.Maps.SymbolResolver.SymbolResolver_OldMilitaryBase">
         <minRectSize>(20, 20)</minRectSize>
       </li>
     </resolvers>
@@ -103,7 +103,7 @@
     <defName>RD_NestedRoomMaze</defName>
     <symbol>nestedRoomMaze</symbol>
     <resolvers>
-      <li Class="ReconAndDiscovery.Maps.SymbolResolver_NestedRoomMaze">
+      <li Class="ReconAndDiscovery.Maps.SymbolResolver.SymbolResolver_NestedRoomMaze">
         <minRectSize>(3, 3)</minRectSize>
       </li>
     </resolvers>
@@ -112,7 +112,7 @@
     <defName>RD_EdgeShields</defName>
     <symbol>edgeShields</symbol>
     <resolvers>
-      <li Class="ReconAndDiscovery.Maps.SymbolResolver_EdgeShields">
+      <li Class="ReconAndDiscovery.Maps.SymbolResolver.SymbolResolver_EdgeShields">
         <minRectSize>(2, 2)</minRectSize>
       </li>
     </resolvers>
@@ -121,7 +121,7 @@
     <defName>RD_OldCastle</defName>
     <symbol>oldCastle</symbol>
     <resolvers>
-      <li Class="ReconAndDiscovery.Maps.SymbolResolver_OldCastle">
+      <li Class="ReconAndDiscovery.Maps.SymbolResolver.SymbolResolver_OldCastle">
         <minRectSize>(2, 2)</minRectSize>
       </li>
     </resolvers>
@@ -130,7 +130,7 @@
     <defName>RD_PlaceTrigger</defName>
     <symbol>placeTrigger</symbol>
     <resolvers>
-      <li Class="ReconAndDiscovery.Maps.SymbolResolver_PlaceTrigger">
+      <li Class="ReconAndDiscovery.Maps.SymbolResolver.SymbolResolver_PlaceTrigger">
         <minRectSize>(1, 1)</minRectSize>
       </li>
     </resolvers>

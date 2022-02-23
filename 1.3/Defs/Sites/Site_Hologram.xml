@@ -12,6 +12,10 @@
     <linkWithSite>RD_AbandonedColony</linkWithSite>
     <order>500</order>
     <genStep Class="GenStep_Outpost">
+      <allowGeneratingThronerooms>true</allowGeneratingThronerooms>
+      <settlementDontGeneratePawns>true</settlementDontGeneratePawns>
+      <allowGeneratingFarms>true</allowGeneratingFarms>
+      <generateLoot>true</generateLoot>
     </genStep>
   </GenStepDef>
   <IncidentDef>

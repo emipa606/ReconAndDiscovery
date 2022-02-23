@@ -1,8 +1,8 @@
 ﻿using RimWorld.BaseGen;
 
-namespace ReconAndDiscovery.Maps
+namespace ReconAndDiscovery.Maps.SymbolResolver
 {
-    public class SymbolResolver_TriangularRoom : SymbolResolver
+    public class SymbolResolver_TriangularRoom : RimWorld.BaseGen.SymbolResolver
     {
         public override void Resolve(ResolveParams rp)
         {

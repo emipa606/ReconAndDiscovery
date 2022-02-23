@@ -22,7 +22,7 @@ namespace ReconAndDiscovery.Missions
             bool result;
             if (!source.Any())
             {
-                result = false;
+                return false;
             }
             else
             {
@@ -74,102 +74,97 @@ namespace ReconAndDiscovery.Missions
         {
             var map = parms.target as Map;
             bool result;
-            if (GetHasGoodStoryConditions(map))
+            if (!GetHasGoodStoryConditions(map))
             {
-                if (!CanFindVisitor(map, out var pawn))
+                return false;
+            }
+
+            if (!CanFindVisitor(map, out var pawn))
+            {
+                return false;
+            }
+
+            if (!CanFindLuciferiumAddict(map, out var pawn2))
+            {
+                return false;
+            }
+
+            if (!TileFinder.TryFindNewSiteTile(out var tile))
+            {
+                return false;
+            }
+
+            var site = (Site) WorldObjectMaker.MakeWorldObject(SiteDefOfReconAndDiscovery.RD_Adventure);
+            site.Tile = tile;
+            var faction = Faction.OfInsects;
+            site.AddPart(new SitePart(site, SiteDefOfReconAndDiscovery.RD_SeraphitesQuest,
+                SiteDefOfReconAndDiscovery.RD_SeraphitesQuest.Worker.GenerateDefaultParams(
+                    StorytellerUtility.DefaultSiteThreatPointsNow(), tile, faction)));
+            var sitePart_Computer = new SitePart(site, SiteDefOfReconAndDiscovery.RD_SitePart_Computer,
+                SiteDefOfReconAndDiscovery.RD_SitePart_Computer.Worker.GenerateDefaultParams(
+                    StorytellerUtility.DefaultSiteThreatPointsNow(), tile, faction))
+            {
+                hidden = true
+            };
+            site.parts.Add(sitePart_Computer);
+            foreach (var sitePartDef in site.parts.Select(x => x.def))
+            {
+                if (sitePartDef.Worker is SitePartWorker_Computer computer)
                 {
-                    result = false;
-                }
-                else if (!CanFindLuciferiumAddict(map, out var pawn2))
-                {
-                    result = false;
-                }
-                else
-                {
-                    if (TileFinder.TryFindNewSiteTile(out var tile))
-                    {
-                        var site = (Site) WorldObjectMaker.MakeWorldObject(SiteDefOfReconAndDiscovery.RD_Adventure);
-                        site.Tile = tile;
-                        var faction = Faction.OfInsects;
-                        site.AddPart(new SitePart(site, SiteDefOfReconAndDiscovery.RD_SeraphitesQuest,
-                            SiteDefOfReconAndDiscovery.RD_SeraphitesQuest.Worker.GenerateDefaultParams(
-                                StorytellerUtility.DefaultSiteThreatPointsNow(), tile, faction)));
-                        var sitePart_Computer = new SitePart(site, SiteDefOfReconAndDiscovery.RD_SitePart_Computer,
-                            SiteDefOfReconAndDiscovery.RD_SitePart_Computer.Worker.GenerateDefaultParams(
-                                StorytellerUtility.DefaultSiteThreatPointsNow(), tile, faction))
-                        {
-                            hidden = true
-                        };
-                        site.parts.Add(sitePart_Computer);
-                        foreach (var sitePartDef in site.parts.Select(x => x.def))
-                        {
-                            if (sitePartDef.Worker is SitePartWorker_Computer computer)
-                            {
-                                computer.action =
-                                    ActionDefOfReconAndDiscovery.RD_ActionSeraphites;
-                            }
-                        }
-
-                        if (Rand.Value < 0.15f)
-                        {
-                            var scatteredManhunters = new SitePart(site,
-                                SiteDefOfReconAndDiscovery.RD_ScatteredManhunters,
-                                SiteDefOfReconAndDiscovery.RD_ScatteredManhunters.Worker.GenerateDefaultParams(
-                                    StorytellerUtility.DefaultSiteThreatPointsNow(), tile, faction))
-                            {
-                                hidden = true
-                            };
-                            site.parts.Add(scatteredManhunters);
-                        }
-
-                        if (Rand.Value < 0.3f)
-                        {
-                            var scatteredTreasure = new SitePart(site, SiteDefOfReconAndDiscovery.RD_ScatteredTreasure,
-                                SiteDefOfReconAndDiscovery.RD_ScatteredTreasure.Worker.GenerateDefaultParams(
-                                    StorytellerUtility.DefaultSiteThreatPointsNow(), tile, faction))
-                            {
-                                hidden = true
-                            };
-                            site.parts.Add(scatteredTreasure);
-                        }
-
-                        if (Rand.Value < 0.1f)
-                        {
-                            var enemyRaidOnArrival = new SitePart(site,
-                                SiteDefOfReconAndDiscovery.RD_EnemyRaidOnArrival,
-                                SiteDefOfReconAndDiscovery.RD_EnemyRaidOnArrival.Worker.GenerateDefaultParams(
-                                    StorytellerUtility.DefaultSiteThreatPointsNow(), tile, faction))
-                            {
-                                hidden = true
-                            };
-                            site.parts.Add(enemyRaidOnArrival);
-                        }
-
-                        if (Rand.Value < 0.1f)
-                        {
-                            var mechanoidForces = new SitePart(site, SiteDefOfReconAndDiscovery.RD_MechanoidForces,
-                                SiteDefOfReconAndDiscovery.RD_MechanoidForces.Worker.GenerateDefaultParams(
-                                    StorytellerUtility.DefaultSiteThreatPointsNow(), tile, faction))
-                            {
-                                hidden = true
-                            };
-                            site.parts.Add(mechanoidForces);
-                        }
-
-                        SendStandardLetter(parms, site, pawn.Label, pawn2.Label);
-                        Find.WorldObjects.Add(site);
-                        result = true;
-                    }
-                    else
-                    {
-                        result = false;
-                    }
+                    computer.action =
+                        ActionDefOfReconAndDiscovery.RD_ActionSeraphites;
                 }
             }
-            else
+
+            if (Rand.Value < 0.15f)
             {
-                result = false;
+                var scatteredManhunters = new SitePart(site,
+                    SiteDefOfReconAndDiscovery.RD_ScatteredManhunters,
+                    SiteDefOfReconAndDiscovery.RD_ScatteredManhunters.Worker.GenerateDefaultParams(
+                        StorytellerUtility.DefaultSiteThreatPointsNow(), tile, faction))
+                {
+                    hidden = true
+                };
+                site.parts.Add(scatteredManhunters);
             }
+
+            if (Rand.Value < 0.3f)
+            {
+                var scatteredTreasure = new SitePart(site, SiteDefOfReconAndDiscovery.RD_ScatteredTreasure,
+                    SiteDefOfReconAndDiscovery.RD_ScatteredTreasure.Worker.GenerateDefaultParams(
+                        StorytellerUtility.DefaultSiteThreatPointsNow(), tile, faction))
+                {
+                    hidden = true
+                };
+                site.parts.Add(scatteredTreasure);
+            }
+
+            if (Rand.Value < 0.1f)
+            {
+                var enemyRaidOnArrival = new SitePart(site,
+                    SiteDefOfReconAndDiscovery.RD_EnemyRaidOnArrival,
+                    SiteDefOfReconAndDiscovery.RD_EnemyRaidOnArrival.Worker.GenerateDefaultParams(
+                        StorytellerUtility.DefaultSiteThreatPointsNow(), tile, faction))
+                {
+                    hidden = true
+                };
+                site.parts.Add(enemyRaidOnArrival);
+            }
+
+            if (Rand.Value < 0.1f)
+            {
+                var mechanoidForces = new SitePart(site, SiteDefOfReconAndDiscovery.RD_MechanoidForces,
+                    SiteDefOfReconAndDiscovery.RD_MechanoidForces.Worker.GenerateDefaultParams(
+                        StorytellerUtility.DefaultSiteThreatPointsNow(), tile, faction))
+                {
+                    hidden = true
+                };
+                site.parts.Add(mechanoidForces);
+            }
+
+            SendStandardLetter(parms, site, pawn.Label, pawn2.Label);
+            Find.WorldObjects.Add(site);
+            result = true;
 
             return result;
         }

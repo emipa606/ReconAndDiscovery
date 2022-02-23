@@ -14,15 +14,15 @@ namespace ReconAndDiscovery.Missions
 
         protected override bool TryExecuteWorker(IncidentParms parms)
         {
-            if (!(parms.target is Map map))
+            if (parms.target is not Map map)
             {
                 return false;
             }
 
-            if ((from wo in Find.WorldObjects.AllWorldObjects
-                where wo is Site site1 &&
+            if ((from worldObjects in Find.WorldObjects.AllWorldObjects
+                where worldObjects is Site site1 &&
                       site1.parts.Select(x => x.def == SiteDefOfReconAndDiscovery.RD_QuakesQuest).Any()
-                select wo).Any())
+                select worldObjects).Any())
             {
                 return false;
             }
@@ -109,6 +109,7 @@ namespace ReconAndDiscovery.Missions
             site.GetComponent<TimeoutComp>().StartTimeout(num * 60000);
             SendStandardLetter(parms, site);
             Find.WorldObjects.Add(site);
+            
             return true;
         }
     }

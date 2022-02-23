@@ -8,6 +8,7 @@
     <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
     <expandingIconTexture>World/WorldObjects/Expanding/Sites/ItemStash</expandingIconTexture>
     <forceExitAndRemoveMapCountdownDurationDays>1</forceExitAndRemoveMapCountdownDurationDays>
+    <disallowsAutomaticDetectionTimerStart>true</disallowsAutomaticDetectionTimerStart>
   </SitePartDef>
   <IncidentDef>
     <defName>RD_TradeFair</defName>

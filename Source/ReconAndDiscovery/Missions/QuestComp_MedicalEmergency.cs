@@ -12,8 +12,7 @@ namespace ReconAndDiscovery.Missions
     {
         private static readonly List<Thing> tmpRewards = new List<Thing>();
 
-        private static readonly Faction fac =
-            Find.FactionManager.RandomNonHostileFaction(false, false, true, TechLevel.Spacer);
+        public Faction DownedFaction;
 
         private bool active;
 
@@ -111,16 +110,21 @@ namespace ReconAndDiscovery.Missions
                 return;
             }
 
+            if (DownedFaction == null)
+            {
+                DownedFaction = Find.FactionManager.RandomNonHostileFaction(false, false, true, TechLevel.Spacer);
+            }
+
             if (injured.NullOrEmpty())
             {
                 injured = (from p in mapParent.Map.mapPawns.AllPawns
-                    where p.Faction == fac && p.RaceProps.Humanlike
+                    where p.Faction == DownedFaction && p.RaceProps.Humanlike
                     select p).ToList();
-                Log.Message($"Found {injured.Count} injured pawns");
+                Log.Message($"Found {injured.Count} injured pawns from the {DownedFaction.Name}");
             }
             else
             {
-                Log.Message($"Active with {injured.Count} in list and max of {maxPawns}.");
+                // Log.Message($"Active with {injured.Count} in list and max of {maxPawns}.");
                 foreach (var pawn in injured)
                 {
                     if (pawn.Dead || pawn.Downed || pawn.GetLord() != null)
@@ -128,9 +132,9 @@ namespace ReconAndDiscovery.Missions
                         continue;
                     }
 
-                    var lordJob = new LordJob_DefendBase(fac, pawn.Position);
+                    var lordJob = new LordJob_DefendBase(DownedFaction, pawn.Position);
                     var list = new List<Pawn> {pawn};
-                    LordMaker.MakeNewLord(fac, lordJob, mapParent.Map, list);
+                    LordMaker.MakeNewLord(DownedFaction, lordJob, mapParent.Map, list);
                 }
 
                 if (CheckAllStanding())
@@ -143,29 +147,14 @@ namespace ReconAndDiscovery.Missions
         private ThingDef RandomHiTechReward()
         {
             var value = Rand.Value;
-            ThingDef result;
-            if (value <= 0f)
+            
+            return value switch
             {
-                result = ThingDef.Named("Gun_ChargeRifle");
-            }
-            else if (value <= 0.25f)
-            {
-                result = ThingDef.Named("RD_HolographicEmitter");
-            }
-            else if (value <= 0.50f)
-            {
-                result = ThingDef.Named("RD_Teleporter");
-            }
-            else if (value <= 0.75f)
-            {
-                result = ThingDef.Named("RD_GattlingLaser");
-            }
-            else
-            {
-                result = ThingDef.Named("Gun_ChargeRifle");
-            }
-
-            return result;
+                <= 0.25f => ThingDef.Named("RD_HolographicEmitter"),
+                <= 0.50f => ThingDef.Named("RD_Teleporter"),
+                <= 0.75f => ThingDef.Named("RD_GattlingLaser"),
+                _ => ThingDef.Named("Gun_ChargeRifle")
+            };
         }
 
         private void CloseMapImmediate()
@@ -176,22 +165,22 @@ namespace ReconAndDiscovery.Missions
             }
 
             if (Dialog_FormCaravan.AllSendablePawns(mapParent.Map, true).Any(x =>
-                x.IsColonist || x.IsPrisonerOfColony || x.Faction == Faction.OfPlayer ||
-                x.HostFaction == Faction.OfPlayer))
+                    x.IsColonist || x.IsPrisonerOfColony || x.Faction == Faction.OfPlayer ||
+                    x.HostFaction == Faction.OfPlayer))
             {
+
                 foreach (var pawn in mapParent.Map.mapPawns.AllPawnsSpawned)
                 {
                     if (!pawn.RaceProps.Humanlike)
                     {
                         continue;
                     }
-
-                    var lord = pawn.GetLord();
-                    if (lord == null)
+                
+                    if (pawn.GetLord() is not { } lord)
                     {
                         continue;
                     }
-
+                
                     lord.Notify_PawnLost(pawn, PawnLostCondition.ExitedMap);
                     pawn.ClearMind();
                 }
@@ -199,66 +188,51 @@ namespace ReconAndDiscovery.Missions
                 Messages.Message("MessageYouHaveToReformCaravanNow".Translate(),
                     new GlobalTargetInfo(mapParent.Tile), MessageTypeDefOf.NeutralEvent);
                 Current.Game.CurrentMap = mapParent.Map;
-                var window = new Dialog_FormCaravan(mapParent.Map, true, delegate
+                Find.WindowStack.Add(new Dialog_FormCaravan(mapParent.Map, true, delegate
                 {
                     if (mapParent.HasMap)
                     {
                         Find.WorldObjects.Remove(mapParent);
                     }
-                });
-                var list = mapParent.Map.mapPawns.AllPawnsSpawned.ToList();
-                foreach (var pawn2 in list)
-                {
-                    if (!pawn2.HostileTo(Faction.OfPlayer) &&
-                        (pawn2.Faction == Faction.OfPlayer || pawn2.IsPrisonerOfColony))
-                    {
-                        Log.Message(pawn2.Label + " Meets criteria in CaravanUtility.");
-                    }
-                    else
-                    {
-                        Log.Message(pawn2.Label + " NOT ALLOWED by in CaravanUtility.");
-                    }
-                }
+                }));
 
-                Find.WindowStack.Add(window);
+                return;
             }
-            else
+            
+            var list2 = new List<Pawn>();
+            list2.AddRange(from x in mapParent.Map.mapPawns.AllPawns
+                where x.IsColonist || x.IsPrisonerOfColony || x.Faction == Faction.OfPlayer ||
+                      x.HostFaction == Faction.OfPlayer
+                select x);
+            if (list2.Any())
             {
-                var list2 = new List<Pawn>();
-                list2.AddRange(from x in mapParent.Map.mapPawns.AllPawns
-                    where x.IsColonist || x.IsPrisonerOfColony || x.Faction == Faction.OfPlayer ||
-                          x.HostFaction == Faction.OfPlayer
-                    select x);
-                if (list2.Any())
+                if (list2.Any(x => CaravanUtility.IsOwner(x, Faction.OfPlayer)))
                 {
-                    if (list2.Any(x => CaravanUtility.IsOwner(x, Faction.OfPlayer)))
+                    //TODO: check if it works
+                    CaravanExitMapUtility.ExitMapAndCreateCaravan(list2, Faction.OfPlayer,
+                        mapParent.Tile, mapParent.Tile, mapParent.Tile, false);
+                    Messages.Message("MessageReformedCaravan".Translate(),
+                        MessageTypeDefOf.PositiveEvent);
+                }
+                else
+                {
+                    var stringBuilder = new StringBuilder();
+                    foreach (var pawn in list2)
                     {
-                        //TODO: check if it works
-                        CaravanExitMapUtility.ExitMapAndCreateCaravan(list2, Faction.OfPlayer,
-                            mapParent.Tile, mapParent.Tile, mapParent.Tile, false);
-                        Messages.Message("MessageReformedCaravan".Translate(),
-                            MessageTypeDefOf.PositiveEvent);
+                        stringBuilder.AppendLine("    " + pawn.LabelCap);
                     }
-                    else
-                    {
-                        var stringBuilder = new StringBuilder();
-                        foreach (var pawn in list2)
+
+                    Find.LetterStack.ReceiveLetter("RD_LetterLabelPawnsLostDueToMapCountdown".Translate(),
+                        "RD_LetterPawnsLostDueToMapCountdown".Translate(new NamedArgument[]
                         {
-                            stringBuilder.AppendLine("    " + pawn.LabelCap);
-                        }
-
-                        Find.LetterStack.ReceiveLetter("RD_LetterLabelPawnsLostDueToMapCountdown".Translate(),
-                            "RD_LetterPawnsLostDueToMapCountdown".Translate(new NamedArgument[]
-                            {
-                                stringBuilder.ToString().TrimEndNewlines()
-                            }), LetterDefOf.ThreatSmall, new GlobalTargetInfo(mapParent.Tile));
-                    }
-
-                    list2.Clear();
+                            stringBuilder.ToString().TrimEndNewlines()
+                        }), LetterDefOf.ThreatSmall, new GlobalTargetInfo(mapParent.Tile));
                 }
 
-                Find.WorldObjects.Remove(mapParent);
+                list2.Clear();
             }
+
+            Find.WorldObjects.Remove(mapParent);
         }
 
         private void GiveRewardsAndSendLetter(bool giveTech, bool newFaction)
@@ -294,15 +268,25 @@ namespace ReconAndDiscovery.Missions
                 return;
             }
 
-            var tile = parent.Tile;
             CloseMapImmediate();
+            GenerateNewFaction();
+        }
 
-            var faction = FactionGenerator.NewGeneratedFaction(new FactionGeneratorParms(FactionDefOf.Ancients));
-            map.pawnDestinationReservationManager.GetPawnDestinationSetFor(faction);
+        private void GenerateNewFaction()
+        {
+            if (parent is not MapParent mapParent || mapParent.Map == null)
+            {
+                return;
+            }
+
+            var faction = FactionGenerator.NewGeneratedFaction(new FactionGeneratorParms(FactionDefOf.OutlanderCivil));
+            mapParent.Map.pawnDestinationReservationManager.GetPawnDestinationSetFor(faction);
             Find.FactionManager.Add(faction);
+
+            Log.Message($"Created faction {faction.Name}");
             var settlement = (Settlement) WorldObjectMaker.MakeWorldObject(WorldObjectDefOf.Settlement);
             settlement.SetFaction(faction);
-            settlement.Tile = tile;
+            settlement.Tile = parent.Tile;
             settlement.Name = SettlementNameGenerator.GenerateSettlementName(settlement);
             Find.WorldObjects.Add(settlement);
             faction.leader = null;
@@ -336,6 +320,7 @@ namespace ReconAndDiscovery.Missions
             Scribe_Values.Look(ref maxPawns, "maxPawns");
             Scribe_Values.Look(ref relationsImprovement, "relationsImprovement");
             Scribe_References.Look(ref requestingFaction, "requestingFaction");
+            Scribe_References.Look(ref DownedFaction, "DownedFaction");
             Scribe_Deep.Look(ref rewards, "rewards", this);
         }
 
@@ -343,10 +328,12 @@ namespace ReconAndDiscovery.Missions
         {
             base.PostPostRemove();
             rewards.ClearAndDestroyContents();
+            GenerateNewFaction();
         }
 
         public void StartQuest(List<Thing> things)
         {
+            DownedFaction = Find.FactionManager.RandomNonHostileFaction(false, false, true, TechLevel.Spacer);
             active = true;
             rewards.ClearAndDestroyContents();
             rewards.TryAddRangeOrTransfer(things);

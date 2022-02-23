@@ -42,53 +42,48 @@ namespace ReconAndDiscovery
             base.PostDeSpawn(map);
         }
 
-        public override IEnumerable<FloatMenuOption> CompFloatMenuOptions(Pawn selPawn)
+        public override IEnumerable<FloatMenuOption> CompFloatMenuOptions(Pawn actingPawn)
         {
             var list = new List<FloatMenuOption>();
             if (pawn != null)
             {
-                var floatMenuOption = new FloatMenuOption("RD_FormatOccupant".Translate(), delegate
+                var formatPawn = new FloatMenuOption("RD_FormatOccupant".Translate(), delegate
                 {
-                    var value = new DamageInfo(DamageDefOf.ExecutionCut, 1000, -1f, -1f, selPawn);
-                    pawn.Kill(value);
-                    pawn.Corpse.Destroy();
+                    pawn.ideo = null;
+                    pawn.Destroy();
                     pawn = null;
                 });
-                if (selPawn != pawn)
-                {
-                    list.Add(floatMenuOption);
-                }
+                
+                list.Add(formatPawn);
+                return list;
             }
-            else if (selPawn.story.traits.HasTrait(TraitDef.Named("RD_Holographic")))
+            
+            if (!actingPawn.story.traits.HasTrait(TraitDef.Named("RD_Holographic"))) return list;
+            var transferToEmitter = new FloatMenuOption("RD_TransferToThisEmitter".Translate(), delegate
             {
-                var floatMenuOption2 = new FloatMenuOption("RD_TransferToThisEmitter".Translate(), delegate
+                foreach (var thing in parent.Map.listerBuildings.AllBuildingsColonistOfDef(ThingDef.Named("RD_HolographicEmitter")))
                 {
-                    foreach (var thing in parent.Map.listerBuildings.AllBuildingsColonistOfDef(
-                        ThingDef.Named("RD_HolographicEmitter")))
+                    if (thing is not HoloEmitter holoEmitter)
                     {
-                        if (!(thing is HoloEmitter holoEmitter))
-                        {
-                            break;
-                        }
-
-                        if (holoEmitter.GetComp<CompHoloEmitter>().SimPawn != selPawn)
-                        {
-                            continue;
-                        }
-
-                        holoEmitter.GetComp<CompHoloEmitter>().SimPawn = null;
-                        pawn = selPawn;
-                        parent.Map.areaManager.AllAreas.Remove(pawn.playerSettings.AreaRestriction);
-                        MakeValidAllowedZone();
                         break;
                     }
-                });
-                if (pawn == null)
-                {
-                    list.Add(floatMenuOption2);
-                }
-            }
 
+                    if (holoEmitter.GetComp<CompHoloEmitter>().SimPawn != actingPawn)
+                    {
+                        continue;
+                    }
+ 
+                    holoEmitter.GetComp<CompHoloEmitter>().SimPawn = null;
+                    pawn = actingPawn;
+                    parent.Map.areaManager.AllAreas.Remove(pawn.playerSettings.AreaRestriction);
+                    MakeValidAllowedZone();
+                    break;
+                }
+            });
+
+            if (pawn != null) return list;
+            
+            list.Add(transferToEmitter);
             return list;
         }
 
@@ -119,38 +114,36 @@ namespace ReconAndDiscovery
 
             if (pawn.Dead)
             {
-                Log.Message($"{pawn.Label} is dead.");
                 if (pawn.Corpse.holdingOwner == Emitter.GetDirectlyHeldThings())
                 {
                     return;
                 }
 
                 Emitter.TryAcceptThing(pawn.Corpse);
+                return;
             }
-            else
+
+            if (!pawn.story.traits.HasTrait(TraitDef.Named("RD_Holographic")))
             {
-                if (!pawn.story.traits.HasTrait(TraitDef.Named("RD_Holographic")))
-                {
-                    SetUpPawn();
-                }
-
-                if (!pawn.Spawned)
-                {
-                    GenSpawn.Spawn(pawn, parent.Position, parent.Map);
-                }
-
-                pawn.needs.food.CurLevel = 1f;
-                if (!pawn.Position.InHorDistOf(parent.Position, 12f) ||
-                    !GenSight.LineOfSight(parent.Position, pawn.Position, parent.Map, true))
-                {
-                    pawn.inventory.DropAllNearPawn(pawn.Position);
-                    pawn.equipment.DropAllEquipment(pawn.Position, false);
-                    pawn.DeSpawn();
-                    GenSpawn.Spawn(pawn, parent.Position, parent.Map);
-                }
-
-                pawn.health.Reset();
+                SetUpPawn();
             }
+
+            if (!pawn.Spawned)
+            {
+                GenSpawn.Spawn(pawn, parent.Position, parent.Map);
+            }
+
+            pawn.needs.food.CurLevel = 1f;
+            if (!pawn.Position.InHorDistOf(parent.Position, 12f) ||
+                !GenSight.LineOfSight(parent.Position, pawn.Position, parent.Map, true))
+            {
+                pawn.inventory.DropAllNearPawn(pawn.Position);
+                pawn.equipment.DropAllEquipment(pawn.Position, false);
+                pawn.DeSpawn();
+                GenSpawn.Spawn(pawn, parent.Position, parent.Map);
+            }
+
+            pawn.health.Reset();
         }
 
         public void Scan(Corpse c)

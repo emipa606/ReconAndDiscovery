@@ -20,6 +20,7 @@
       </points>
     </chanceFactorByPopulationCurve>
   </IncidentDef>
+  
   <SitePartDef>
     <defName>RD_PeaceTalks</defName>
     <label>peace talks</label>
@@ -45,5 +46,6 @@
     <showFactionInInspectString>true</showFactionInInspectString>
     <badEvenIfNoMap>false</badEvenIfNoMap>
     <requiresFaction>true</requiresFaction>
+    <disallowsAutomaticDetectionTimerStart>true</disallowsAutomaticDetectionTimerStart>
   </SitePartDef>
 </Defs>
