@@ -67,4 +67,26 @@
   <RD_LetterLabelPawnsLostDueToMapCountdown>Left behind</RD_LetterLabelPawnsLostDueToMapCountdown>
   <RD_LetterPawnsLostDueToMapCountdown>Some of your animals or prisoners were left behind in the wilderness:\n\n{0}</RD_LetterPawnsLostDueToMapCountdown>
   <RD_SettingHeader>Incident baseChances</RD_SettingHeader>
+  <RD_ResetSettings>Reset Settings</RD_ResetSettings>
+  <RD_RaidEnemyQuestBaseChance>Enemy Raid Quest</RD_RaidEnemyQuestBaseChance>
+  <RD_DiscoveredStargateBaseChance>Discovered Stargate</RD_DiscoveredStargateBaseChance>
+  <RD_RaidStargateBaseChance>Stargate Raid</RD_RaidStargateBaseChance>
+  <RD_MalevolentAIBaseChance>Malevolent AI</RD_MalevolentAIBaseChance>
+  <RD_RaidTeleporterBaseChance>Teleporter Hack</RD_RaidTeleporterBaseChance>
+  <RD_IncidentTremorsBaseChance>Tremors</RD_IncidentTremorsBaseChance>
+  <RD_IncidentRadiationBaseChance>Radiation</RD_IncidentRadiationBaseChance>
+  <RD_CrashedShipBaseChance>Crashed Ship</RD_CrashedShipBaseChance>
+  <RD_TradeFairBaseChance>Trade Fair</RD_TradeFairBaseChance>
+  <RD_AbandonedColonyBaseChance>Abandoned Colony</RD_AbandonedColonyBaseChance>
+  <RD_MuffaloHerdMigrationBaseChance>Muffalo Herd Migration Spotted</RD_MuffaloHerdMigrationBaseChance>
+  <RD_OsirisQuestBaseChance>Osiris Casket Quest</RD_OsirisQuestBaseChance>
+  <RD_WarIdolBaseChance>Abandoned Military Base</RD_WarIdolBaseChance>
+  <RD_QuestQuakesBaseChance>Quakes From Faulty Generator</RD_QuestQuakesBaseChance>
+  <RD_QuestRadiationBaseChance>Radiation Quest</RD_QuestRadiationBaseChance>
+  <RD_SeraphitesLabBaseChance>Seraphites Quest</RD_SeraphitesLabBaseChance>
+  <RD_PeaceTalksBaseChance>Peace Talks</RD_PeaceTalksBaseChance>
+  <RD_VerboseLogging>Verbose logging</RD_VerboseLogging>
+  <RD_VerboseLoggingTooltip>Extra logging for debugging</RD_VerboseLoggingTooltip>
+  <RD_ModVersion>Installed mod-version: {0}</RD_ModVersion>
+  
 </LanguageData>

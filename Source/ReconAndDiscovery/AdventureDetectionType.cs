@@ -1,10 +1,9 @@
-﻿namespace ReconAndDiscovery
+﻿namespace ReconAndDiscovery;
+
+public enum AdventureDetectionType
 {
-    public enum AdventureDetectionType
-    {
-        PSYCHIC,
-        COMMS,
-        RESEARCH,
-        NONE
-    }
+    PSYCHIC,
+    COMMS,
+    RESEARCH,
+    NONE
 }

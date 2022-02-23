@@ -2,25 +2,24 @@
 using System.Linq;
 using Verse;
 
-namespace ReconAndDiscovery.Triggers
-{
-    public class RectActionTrigger : ActionTrigger
-    {
-        private CellRect rect;
+namespace ReconAndDiscovery.Triggers;
 
-        public CellRect Rect
+public class RectActionTrigger : ActionTrigger
+{
+    private CellRect rect;
+
+    public CellRect Rect
+    {
+        get => rect;
+        set
         {
-            get => rect;
-            set
+            rect = value;
+            if (Spawned)
             {
-                rect = value;
-                if (Spawned)
-                {
-                    rect.ClipInsideMap(Map);
-                }
+                rect.ClipInsideMap(Map);
             }
         }
-
-        public override ICollection<IntVec3> Cells => rect.Cells.ToList();
     }
+
+    public override ICollection<IntVec3> Cells => rect.Cells.ToList();
 }

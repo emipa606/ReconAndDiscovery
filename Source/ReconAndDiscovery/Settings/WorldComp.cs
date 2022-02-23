@@ -1,20 +1,17 @@
-﻿using RimWorld.Planet;
-using Verse;
+using RimWorld.Planet;
 
-namespace ExpandedIncidents.Settings
+namespace ExpandedIncidents.Settings;
+
+internal class WorldComp : WorldComponent
 {
-    // Token: 0x0200000F RID: 15
-    internal class WorldComp : WorldComponent
+    public WorldComp(World world) : base(world)
     {
-        public WorldComp(World world) : base(world)
-        {
-        }
+    }
 
-        public override void FinalizeInit()
-        {
-            base.FinalizeInit();
-            Log.Message("Recon And Discovery - Settings loaded");
-            RaD_ModSettings.ChangeDefPost();
-        }
+    public override void FinalizeInit()
+    {
+        base.FinalizeInit();
+        RaD_Mod.LogMessage("Settings loaded", true);
+        RaD_ModSettings.ChangeDefPost();
     }
 }

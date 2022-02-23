@@ -2,67 +2,66 @@
 using RimWorld;
 using Verse;
 
-namespace ReconAndDiscovery.Triggers
+namespace ReconAndDiscovery.Triggers;
+
+public class ActionTrigger : Thing
 {
-    public class ActionTrigger : Thing
+    public ActivatedActionDef actionDef;
+
+    public virtual ICollection<IntVec3> Cells { get; } = new List<IntVec3>();
+
+    private void ActivatedBy(Pawn p)
     {
-        public ActivatedActionDef actionDef;
-
-        public virtual ICollection<IntVec3> Cells { get; } = new List<IntVec3>();
-
-        private void ActivatedBy(Pawn p)
+        if (!actionDef.ActivatedAction.TryAction(p, Map, this))
         {
-            if (!actionDef.ActivatedAction.TryAction(p, Map, this))
-            {
-                return;
-            }
-
-            if (!Destroyed)
-            {
-                Destroy();
-            }
+            return;
         }
 
-        public override void ExposeData()
+        if (!Destroyed)
         {
-            Scribe_Defs.Look(ref actionDef, "actionDef");
-            base.ExposeData();
+            Destroy();
+        }
+    }
+
+    public override void ExposeData()
+    {
+        Scribe_Defs.Look(ref actionDef, "actionDef");
+        base.ExposeData();
+    }
+
+    public override void Tick()
+    {
+        Pawn pawn = null;
+        if (!this.IsHashIntervalTick(20))
+        {
+            return;
         }
 
-        public override void Tick()
+        var map = Map;
+        foreach (var c in Cells)
         {
-            Pawn pawn = null;
-            if (!this.IsHashIntervalTick(20))
+            var thingList = c.GetThingList(map);
+            foreach (var thing in thingList)
             {
-                return;
-            }
-
-            var map = Map;
-            foreach (var c in Cells)
-            {
-                var thingList = c.GetThingList(map);
-                foreach (var thing in thingList)
+                if (thing.def.category != ThingCategory.Pawn ||
+                    thing.def.race.intelligence != Intelligence.Humanlike || thing.Faction != Faction.OfPlayer)
                 {
-                    if (thing.def.category != ThingCategory.Pawn ||
-                        thing.def.race.intelligence != Intelligence.Humanlike || thing.Faction != Faction.OfPlayer)
-                    {
-                        continue;
-                    }
-
-                    pawn = thing as Pawn;
-                    break;
+                    continue;
                 }
 
-                if (pawn != null)
-                {
-                    break;
-                }
+                pawn = thing as Pawn;
+                break;
             }
 
             if (pawn != null)
             {
-                ActivatedBy(pawn);
+                break;
             }
+        }
+
+        if (pawn != null)
+        {
+            ActivatedBy(pawn);
         }
     }
 }

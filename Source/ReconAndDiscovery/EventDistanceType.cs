@@ -1,9 +1,8 @@
-﻿namespace ReconAndDiscovery
+﻿namespace ReconAndDiscovery;
+
+public enum EventDistanceType
 {
-    public enum EventDistanceType
-    {
-        LOCAL,
-        REGIONAL,
-        PLANETWIDE
-    }
+    LOCAL,
+    REGIONAL,
+    PLANETWIDE
 }

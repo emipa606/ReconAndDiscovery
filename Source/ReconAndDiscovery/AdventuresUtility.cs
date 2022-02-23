@@ -1,9 +1,8 @@
 ﻿using Verse;
 
-namespace ReconAndDiscovery
+namespace ReconAndDiscovery;
+
+[StaticConstructorOnStartup]
+public static class AdventuresUtility
 {
-    [StaticConstructorOnStartup]
-    public static class AdventuresUtility
-    {
-    }
 }

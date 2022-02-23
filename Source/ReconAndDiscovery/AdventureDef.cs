@@ -2,47 +2,46 @@
 using RimWorld;
 using Verse;
 
-namespace ReconAndDiscovery
+namespace ReconAndDiscovery;
+
+public class AdventureDef : IncidentDef
 {
-    public class AdventureDef : IncidentDef
-    {
-        public GameConditionDef adventureGameCondition = null;
+    public GameConditionDef adventureGameCondition = null;
 
-        public AdventureDetectionType detectionType = AdventureDetectionType.NONE;
-        public EventDistanceType eventDistance = EventDistanceType.PLANETWIDE;
+    public AdventureDetectionType detectionType = AdventureDetectionType.NONE;
+    public EventDistanceType eventDistance = EventDistanceType.PLANETWIDE;
 
-        public bool hasInitiatedDialog = false;
+    public bool hasInitiatedDialog = false;
 
-        public bool hasMapEnterDialog = false;
+    public bool hasMapEnterDialog = false;
 
-        public bool hasWorldMapDialog = false;
+    public bool hasWorldMapDialog = false;
 
-        public string initiatedText = "";
+    public string initiatedText = "";
 
-        public float luciferiumGasChance = 0f;
+    public float luciferiumGasChance = 0f;
 
-        public float madAnimalChance = 0f;
+    public float madAnimalChance = 0f;
 
-        public ActivatedActionDef mainAdventureAction = null;
+    public ActivatedActionDef mainAdventureAction = null;
 
-        public string mapEnterText = "";
+    public string mapEnterText = "";
 
-        public MapGeneratorDef mapGenerator = null;
+    public MapGeneratorDef mapGenerator = null;
 
-        public string mapPinPath = "";
+    public string mapPinPath = "";
 
-        public float psionicLandmineChance = 0f;
+    public float psionicLandmineChance = 0f;
 
-        public float smallGoldChance = 0f;
+    public float smallGoldChance = 0f;
 
-        public float smallSilverChance = 0f;
+    public float smallSilverChance = 0f;
 
-        public GameConditionDef targetGameCondition = null;
+    public GameConditionDef targetGameCondition = null;
 
-        public string worldLabel = "Adventure";
+    public string worldLabel = "Adventure";
 
-        public string worldMapText = "";
+    public string worldMapText = "";
 
-        public string zoomedMapPinPath = "";
-    }
+    public string zoomedMapPinPath = "";
 }

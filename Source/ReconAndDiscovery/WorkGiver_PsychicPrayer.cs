@@ -2,39 +2,38 @@
 using Verse;
 using Verse.AI;
 
-namespace ReconAndDiscovery
+namespace ReconAndDiscovery;
+
+public class WorkGiver_PsychicPrayer : WorkGiver_Scanner
 {
-    public class WorkGiver_PsychicPrayer : WorkGiver_Scanner
+    public override ThingRequest PotentialWorkThingRequest => ThingRequest.ForDef(ThingDef.Named("RD_PsionicEmanator"));
+
+    public override bool Prioritized => true;
+
+    public override float GetPriority(Pawn pawn, TargetInfo t)
     {
-        public override ThingRequest PotentialWorkThingRequest => ThingRequest.ForDef(ThingDef.Named("RD_PsionicEmanator"));
+        return 0f;
+    }
 
-        public override bool Prioritized => true;
-
-        public override float GetPriority(Pawn pawn, TargetInfo t)
+    public override bool HasJobOnThing(Pawn pawn, Thing pschicEmanator, bool forced = false)
+    {
+        if (pschicEmanator is not Building)
         {
-            return 0f;
+            return false;
         }
 
-        public override bool HasJobOnThing(Pawn pawn, Thing pschicEmanator, bool forced = false)
+        if (pawn.story.traits.HasTrait(TraitDef.Named("PsychicSensitivity")))
         {
-            if (pschicEmanator is not Building)
-            {
-                return false;
-            }
-
-            if (!pawn.story.traits.HasTrait(TraitDef.Named("PsychicSensitivity")))
-            {
-                JobFailReason.Is("RD_OnlyPsychicCanBroadcast"
-                    .Translate()); //"Only psychic pawns can broadcast a battle prayer"
-                return false;
-            }
-
             return pawn.CanReserveAndReach(pschicEmanator, PathEndMode.Touch, Danger.Some, 1, -1, null, forced);
         }
 
-        public override Job JobOnThing(Pawn pawn, Thing t, bool forced = false)
-        {
-            return new Job(JobDefOfReconAndDiscovery.RD_PsychicPrayer, t);
-        }
+        JobFailReason.Is("RD_OnlyPsychicCanBroadcast"
+            .Translate()); //"Only psychic pawns can broadcast a battle prayer"
+        return false;
+    }
+
+    public override Job JobOnThing(Pawn pawn, Thing t, bool forced = false)
+    {
+        return new Job(JobDefOfReconAndDiscovery.RD_PsychicPrayer, t);
     }
 }

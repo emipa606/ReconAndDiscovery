@@ -1,12 +1,11 @@
 ﻿using RimWorld;
 
-namespace ReconAndDiscovery.Missions
+namespace ReconAndDiscovery.Missions;
+
+public class WorldObjectCompProperties_PeaceTalks : WorldObjectCompProperties
 {
-    public class WorldObjectCompProperties_PeaceTalks : WorldObjectCompProperties
+    public WorldObjectCompProperties_PeaceTalks()
     {
-        public WorldObjectCompProperties_PeaceTalks()
-        {
-            compClass = typeof(QuestComp_PeaceTalks);
-        }
+        compClass = typeof(QuestComp_PeaceTalks);
     }
 }

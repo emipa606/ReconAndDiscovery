@@ -1,12 +1,11 @@
 ﻿using RimWorld;
 
-namespace ReconAndDiscovery.Missions
+namespace ReconAndDiscovery.Missions;
+
+public class WorldObjectCompProperties_MedicalEmergency : WorldObjectCompProperties
 {
-    public class WorldObjectCompProperties_MedicalEmergency : WorldObjectCompProperties
+    public WorldObjectCompProperties_MedicalEmergency()
     {
-        public WorldObjectCompProperties_MedicalEmergency()
-        {
-            compClass = typeof(QuestComp_MedicalEmergency);
-        }
+        compClass = typeof(QuestComp_MedicalEmergency);
     }
 }

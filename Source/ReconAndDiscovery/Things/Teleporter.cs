@@ -1,8 +1,7 @@
 ﻿using Verse;
 
-namespace ReconAndDiscovery.Things
+namespace ReconAndDiscovery.Things;
+
+public class Teleporter : Building
 {
-    public class Teleporter : Building
-    {
-    }
 }

@@ -1,8 +1,7 @@
 ﻿using RimWorld.Planet;
 
-namespace ReconAndDiscovery
+namespace ReconAndDiscovery;
+
+public class WorldAdventure : MapParent
 {
-    public class WorldAdventure : MapParent
-    {
-    }
 }

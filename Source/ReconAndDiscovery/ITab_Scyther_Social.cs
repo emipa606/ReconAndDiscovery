@@ -3,48 +3,42 @@ using RimWorld;
 using UnityEngine;
 using Verse;
 
-namespace ReconAndDiscovery
+namespace ReconAndDiscovery;
+
+public class ITab_Scyther_Social : ITab
 {
-    public class ITab_Scyther_Social : ITab
+    public const float Width = 540f;
+
+    public ITab_Scyther_Social()
     {
-        public const float Width = 540f;
+        size = new Vector2(540f, 510f);
+        labelKey = "TabSocial".Translate();
+        tutorTag = "RD_Social".Translate();
+    }
 
-        public ITab_Scyther_Social()
+    public override bool IsVisible => SelPawnForSocialInfo.RaceProps.IsMechanoid &&
+                                      SelPawnForSocialInfo.RaceProps.intelligence == Intelligence.Humanlike;
+
+    private Pawn SelPawnForSocialInfo
+    {
+        get
         {
-            size = new Vector2(540f, 510f);
-            labelKey = "TabSocial".Translate();
-            tutorTag = "RD_Social".Translate();
-        }
-
-        public override bool IsVisible => SelPawnForSocialInfo.RaceProps.IsMechanoid &&
-                                          SelPawnForSocialInfo.RaceProps.intelligence == Intelligence.Humanlike;
-
-        private Pawn SelPawnForSocialInfo
-        {
-            get
+            if (SelPawn != null)
             {
-                Pawn result;
-                if (SelPawn != null)
-                {
-                    result = SelPawn;
-                }
-                else
-                {
-                    if (!(SelThing is Corpse corpse))
-                    {
-                        throw new InvalidOperationException("Social tab on non-pawn non-corpse " + SelThing);
-                    }
-
-                    result = corpse.InnerPawn;
-                }
-
-                return result;
+                return SelPawn;
             }
-        }
 
-        protected override void FillTab()
-        {
-            SocialCardUtility.DrawSocialCard(new Rect(0f, 0f, size.x, size.y), SelPawnForSocialInfo);
+            if (SelThing is not Corpse corpse)
+            {
+                throw new InvalidOperationException("Social tab on non-pawn non-corpse " + SelThing);
+            }
+
+            return corpse.InnerPawn;
         }
+    }
+
+    protected override void FillTab()
+    {
+        SocialCardUtility.DrawSocialCard(new Rect(0f, 0f, size.x, size.y), SelPawnForSocialInfo);
     }
 }

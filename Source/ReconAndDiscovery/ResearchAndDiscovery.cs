@@ -1,13 +1,12 @@
-﻿using HarmonyLib;
+﻿using ExpandedIncidents.Settings;
 using Verse;
 
-namespace ReconAndDiscovery
+namespace ReconAndDiscovery;
+
+public class Mod : Verse.Mod
 {
-    public class Mod: Verse.Mod
+    public Mod(ModContentPack content) : base(content)
     {
-        public Mod(ModContentPack content) : base(content)
-        {
-            Log.Message("Init mod please");
-        }      
+        RaD_Mod.LogMessage("Init mod please");
     }
 }

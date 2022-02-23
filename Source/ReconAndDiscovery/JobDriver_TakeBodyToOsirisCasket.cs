@@ -3,39 +3,38 @@ using RimWorld;
 using Verse;
 using Verse.AI;
 
-namespace ReconAndDiscovery
+namespace ReconAndDiscovery;
+
+public class JobDriver_TakeBodyToOsirisCasket : JobDriver
 {
-    public class JobDriver_TakeBodyToOsirisCasket : JobDriver
+    private const TargetIndex CorpseIndex = TargetIndex.A;
+
+    private const TargetIndex GraveIndex = TargetIndex.B;
+
+    public JobDriver_TakeBodyToOsirisCasket()
     {
-        private const TargetIndex CorpseIndex = TargetIndex.A;
+        rotateToFace = TargetIndex.B;
+    }
 
-        private const TargetIndex GraveIndex = TargetIndex.B;
+    private Corpse Corpse => (Corpse)pawn.CurJob.GetTarget(TargetIndex.A).Thing;
 
-        public JobDriver_TakeBodyToOsirisCasket()
-        {
-            rotateToFace = TargetIndex.B;
-        }
+    private Building_CryptosleepCasket Casket =>
+        (Building_CryptosleepCasket)pawn.CurJob.GetTarget(TargetIndex.B).Thing;
 
-        private Corpse Corpse => (Corpse) pawn.CurJob.GetTarget(TargetIndex.A).Thing;
+    public override bool TryMakePreToilReservations(bool errorOnFailed)
+    {
+        return pawn.Reserve(job.targetA, job, 1, -1, null, errorOnFailed);
+    }
 
-        private Building_CryptosleepCasket Casket =>
-            (Building_CryptosleepCasket) pawn.CurJob.GetTarget(TargetIndex.B).Thing;
-
-        public override bool TryMakePreToilReservations(bool errorOnFailed)
-        {
-            return pawn.Reserve(job.targetA, job, 1, -1, null, errorOnFailed);
-        }
-
-        protected override IEnumerable<Toil> MakeNewToils()
-        {
-            yield return Toils_Reserve.Reserve(TargetIndex.A);
-            yield return Toils_Reserve.Reserve(TargetIndex.B);
-            yield return Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.ClosestTouch);
-            yield return Toils_Haul.StartCarryThing(TargetIndex.A);
-            yield return Toils_Haul.CarryHauledThingToCell(TargetIndex.B);
-            yield return Toils_Haul.DepositHauledThingInContainer(TargetIndex.B, TargetIndex.A);
-            yield return Toils_Reserve.Release(TargetIndex.A);
-            yield return Toils_Reserve.Release(TargetIndex.B);
-        }
+    protected override IEnumerable<Toil> MakeNewToils()
+    {
+        yield return Toils_Reserve.Reserve(TargetIndex.A);
+        yield return Toils_Reserve.Reserve(TargetIndex.B);
+        yield return Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.ClosestTouch);
+        yield return Toils_Haul.StartCarryThing(TargetIndex.A);
+        yield return Toils_Haul.CarryHauledThingToCell(TargetIndex.B);
+        yield return Toils_Haul.DepositHauledThingInContainer(TargetIndex.B, TargetIndex.A);
+        yield return Toils_Reserve.Release(TargetIndex.A);
+        yield return Toils_Reserve.Release(TargetIndex.B);
     }
 }

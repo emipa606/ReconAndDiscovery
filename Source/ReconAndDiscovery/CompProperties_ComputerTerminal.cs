@@ -1,12 +1,11 @@
 ﻿using Verse;
 
-namespace ReconAndDiscovery
+namespace ReconAndDiscovery;
+
+public class CompProperties_ComputerTerminal : CompProperties
 {
-    public class CompProperties_ComputerTerminal : CompProperties
+    public CompProperties_ComputerTerminal()
     {
-        public CompProperties_ComputerTerminal()
-        {
-            compClass = typeof(CompComputerTerminal);
-        }
+        compClass = typeof(CompComputerTerminal);
     }
 }

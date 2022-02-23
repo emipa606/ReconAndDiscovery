@@ -1,8 +1,7 @@
 ﻿using RimWorld;
 
-namespace ReconAndDiscovery
+namespace ReconAndDiscovery;
+
+public class AdventureWorker : IncidentWorker
 {
-    public class AdventureWorker : IncidentWorker
-    {
-    }
 }

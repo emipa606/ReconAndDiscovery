@@ -1,6 +1,5 @@
-﻿namespace ReconAndDiscovery.Missions
+﻿namespace ReconAndDiscovery.Missions;
+
+public class Adventure_ReprogrammedMechanoid : AdventureWorker
 {
-    public class Adventure_ReprogrammedMechanoid : AdventureWorker
-    {
-    }
 }
