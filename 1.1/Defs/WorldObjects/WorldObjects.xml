@@ -73,7 +73,7 @@
       <li Class="ReconAndDiscovery.Missions.WorldObjectCompProperties_CountThings" />
     </comps>
   </WorldObjectDef>
-		<WorldObjectDef>
+  <WorldObjectDef>
     <defName>RD_FestivalMap</defName>
     <worldObjectClass>Site</worldObjectClass>
     <expandingIcon>true</expandingIcon>
@@ -85,5 +85,5 @@
       <li Class="WorldObjectCompProperties_FormCaravan" />
       <li Class="ReconAndDiscovery.Missions.QuestComp.Festival_Properties" />
     </comps>
-  </WorldObjectDef>	
+  </WorldObjectDef>
 </Defs>

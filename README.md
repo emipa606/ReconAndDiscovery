@@ -1,6 +1,8 @@
 # ReconAndDiscovery
 
-![Image](https://i.imgur.com/WAEzk68.png)
+THIS MOD CURRENTLY CONTAINS MANY BUGS AND NON-FUNCTIONAL EVENTS THAT WE DO NOT HAVE THE PROGRAMMING SKILLS NECESSARY TO FIX. IT'S ONLY LEFT UP TO NOT BREAK SAVE FILES, BUT DO NOT USE THIS ITEM.
+
+![Image](https://i.imgur.com/buuPQel.png)
 
 Update of SeveralPuffins mod
 https://steamcommunity.com/sharedfiles/filedetails/?id=935948526
@@ -16,27 +18,18 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=935948526
 - Added settings for incident baseChances
 - Added support for https://steamcommunity.com/sharedfiles/filedetails/?id=2451324814][SYR] Trait Value
 
-![Image](https://i.imgur.com/7Gzt3Rg.png)
+![Image](https://i.imgur.com/pufA0kM.png)
 
-
-[table]
-	[tr]
-		[td]https://invite.gg/Mlie]![Image](https://i.imgur.com/zdzzBrc.png)
-[/td]
-		[td]https://github.com/emipa606/ReconAndDiscovery]![Image](https://i.imgur.com/kTkpTOE.png)
-[/td]
-	[/tr]
-[/table]
 	
-![Image](https://i.imgur.com/NOW7jU1.png)
+![Image](https://i.imgur.com/Z4GOv8H.png)
 
 
 New Sites!
 
-- Crashed ships: What will you find inside? A wealth of treasures? A crew in need of help? A horde of flesh-eating ♥♥♥♥♥hillas? All three!? It&apos;s probably all three.
-Whatever it is, be quick, because you&apos;re not the only one who saw the ship come down.
+- Crashed ships: What will you find inside? A wealth of treasures? A crew in need of help? A horde of flesh-eating ♥♥♥♥♥hillas? All three!? It's probably all three.
+Whatever it is, be quick, because you're not the only one who saw the ship come down.
 
--Lost labs: There&apos;s a rumour going around that luciferium addiction can be cured. Did the scientists here succeed, or will you get a dose of half-crazed nanites, sick of being poked and prodded?
+-Lost labs: There's a rumour going around that luciferium addiction can be cured. Did the scientists here succeed, or will you get a dose of half-crazed nanites, sick of being poked and prodded?
 
 - Ancient castles: You finally pinpoint the source of one of these damned psychic drones! Is the technology to overcome death itself here on this planet?
 
@@ -50,19 +43,19 @@ Whatever it is, be quick, because you&apos;re not the only one who saw the ship 
 
 Big Rewards!
 
-Hi-tech rewards from missions: Don&apos;t read on if you don&apos;t want to spoil the mysteries!
+Hi-tech rewards from missions: Don't read on if you don't want to spoil the mysteries!
 
-- Holo-emitters: Scan HoloDisks taken of people of extraordinary talent, or scan the brains of the recently dead to revive them holographically. Transfer a colonist instantly to a new emitter across the map! The convenience! the immortality! The unfortunate nudity as all their clothes fall off! Just remember, they can&apos;t step out of range of their emitter ever again.
+- Holo-emitters: Scan HoloDisks taken of people of extraordinary talent, or scan the brains of the recently dead to revive them holographically. Transfer a colonist instantly to a new emitter across the map! The convenience! the immortality! The unfortunate nudity as all their clothes fall off! Just remember, they can't step out of range of their emitter ever again.
 
 -Teleporters: Slow to charge, but able to recover any living creature from anywhere on the planet. How will you use it? To rescue your people at the last minute? Or to slowly fill a deep, dark cave with your confused, hungry enemies?
 
 -Deflectors: Sick of your food all rotting because Randy decided to heat wave your solar flare? Or loosing your best doctor to electrical disturbances because they happen to be a hologram? Protect a small area of your colony from such disruptions by installing a salvaged defector dish!
 
-Gattling Lasers: Built for space combat, these weapons will roast your enemies, and indeed anything else in between or within several yards. Just don&apos;t expect to recover much from the bodies, and be ready to fight the huge fire this will start.
+Gattling Lasers: Built for space combat, these weapons will roast your enemies, and indeed anything else in between or within several yards. Just don't expect to recover much from the bodies, and be ready to fight the huge fire this will start.
 
 Devillo: Large, horned intelligent genetically engineered muffalo that secrete devilstrand into their wool. Their milk, devilcream, is also extraordinarily rich and nutritious (and, I will grant, stupidly named- look, these things only exist because GracieRocket like highland cows).
 
-Osiris Caskets: An advanced Cryptosleep casket design, these caskets direct an army of luciferium nanites to restore health, reverse ageing and even to revive the recently dead, if at the cost of developing an addiction to the nanites. The power drain while active is extraordinary, and the EM field tends to cause hairs to stand on end, storms, to spontaneously begin, and power surges, so make sure you&apos;ve got enough juice for your mad gothic experiments! Also I can&apos;t, or more honestly don&apos;t want to, stop colonists from putting their dead cats in here.
+Osiris Caskets: An advanced Cryptosleep casket design, these caskets direct an army of luciferium nanites to restore health, reverse ageing and even to revive the recently dead, if at the cost of developing an addiction to the nanites. The power drain while active is extraordinary, and the EM field tends to cause hairs to stand on end, storms, to spontaneously begin, and power surges, so make sure you've got enough juice for your mad gothic experiments! Also I can't, or more honestly don't want to, stop colonists from putting their dead cats in here.
 
 Seraphites: A self-replicating luciferium nanite. Could these little blue pills cure the worst cravings of your colonists?
 
@@ -74,7 +67,7 @@ Unique to tribes, weather control points: Once able to read the needs of the pla
 
 UPDATE: NEW FEATURES FROM 13 Jun 2017:
 
-Nitralope: Exotic boomalope that can be drained for chemfuel. Be careful, as if they are not &quot;milked&quot; for a long time they become spontaneously explosive!
+Nitralope: Exotic boomalope that can be drained for chemfuel. Be careful, as if they are not "milked" for a long time they become spontaneously explosive!
 
 War Idol: A small psychic field generator allowing a psychic colonist to broadcast an emboldening signal, improving the battle performance of other colonists. You can also sacrifice an animal at this device, broadcasting its last distressed moments into the minds of your enemies.
 
@@ -84,13 +77,13 @@ Tremors/faulty generator: Adds the map condition tremors, in which roofing perio
 
 Muffalo herd: A huge seasonal migration of the creatures presents the perfect opportunity to tame (or hunt) them.
 
-Malevolent AI: During a raid, a distant AI may hack your defenses and turn them against you. Be careful that you don&apos;t depend too heavily on that gattling laser!
+Malevolent AI: During a raid, a distant AI may hack your defenses and turn them against you. Be careful that you don't depend too heavily on that gattling laser!
 
 Teleporter hack: Mechanoids, with their advanced understanding of computer systems, may hack your teleporter. Be wary of this Trojan horse!
 
 Stargate raids: A stargate allows you to jump into the heart of another location, but now it leaves you open to someone else doing the same with you.
 
-![Image](https://i.imgur.com/Rs6T6cr.png)
+![Image](https://i.imgur.com/PwoNOj4.png)
 
 
 
@@ -100,5 +93,6 @@ Stargate raids: A stargate allows you to jump into the heart of another location
 -  For best support, please use the Discord-channel for error-reporting.
 -  Do not report errors by making a discussion-thread, I get no notification of that.
 -  If you have the solution for a problem, please post it to the GitHub repository.
+
 
 

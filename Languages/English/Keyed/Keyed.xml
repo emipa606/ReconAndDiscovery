@@ -88,5 +88,4 @@
   <RD_VerboseLogging>Verbose logging</RD_VerboseLogging>
   <RD_VerboseLoggingTooltip>Extra logging for debugging</RD_VerboseLoggingTooltip>
   <RD_ModVersion>Installed mod-version: {0}</RD_ModVersion>
-  
 </LanguageData>
