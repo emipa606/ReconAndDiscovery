@@ -74,4 +74,17 @@
       <li Class="ReconAndDiscovery.Missions.WorldObjectCompProperties_CountThings" />
     </comps>
   </WorldObjectDef>
+		<WorldObjectDef>
+    <defName>RD_FestivalMap</defName>
+    <worldObjectClass>Site</worldObjectClass>
+    <expandingIcon>true</expandingIcon>
+    <expandingIconPriority>70</expandingIconPriority>
+    <comps>
+      <li Class="WorldObjectCompProperties_Timeout" />
+      <li Class="WorldObjectCompProperties_TimedForcedExit" />
+      <li Class="WorldObjectCompProperties_ItemStashContents" />
+      <li Class="WorldObjectCompProperties_FormCaravan" />
+      <li Class="ReconAndDiscovery.Missions.QuestComp.Festival_Properties" />
+    </comps>
+  </WorldObjectDef>		  
 </Defs>
