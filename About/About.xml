@@ -13,9 +13,7 @@
   <loadAfter>
     <li>syrchalis.traitvalue</li>
   </loadAfter>
-  <description>THIS MOD CURRENTLY CONTAINS MANY BUGS AND NON-FUNCTIONAL EVENTS THAT WE DO NOT HAVE THE PROGRAMMING SKILLS NECESSARY TO FIX. IT'S ONLY LEFT UP TO NOT BREAK SAVE FILES, BUT DO NOT USE THIS ITEM.
-
-[img]https://i.imgur.com/buuPQel.png[/img]
+  <description>[img]https://i.imgur.com/buuPQel.png[/img]
 Update of SeveralPuffins mod
 https://steamcommunity.com/sharedfiles/filedetails/?id=935948526
 
@@ -30,13 +28,19 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=935948526
 - Added settings for incident baseChances
 - Added support for [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2451324814][SYR] Trait Value[/url]
 
+- Most of the issues with the mod is now fixed by Garethp, for full info see [url=https://github.com/emipa606/ReconAndDiscovery/blob/main/Source/Progress.md]Progress[/url]
+
 [img]https://i.imgur.com/pufA0kM.png[/img]
 
 [table]
 	[tr]
 		[td][url=https://invite.gg/Mlie][img]https://i.imgur.com/zdzzBrc.png[/img][/url][/td]
 		[td][url=https://github.com/emipa606/ReconAndDiscovery][img]https://i.imgur.com/kTkpTOE.png[/img][/url][/td]
-	[/tr]
+    [/tr]
+    [tr]
+        [td][img]https://i.imgur.com/WjDSfUn.png[/img][/td]
+        [td][img]https://i.imgur.com/Be8E2qJ.png[/img][/td]
+    [/tr]
 [/table]
 	
 [img]https://i.imgur.com/Z4GOv8H.png[/img]
