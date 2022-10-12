@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ReconAndDiscovery.Triggers.ActivatedActionDef Name="ActionSeraphites" ParentName="BaseActivatedAction">
+    <defName>RD_ActionSeraphites</defName>
+    <activatedActionClass>ReconAndDiscovery.Triggers.ActivatedAction_Seraphites</activatedActionClass>
+    <numThingsToSpawn>0~0</numThingsToSpawn>
+    <spawnedThingStackSize>0~0</spawnedThingStackSize>
+    <effectRadius>5</effectRadius>
+    <hasDialog>true</hasDialog>
+    <dialogText>Some of the research logs refer to a project to make a self-replicating luciferium nanite, freeing the user from the need to take more. Apparently this lab contains a small sample of a trial nanite.</dialogText>
+  </ReconAndDiscovery.Triggers.ActivatedActionDef>
+</Defs>

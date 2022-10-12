@@ -1,7 +1,5 @@
 # ReconAndDiscovery
 
-THIS MOD CURRENTLY CONTAINS MANY BUGS AND NON-FUNCTIONAL EVENTS THAT WE DO NOT HAVE THE PROGRAMMING SKILLS NECESSARY TO FIX. IT'S ONLY LEFT UP TO NOT BREAK SAVE FILES, BUT DO NOT USE THIS ITEM.
-
 ![Image](https://i.imgur.com/buuPQel.png)
 
 Update of SeveralPuffins mod
@@ -17,6 +15,8 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=935948526
 - Harmony and Hugslib dependencies removed
 - Added settings for incident baseChances
 - Added support for https://steamcommunity.com/sharedfiles/filedetails/?id=2451324814][SYR] Trait Value
+
+- Most of the issues with the mod is now fixed by Garethp, for full info see https://github.com/emipa606/ReconAndDiscovery/blob/main/Source/Progress.md]Progress
 
 ![Image](https://i.imgur.com/pufA0kM.png)
 
@@ -93,6 +93,7 @@ Stargate raids: A stargate allows you to jump into the heart of another location
 -  For best support, please use the Discord-channel for error-reporting.
 -  Do not report errors by making a discussion-thread, I get no notification of that.
 -  If you have the solution for a problem, please post it to the GitHub repository.
+
 
 
 

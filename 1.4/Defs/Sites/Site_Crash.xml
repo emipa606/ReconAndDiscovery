@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <IncidentDef>
+    <defName>RD_CrashedShip</defName>
+    <label>Crashed Ship</label>
+    <category>Misc</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>ReconAndDiscovery.Missions.IncidentWorker_CrashedShip</workerClass>
+    <letterLabel>Starship down</letterLabel>
+    <letterText>Our comms console detected a distress call from a ship shortly before it crashed! Other factions may try to loot the wreck, so you will only have a few days to visit the site!</letterText>
+    <letterDef>PositiveEvent</letterDef>
+    <baseChance>6</baseChance>
+    <minRefireDays>8</minRefireDays>
+    <chanceFactorByPopulationCurve>
+      <points>
+        <li>(2,0)</li>
+        <li>(6,1)</li>
+      </points>
+    </chanceFactorByPopulationCurve>
+  </IncidentDef>
+  <SitePartDef>
+    <defName>RD_CrashedShip</defName>
+    <label>crashed ship</label>
+    <description>The approximate place a ship came down.</description>
+    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+    <expandingIconTexture>World/WorldObjects/CrashedShip</expandingIconTexture>
+  </SitePartDef>
+  <GenStepDef>
+    <defName>RD_CrashedShipGen</defName>
+    <linkWithSite>RD_CrashedShip</linkWithSite>
+    <order>800</order>
+    <genStep Class="ReconAndDiscovery.Maps.GenStep_CrashedShip">
+    </genStep>
+  </GenStepDef>
+  <SitePartDef>
+    <defName>RD_ScatteredTreasure</defName>
+    <label>treasure</label>
+    <description>Some scattered valuables.</description>
+    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+    <expandingIconTexture>World/WorldObjects/Expanding/Sites/ItemStash</expandingIconTexture>
+    <applyFactionColorToSiteTexture>false</applyFactionColorToSiteTexture>
+    <showFactionInInspectString>false</showFactionInInspectString>
+    <badEvenIfNoMap>false</badEvenIfNoMap>
+    <requiresFaction>false</requiresFaction>
+  </SitePartDef>
+  <GenStepDef>
+    <defName>RD_ScatteredTreasureGen</defName>
+    <linkWithSite>RD_ScatteredTreasure</linkWithSite>
+    <order>2500</order>
+    <genStep Class="ReconAndDiscovery.Maps.GenStep_ScatteredTreasure" />
+  </GenStepDef>
+  <SitePartDef>
+    <defName>RD_ScatteredManhunters</defName>
+    <label>manhunters</label>
+    <description>Trapped animals going crazy.</description>
+    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+    <expandingIconTexture>World/WorldObjects/Expanding/Sites/Manhunters</expandingIconTexture>
+    <applyFactionColorToSiteTexture>false</applyFactionColorToSiteTexture>
+    <showFactionInInspectString>false</showFactionInInspectString>
+    <badEvenIfNoMap>false</badEvenIfNoMap>
+    <requiresFaction>false</requiresFaction>
+  </SitePartDef>
+  <GenStepDef>
+    <defName>RD_ScatteredManhuntersGen</defName>
+    <linkWithSite>RD_ScatteredManhunters</linkWithSite>
+    <order>2500</order>
+    <genStep Class="ReconAndDiscovery.Maps.GenStep_ScatteredManhunters" />
+  </GenStepDef>
+  <SitePartDef>
+    <defName>RD_MechanoidForces</defName>
+    <label>mechanoids</label>
+    <description>A mechanoid hive has forces active here.</description>
+    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+    <expandingIconTexture>World/WorldObjects/MechanoidForces</expandingIconTexture>
+    <applyFactionColorToSiteTexture>false</applyFactionColorToSiteTexture>
+    <showFactionInInspectString>false</showFactionInInspectString>
+    <badEvenIfNoMap>false</badEvenIfNoMap>
+    <requiresFaction>false</requiresFaction>
+  </SitePartDef>
+  <GenStepDef>
+    <defName>RD_MechanoidForcesGen</defName>
+    <linkWithSite>RD_MechanoidForces</linkWithSite>
+    <order>2500</order>
+    <genStep Class="ReconAndDiscovery.Maps.GenStep_MechanoidForces" />
+  </GenStepDef>
+  <SitePartDef>
+    <defName>RD_EnemyRaidOnArrival</defName>
+    <label>raid</label>
+    <description>An enemy faction will arrive here imminently.</description>
+    <workerClass>ReconAndDiscovery.Maps.SitePartWorker_EnemyRaidOnArrival</workerClass>
+    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+    <expandingIconTexture>World/WorldObjects/Expanding/Sites/Ambush</expandingIconTexture>
+    <applyFactionColorToSiteTexture>false</applyFactionColorToSiteTexture>
+    <showFactionInInspectString>false</showFactionInInspectString>
+    <badEvenIfNoMap>true</badEvenIfNoMap>
+    <requiresFaction>false</requiresFaction>
+  </SitePartDef>
+  <GenStepDef>
+    <defName>RD_EnemyRaidOnArrivalGen</defName>
+    <linkWithSite>RD_EnemyRaidOnArrival</linkWithSite>
+    <order>2500</order>
+    <genStep Class="ReconAndDiscovery.Maps.GenStep_EnemyRaidOnArrival" />
+  </GenStepDef>
+  <SitePartDef>
+    <defName>RD_MedicalEmergency</defName>
+    <label>medical emergency</label>
+    <description>There is an urgent need for medical assistance here.</description>
+    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+    <workerClass>ReconAndDiscovery.Maps.SitePartWorker_MedicalEmergency</workerClass>
+    <expandingIconTexture>World/WorldObjects/Expanding/Sites/DownedRefugee</expandingIconTexture>
+    <applyFactionColorToSiteTexture>false</applyFactionColorToSiteTexture>
+    <showFactionInInspectString>false</showFactionInInspectString>
+    <badEvenIfNoMap>true</badEvenIfNoMap>
+    <requiresFaction>false</requiresFaction>
+  </SitePartDef>
+  <SitePartDef>
+    <defName>RD_RareBeasts</defName>
+    <label>rare beasts</label>
+    <description>Rare, unusual animals roam near here.</description>
+    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+    <expandingIconTexture>World/WorldObjects/Expanding/Sites/Manhunters</expandingIconTexture>
+    <applyFactionColorToSiteTexture>false</applyFactionColorToSiteTexture>
+    <showFactionInInspectString>false</showFactionInInspectString>
+    <badEvenIfNoMap>true</badEvenIfNoMap>
+    <requiresFaction>false</requiresFaction>
+  </SitePartDef>
+  <GenStepDef>
+    <defName>RD_RareBeastsGen</defName>
+    <linkWithSite>RD_RareBeasts</linkWithSite>
+    <order>2500</order>
+    <genStep Class="ReconAndDiscovery.Maps.GenStep_RareBeasts" />
+  </GenStepDef>
+</Defs>

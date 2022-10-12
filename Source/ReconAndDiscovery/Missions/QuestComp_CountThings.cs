@@ -98,7 +98,7 @@ public class QuestComp_CountThings : WorldObjectComp
         }
 
         var settlement = Find.World.worldObjects.SettlementAt(worldTileAffected);
-        if (settlement == null || !settlement.HasMap)
+        if (settlement is not { HasMap: true })
         {
             return;
         }

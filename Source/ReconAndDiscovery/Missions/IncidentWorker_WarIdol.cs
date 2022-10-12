@@ -56,12 +56,7 @@ public class IncidentWorker_WarIdol : IncidentWorker
             return false;
         }
 
-        if (!CanFindPsychic(map, out _))
-        {
-            return false;
-        }
-
-        return CanFindVisitor(map, out _);
+        return CanFindPsychic(map, out _) && CanFindVisitor(map, out _);
     }
 
     protected override bool TryExecuteWorker(IncidentParms parms)

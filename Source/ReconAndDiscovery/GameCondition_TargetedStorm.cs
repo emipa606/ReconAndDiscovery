@@ -57,7 +57,7 @@ public class GameCondition_TargetedStorm : GameCondition
     {
         foreach (var map in AffectedMaps)
         {
-            if (target == null || !target.Spawned)
+            if (target is not { Spawned: true })
             {
                 FindNewTarget();
                 continue;

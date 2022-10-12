@@ -33,7 +33,7 @@ public class SitePartWorker_MedicalEmergency : SitePartWorker
                 }
 
                 var request = new PawnGenerationRequest(PawnKindDefOf.SpaceRefugee, faction,
-                    PawnGenerationContext.NonPlayer, -1, false, false, false, false, true, false, 20f, false,
+                    PawnGenerationContext.NonPlayer, -1, false, false, false, false, true, 20f, false,
                     true, true, false);
                 var pawn = PawnGenerator.GeneratePawn(request);
                 list.Add(pawn);

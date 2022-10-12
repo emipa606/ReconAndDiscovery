@@ -97,6 +97,6 @@ public class ActivatedAction_PsionicLandmine : ActivatedAction
         var center = cells.RandomElement();
         //TODO: check if it works
         GenExplosion.DoExplosion(center, map, 2f, DamageDefOf.Flame, null, -1, -1f, null, null, null, null,
-            ThingDefOf.ChunkSlagSteel, 0.4f, 1, true);
+            ThingDefOf.ChunkSlagSteel, 0.4f, 1, null, true);
     }
 }

@@ -53,17 +53,7 @@ public class IncidentWorker_SeraphitesQuest : IncidentWorker
             return false;
         }
 
-        if (!CanFindLuciferiumAddict(map, out _))
-        {
-            return false;
-        }
-
-        if (CanFindVisitor(map, out _))
-        {
-            return true;
-        }
-
-        return false;
+        return CanFindLuciferiumAddict(map, out _) && CanFindVisitor(map, out _);
     }
 
     protected override bool TryExecuteWorker(IncidentParms parms)

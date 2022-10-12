@@ -25,7 +25,7 @@ public class JobDriver_LoadIntoEmitter : JobDriver
     private Pawn MakeGeniusPawn()
     {
         var request = new PawnGenerationRequest(PawnKindDefOf.SpaceRefugee, Faction.OfPlayer,
-            PawnGenerationContext.PlayerStarter, -1, true, false, false, false, false, false, 0f,
+            PawnGenerationContext.PlayerStarter, -1, true, false, false, false, false, 0f,
             true, true, true, false);
         var generatePawn = PawnGenerator.GeneratePawn(request);
         var list = new List<Trait>();

@@ -24,7 +24,7 @@ public class CompStargate : ThingComp
         get
         {
             Thing result;
-            if (link == null || !link.Spawned || link.Destroyed)
+            if (link is not { Spawned: true } || link.Destroyed)
             {
                 result = null;
             }
@@ -227,7 +227,7 @@ public class CompStargate : ThingComp
             return;
         }
 
-        if (LinkedGate == null || !LinkedGate.Spawned || LinkedGate.Destroyed)
+        if (LinkedGate is not { Spawned: true } || LinkedGate.Destroyed)
         {
             Messages.Message("RD_OtherGateBuried".Translate(),
                 MessageTypeDefOf.RejectInput); //"The other gate has been buried! We cannot transit!"

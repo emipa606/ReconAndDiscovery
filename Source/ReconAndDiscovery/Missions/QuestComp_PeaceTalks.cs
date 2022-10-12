@@ -57,7 +57,7 @@ public class QuestComp_PeaceTalks : WorldObjectComp
                 return;
             }
 
-            if (Negotiator == null || !Negotiator.Spawned)
+            if (Negotiator is not { Spawned: true })
             {
                 return;
             }

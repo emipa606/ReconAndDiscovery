@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThoughtDef>
+    <defName>RD_ReturnedFromTheDeadGood</defName>
+    <durationDays>15</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>returned from the dead</label>
+        <description>I died and lived to tell the tale! How cool is that?!</description>
+        <baseMoodEffect>12</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  <ThoughtDef>
+    <defName>RD_ReturnedFromTheDeadBad</defName>
+    <durationDays>15</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>returned from the dead</label>
+        <description>I died. I actually died. It's all so terrifyingly fragile!</description>
+        <baseMoodEffect>-8</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+</Defs>

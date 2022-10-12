@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <GameConditionDef>
+    <defName>RD_TargetedStorm</defName>
+    <conditionClass>ReconAndDiscovery.GameCondition_TargetedStorm</conditionClass>
+    <label>flashstorm</label>
+    <description>Extreme amounts of lightning are hitting a small region.</description>
+    <letterText>Extreme amounts of lightning are hitting a small region.</letterText>
+    <letterDef>NegativeEvent</letterDef>
+    <endMessage>The flashstorm is over.</endMessage>
+    <preventRain>true</preventRain>
+    <canBePermanent>false</canBePermanent>
+  </GameConditionDef>
+  <GameConditionDef>
+    <defName>RD_Tremors</defName>
+    <conditionClass>ReconAndDiscovery.GameCondition_Tremors</conditionClass>
+    <label>tremors</label>
+    <description>Occasional quakes are collapsing roofed areas.</description>
+    <letterText>A geological disturbance is causing tremors in the area. The roof in some areas may collapse. While this is merely an inconvenience in artificial structures, it can be very dangerous under mountains.</letterText>
+    <letterDef>NegativeEvent</letterDef>
+    <endMessage>The tremors have ended.</endMessage>
+    <canBePermanent>true</canBePermanent>
+  </GameConditionDef>
+  <GameConditionDef>
+    <defName>RD_Radiation</defName>
+    <conditionClass>ReconAndDiscovery.GameCondition_Radiation</conditionClass>
+    <label>radiation</label>
+    <description>The air contains radioactive fallout. This will be hazardous to all life in the area.</description>
+    <letterText>The wind has carried radioactive dust across the area. The heightened radiation levels increase the risks of severe illness even indoors, unless deep underground, enclosed in a room with a thick rock roof. You may wish to consider leaving the area until the effect has passed.</letterText>
+    <letterDef>ThreatBig</letterDef>
+    <endMessage>radiation levels have returned to normal.</endMessage>
+    <canBePermanent>true</canBePermanent>
+  </GameConditionDef>
+</Defs>

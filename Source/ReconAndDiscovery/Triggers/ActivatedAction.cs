@@ -11,12 +11,12 @@ public class ActivatedAction
 
     public virtual bool TryAction(Pawn activatedBy, Map map, Thing trigger)
     {
-        if (def.numThingsToSpawn.max > 0 && def.spawnedThings != null && def.spawnedThings.Count > 0)
+        if (def.numThingsToSpawn.max > 0 && def.spawnedThings is { Count: > 0 })
         {
             SpawnThings();
         }
 
-        if (def.numPawnsToSpawn.max > 0 && def.pawnKinds != null && def.pawnKinds.Count > 0)
+        if (def.numPawnsToSpawn.max > 0 && def.pawnKinds is { Count: > 0 })
         {
             SpawnPawns();
         }
@@ -74,7 +74,7 @@ public class ActivatedAction
             }
 
             var request = new PawnGenerationRequest(pawnKindDef, faction, PawnGenerationContext.NonPlayer, -1,
-                false, false, false, false, true, false, 1f, false, true, true, false);
+                false, false, false, false, true, 1f, false, true, true, false);
             var pawn = PawnGenerator.GeneratePawn(request);
             if (!pawn.RaceProps.Humanlike)
             {

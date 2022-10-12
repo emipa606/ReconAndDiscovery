@@ -65,7 +65,7 @@ public class IncidentWorker_RaidStargate : IncidentWorker_RaidEnemy
         {
             foreach (var pawn2 in list)
             {
-                if (!pawn2.apparel.WornApparel.Any(ap => ap is ShieldBelt))
+                if (!pawn2.apparel.WornApparel.Any(ap => ap.def.HasComp(typeof(CompShield))))
                 {
                     continue;
                 }

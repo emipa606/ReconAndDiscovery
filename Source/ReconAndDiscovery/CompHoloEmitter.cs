@@ -34,7 +34,7 @@ public class CompHoloEmitter : ThingComp
 
     public override void PostDeSpawn(Map map)
     {
-        if (pawn != null && pawn.Spawned)
+        if (pawn is { Spawned: true })
         {
             pawn.DeSpawn();
         }

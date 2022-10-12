@@ -66,7 +66,7 @@ public class SymbolResolver_OldCastle : RimWorld.BaseGen.SymbolResolver
             resolveParams6.rect = new CellRect(resolveParams6.rect.minX, resolveParams5.rect.minZ, width, height);
             if (Rand.Chance(0.15f))
             {
-                resolveParams6.rect.minX = resolveParams6.rect.minX + 3;
+                resolveParams6.rect.minX += 3;
             }
             else
             {
@@ -94,7 +94,7 @@ public class SymbolResolver_OldCastle : RimWorld.BaseGen.SymbolResolver
                 width2, num2);
             if (Rand.Chance(0.15f))
             {
-                resolveParams6.rect.minX = resolveParams6.rect.minX + 3;
+                resolveParams6.rect.minX += 3;
             }
             else
             {
@@ -109,7 +109,7 @@ public class SymbolResolver_OldCastle : RimWorld.BaseGen.SymbolResolver
         }
 
         resolveParams6 = resolveParams5;
-        resolveParams6.rect.minZ = resolveParams6.rect.minZ + 4;
+        resolveParams6.rect.minZ += 4;
         for (var n = 0; n < 25; n++)
         {
             var width3 = Rand.RangeInclusive(4, 6);
@@ -122,7 +122,7 @@ public class SymbolResolver_OldCastle : RimWorld.BaseGen.SymbolResolver
             resolveParams6.rect = new CellRect(resolveParams5.rect.minX, resolveParams6.rect.minZ, width3, height2);
             if (Rand.Chance(0.15f))
             {
-                resolveParams6.rect.minZ = resolveParams6.rect.minZ + 3;
+                resolveParams6.rect.minZ += 3;
             }
             else
             {
@@ -137,7 +137,7 @@ public class SymbolResolver_OldCastle : RimWorld.BaseGen.SymbolResolver
         }
 
         resolveParams6 = resolveParams5;
-        resolveParams6.rect.minZ = resolveParams6.rect.minZ + 4;
+        resolveParams6.rect.minZ += 4;
         for (var num3 = 0; num3 < 25; num3++)
         {
             var num4 = Rand.RangeInclusive(4, 6);
@@ -151,7 +151,7 @@ public class SymbolResolver_OldCastle : RimWorld.BaseGen.SymbolResolver
                 height3);
             if (Rand.Chance(0.15f))
             {
-                resolveParams6.rect.minZ = resolveParams6.rect.minZ + 3;
+                resolveParams6.rect.minZ += 3;
             }
             else
             {

@@ -35,7 +35,7 @@ public class CompOsiris : ThingComp
             PawnComponentsUtility.AddAndRemoveDynamicComponents(pawn);
             FixPawnRelationships(pawn);
             pawn.health.Reset();
-            if (pawn.Corpse != null && pawn.Corpse.Spawned)
+            if (pawn.Corpse is { Spawned: true })
             {
                 pawn.Corpse.DeSpawn();
             }
@@ -55,7 +55,7 @@ public class CompOsiris : ThingComp
             PawnDiedOrDownedThoughtsUtility.RemoveDiedThoughts(pawn);
             FixPawnRelationships(pawn);
             pawn.health.Reset();
-            if (pawn.Corpse != null && pawn.Corpse.Spawned)
+            if (pawn.Corpse is { Spawned: true })
             {
                 pawn.Corpse.DeSpawn();
             }

@@ -23,12 +23,7 @@ public class IncidentWorker_OsirisCasket : IncidentWorker
                   && pawn.story.traits.HasTrait(TraitDef.Named("PsychicSensitivity"))
             select pawn;
 
-        if (!pawns.Any())
-        {
-            return null;
-        }
-
-        return pawns.RandomElement();
+        return !pawns.Any() ? null : pawns.RandomElement();
     }
 
     protected override bool TryExecuteWorker(IncidentParms parms)
@@ -131,9 +126,10 @@ public class IncidentWorker_OsirisCasket : IncidentWorker
             site.parts.Add(scatteredTreasure);
         }
 
+        SitePart enemyRaidOnArrival;
         if (Rand.Value < 1f)
         {
-            var enemyRaidOnArrival = new SitePart(site,
+            enemyRaidOnArrival = new SitePart(site,
                 SiteDefOfReconAndDiscovery.RD_EnemyRaidOnArrival,
                 SiteDefOfReconAndDiscovery.RD_EnemyRaidOnArrival.Worker.GenerateDefaultParams(
                     StorytellerUtility.DefaultSiteThreatPointsNow(), tile, faction))
@@ -145,7 +141,7 @@ public class IncidentWorker_OsirisCasket : IncidentWorker
 
         if (Rand.Value < 0.9f)
         {
-            var enemyRaidOnArrival = new SitePart(site,
+            enemyRaidOnArrival = new SitePart(site,
                 SiteDefOfReconAndDiscovery.RD_EnemyRaidOnArrival,
                 SiteDefOfReconAndDiscovery.RD_EnemyRaidOnArrival.Worker.GenerateDefaultParams(
                     StorytellerUtility.DefaultSiteThreatPointsNow(), tile, faction))
@@ -155,16 +151,18 @@ public class IncidentWorker_OsirisCasket : IncidentWorker
             site.parts.Add(enemyRaidOnArrival);
         }
 
-        if (Rand.Value < 0.6f)
+        if (!(Rand.Value < 0.6f))
         {
-            var enemyRaidOnArrival = new SitePart(site,
-                SiteDefOfReconAndDiscovery.RD_EnemyRaidOnArrival,
-                SiteDefOfReconAndDiscovery.RD_EnemyRaidOnArrival.Worker.GenerateDefaultParams(
-                    StorytellerUtility.DefaultSiteThreatPointsNow(), tile, faction))
-            {
-                hidden = true
-            };
-            site.parts.Add(enemyRaidOnArrival);
+            return;
         }
+
+        enemyRaidOnArrival = new SitePart(site,
+            SiteDefOfReconAndDiscovery.RD_EnemyRaidOnArrival,
+            SiteDefOfReconAndDiscovery.RD_EnemyRaidOnArrival.Worker.GenerateDefaultParams(
+                StorytellerUtility.DefaultSiteThreatPointsNow(), tile, faction))
+        {
+            hidden = true
+        };
+        site.parts.Add(enemyRaidOnArrival);
     }
 }

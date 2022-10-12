@@ -55,11 +55,11 @@ public class SymbolResolver_CrashedShip : RimWorld.BaseGen.SymbolResolver
         resolveParams5.thingRot = new Rot4(1);
         resolveParams5.singleThingDef = ThingDefOf.Ship_Engine;
         BaseGen.symbolStack.Push("insertFurnishing", resolveParams5);
-        resolveParams5.rect.minZ = resolveParams5.rect.minZ + 2;
+        resolveParams5.rect.minZ += 2;
         BaseGen.symbolStack.Push("insertFurnishing", resolveParams5);
         resolveParams5.rect.minZ = resolveParams.rect.maxZ;
         BaseGen.symbolStack.Push("insertFurnishing", resolveParams5);
-        resolveParams5.rect.minZ = resolveParams5.rect.minZ - 2;
+        resolveParams5.rect.minZ -= 2;
         BaseGen.symbolStack.Push("insertFurnishing", resolveParams5);
         BaseGen.symbolStack.Push("batteryRoom", resolveParams);
         resolveParams2.SetCustom("hasDoor", new[]
