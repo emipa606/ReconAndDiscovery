@@ -160,8 +160,9 @@ public class GameCondition_Radiation : GameCondition
                     continue;
                 }
 
-                var chance = 0.14f / Mathf.Max(pawn.GetStatValue(StatDefOf.ToxicResistance), 0.001f) / 60000f;
-                var chance2 = 0.04f / Mathf.Max(pawn.GetStatValue(StatDefOf.ToxicResistance), 0.001f) / 60000f;
+                var toxicModifier = 1 - Mathf.Max(pawn.GetStatValue(StatDefOf.ToxicEnvironmentResistance), 0.001f);
+                var chance = 0.14f / 60000f * toxicModifier;
+                var chance2 = 0.04f / 60000f * toxicModifier;
                 if (Rand.Chance(chance))
                 {
                     AssignRadiationSickness(pawn);

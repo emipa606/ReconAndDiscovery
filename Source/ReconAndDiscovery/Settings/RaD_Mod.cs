@@ -15,8 +15,7 @@ internal class RaD_Mod : Mod
     {
         settings = GetSettings<RaD_ModSettings>();
         currentVersion =
-            VersionFromManifest.GetVersionFromModMetaData(
-                ModLister.GetActiveModWithIdentifier("Mlie.ReconAndDiscovery"));
+            VersionFromManifest.GetVersionFromModMetaData(content.ModMetaData);
     }
 
     public override string SettingsCategory()
@@ -60,7 +59,7 @@ internal class RaD_Mod : Mod
         var rect6 = valueRect.RightHalf().Rounded();
         Widgets.Label(labelRect, label);
         Widgets.Label(rect6, value.ToString());
-        value = Widgets.HorizontalSlider(
+        value = Widgets.HorizontalSlider_NewTemp(
             new Rect(sliderRect.xMin + sliderRect.height + 10f, sliderRect.y,
                 sliderRect.width - ((sliderRect.height * 2f) + 20f),
                 sliderRect.height), value, 0f, 20f, true);

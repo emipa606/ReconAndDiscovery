@@ -97,3 +97,4 @@ Stargate raids: A stargate allows you to jump into the heart of another location
 
 
 
+https://steamcommunity.com/sharedfiles/filedetails/changelog/2035131107]Last updated 2023-05-07
