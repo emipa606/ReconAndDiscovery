@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- ============================== Big threats ==============================-->
+  <IncidentDef>
+    <defName>RD_RaidEnemyQuest</defName>
+    <label>enemy raid</label>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>ReconAndDiscovery.Missions.IncidentWorker_RaidEnemyQuest</workerClass>
+    <!--    <workerClass>IncidentWorker_RaidEnemy</workerClass>-->
+    <baseChance>0.0</baseChance>
+    <category>ThreatBig</category>
+    <pointsScaleable>true</pointsScaleable>
+    <tale>Raid</tale>
+  </IncidentDef>
+  <IncidentDef>
+    <defName>RD_DiscoveredStargate</defName>
+    <label>discovered stargate</label>
+    <targetTags>
+      <li>World</li>
+    </targetTags>
+    <workerClass>ReconAndDiscovery.Missions.IncidentWorker_DiscoveredStargate</workerClass>
+    <baseChance>0.0</baseChance>
+    <category>Misc</category>
+    <letterLabel>Stargate</letterLabel>
+    <letterText>You have discovered another stargate on the planet!</letterText>
+    <letterDef>PositiveEvent</letterDef>
+    <pointsScaleable>false</pointsScaleable>
+  </IncidentDef>
+  <IncidentDef>
+    <defName>RD_RaidStargate</defName>
+    <label>stargate raid</label>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>ReconAndDiscovery.IncidentWorker_RaidStargate</workerClass>
+    <baseChance>1.9</baseChance>
+    <category>ThreatBig</category>
+    <letterLabel>Raid</letterLabel>
+    <letterText>A raiding party from {0} has just come through the stargate!</letterText>
+    <letterDef>ThreatBig</letterDef>
+    <pointsScaleable>true</pointsScaleable>
+    <minRefireDays>10</minRefireDays>
+    <minThreatPoints>300</minThreatPoints>
+  </IncidentDef>
+  <IncidentDef>
+    <defName>RD_MalevolentAI</defName>
+    <label>malevolent ai</label>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>ReconAndDiscovery.IncidentWorker_MalevolentAI</workerClass>
+    <baseChance>16</baseChance>
+    <category>ThreatBig</category>
+    <letterLabel>Defences Hacked</letterLabel>
+    <letterText>A malevolent AI has hacked your defences in support of your enemies, {0}!</letterText>
+    <letterDef>ThreatBig</letterDef>
+    <pointsScaleable>true</pointsScaleable>
+    <minRefireDays>10</minRefireDays>
+    <minThreatPoints>100</minThreatPoints>
+  </IncidentDef>
+  <IncidentDef>
+    <defName>RD_RaidTeleporter</defName>
+    <label>teleporter hack</label>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>ReconAndDiscovery.IncidentWorker_RaidTeleporter</workerClass>
+    <baseChance>20.0</baseChance>
+    <category>ThreatBig</category>
+    <letterLabel>Teleporter Hack</letterLabel>
+    <letterText>The mechanoids have hacked our teleporter systems!</letterText>
+    <letterDef>ThreatBig</letterDef>
+    <pointsScaleable>false</pointsScaleable>
+    <minRefireDays>20</minRefireDays>
+    <minThreatPoints>400</minThreatPoints>
+  </IncidentDef>
+  <IncidentDef>
+    <defName>RD_IncidentTremors</defName>
+    <label>tremors</label>
+    <category>Misc</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>IncidentWorker_MakeGameCondition</workerClass>
+    <gameCondition>RD_Tremors</gameCondition>
+    <letterLabel>Tremors</letterLabel>
+    <letterText>A geological disturbance is causing tremors in the area. The roof in some areas may collapse. While this is merely an inconvenience in artificial structures, it can be very dangerous under mountains.</letterText>
+    <letterDef>NegativeEvent</letterDef>
+    <baseChance>0.2</baseChance>
+    <earliestDay>10</earliestDay>
+    <minRefireDays>20</minRefireDays>
+    <minDifficulty>2</minDifficulty>
+    <durationDays>
+      <min>0.5</min>
+      <max>4</max>
+    </durationDays>
+  </IncidentDef>
+  <IncidentDef>
+    <defName>RD_IncidentRadiation</defName>
+    <label>radiation</label>
+    <category>Misc</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>IncidentWorker_MakeGameCondition</workerClass>
+    <gameCondition>RD_Radiation</gameCondition>
+    <letterLabel>Radioactive fallout</letterLabel>
+    <letterText>The wind has carried radioactive dust across the area. The heightened radiation levels increase the risks of severe illness even indoors, unless deep underground, enclosed in a room with a thick rock roof. You may wish to consider leaving the area until the effect has passed.</letterText>
+    <letterDef>ThreatBig</letterDef>
+    <baseChance>0.2</baseChance>
+    <earliestDay>45</earliestDay>
+    <minRefireDays>30</minRefireDays>
+    <minDifficulty>2</minDifficulty>
+    <durationDays>
+      <min>0.5</min>
+      <max>3</max>
+    </durationDays>
+  </IncidentDef>
+</Defs>

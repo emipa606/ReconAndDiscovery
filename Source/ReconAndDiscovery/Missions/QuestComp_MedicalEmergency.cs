@@ -315,7 +315,7 @@ public class QuestComp_MedicalEmergency : WorldObjectComp, IThingHolder
     public override void PostExposeData()
     {
         base.PostExposeData();
-        Scribe_Collections.Look(ref injured, true, "injured", LookMode.Reference);
+        Scribe_Collections.Look(ref injured, "injured", LookMode.Reference);
         Scribe_Values.Look(ref active, "active");
         Scribe_Values.Look(ref maxPawns, "maxPawns");
         Scribe_Values.Look(ref relationsImprovement, "relationsImprovement");

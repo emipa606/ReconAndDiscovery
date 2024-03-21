@@ -28,9 +28,13 @@ public class CompOsiris : ThingComp
 
     public static void Ressurrect(Pawn pawn, Thing thing)
     {
+        if (!ResurrectionUtility.TryResurrect(pawn))
+        {
+            return;
+        }
+
         if (thing is HoloEmitter)
         {
-            ResurrectionUtility.Resurrect(pawn);
             PawnDiedOrDownedThoughtsUtility.RemoveDiedThoughts(pawn);
             PawnComponentsUtility.AddAndRemoveDynamicComponents(pawn);
             FixPawnRelationships(pawn);
@@ -51,7 +55,6 @@ public class CompOsiris : ThingComp
         }
         else
         {
-            ResurrectionUtility.Resurrect(pawn);
             PawnDiedOrDownedThoughtsUtility.RemoveDiedThoughts(pawn);
             FixPawnRelationships(pawn);
             pawn.health.Reset();
@@ -259,6 +262,6 @@ public class CompOsiris : ThingComp
         }
 
         RaD_Mod.LogError("The pawn has died while being resurrected.");
-        ResurrectionUtility.Resurrect(pawn);
+        ResurrectionUtility.TryResurrect(pawn);
     }
 }

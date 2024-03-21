@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <IncidentDef>
+    <defName>RD_SeraphitesLab</defName>
+    <label>seraphitelab</label>
+    <category>Misc</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>ReconAndDiscovery.Missions.IncidentWorker_SeraphitesQuest</workerClass>
+    <letterLabel>Rumour</letterLabel>
+    <letterText>{0}, seeing that {1} is addicted to luciferum, has told us that a cure was under development near here. The lab has since been abandoned, but its location is now marked on our map.</letterText>
+    <letterDef>PositiveEvent</letterDef>
+    <baseChance>10</baseChance>
+    <minRefireDays>15</minRefireDays>
+    <chanceFactorByPopulationCurve>
+      <points>
+        <li>(2,0)</li>
+        <li>(5,1)</li>
+      </points>
+    </chanceFactorByPopulationCurve>
+  </IncidentDef>
+  <SitePartDef>
+    <defName>RD_SeraphitesQuest</defName>
+    <label>Abandoned lab</label>
+    <description>The rumoured location of the luciferium cure.</description>
+    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+    <expandingIconTexture>World/WorldObjects/AbandonedLab</expandingIconTexture>
+  </SitePartDef>
+  <GenStepDef>
+    <defName>RD_AbandonedLabNanites</defName>
+    <linkWithSite>RD_SeraphitesQuest</linkWithSite>
+    <order>800</order>
+    <genStep Class="ReconAndDiscovery.Maps.GenStep_AbandonedLab">
+    </genStep>
+  </GenStepDef>
+  <SitePartDef>
+    <defName>RD_SitePart_Computer</defName>
+    <label>computer</label>
+    <description>A computer!</description>
+    <workerClass>ReconAndDiscovery.Maps.SitePartWorker_Computer</workerClass>
+    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+    <expandingIconTexture>World/WorldObjects/Expanding/Sites/Manhunters</expandingIconTexture>
+    <applyFactionColorToSiteTexture>false</applyFactionColorToSiteTexture>
+    <showFactionInInspectString>false</showFactionInInspectString>
+    <badEvenIfNoMap>true</badEvenIfNoMap>
+    <requiresFaction>false</requiresFaction>
+  </SitePartDef>
+</Defs>

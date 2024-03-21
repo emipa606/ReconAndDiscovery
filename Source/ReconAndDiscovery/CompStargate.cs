@@ -103,7 +103,7 @@ public class CompStargate : ThingComp
     {
         CameraJumper.TryJump(CameraJumper.GetWorldTarget(parent));
         Find.WorldSelector.ClearSelection();
-        var tile = parent.Map.Tile;
+        _ = parent.Map.Tile;
         Find.WorldTargeter.BeginTargeting(ChoseWorldTarget, true, null, true);
     }
 
@@ -119,7 +119,7 @@ public class CompStargate : ThingComp
         {
             if (mapParent.HasMap)
             {
-                var sourceMap = parent.Map;
+                _ = parent.Map;
                 var targetMap = mapParent.Map;
                 Current.Game.CurrentMap = targetMap;
                 if (targetMap.listerThings.ThingsOfDef(ThingDef.Named("RD_Stargate")).Any())
@@ -175,8 +175,8 @@ public class CompStargate : ThingComp
     private bool CheckSetupGateAndMap(Pawn p)
     {
         RaD_Mod.LogMessage("Checking for link");
-        var drafted = p.Drafted;
-        var isSelected = Find.Selector.IsSelected(p);
+        _ = p.Drafted;
+        _ = Find.Selector.IsSelected(p);
         if (LinkedGate != null)
         {
             RaD_Mod.LogMessage("Linked already!");

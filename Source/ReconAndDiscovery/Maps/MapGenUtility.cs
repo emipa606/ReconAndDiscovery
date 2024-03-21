@@ -398,7 +398,8 @@ public static class MapGenUtility
 
     public static void UnfogFromRandomEdge(Map map)
     {
-        FogAll(map);
+        map.fogGrid.Refog(new CellRect(0, 0, map.Size.x, map.Size.z));
+        //FogAll(map);
         MapGenerator.rootsToUnfog.Clear();
         foreach (var pawn in map.mapPawns.FreeColonists)
         {
@@ -414,30 +415,30 @@ public static class MapGenUtility
         }
     }
 
-    private static void FogAll(Map map)
-    {
-        var fogGrid = map.fogGrid;
-        if (fogGrid == null)
-        {
-            return;
-        }
+    //private static void FogAll(Map map)
+    //{
+    //    var fogGrid = map.fogGrid;
+    //    if (fogGrid == null)
+    //    {
+    //        return;
+    //    }
 
-        var cellIndices = map.cellIndices;
-        if (fogGrid.fogGrid == null)
-        {
-            fogGrid.fogGrid = new bool[cellIndices.NumGridCells];
-        }
+    //    var cellIndices = map.cellIndices;
+    //    if (fogGrid.fogGrid == null)
+    //    {
+    //        fogGrid.fogGrid = new bool[cellIndices.NumGridCells];
+    //    }
 
-        foreach (var c in map.AllCells)
-        {
-            fogGrid.fogGrid[cellIndices.CellToIndex(c)] = true;
-        }
+    //    foreach (var c in map.AllCells)
+    //    {
+    //        fogGrid.fogGrid[cellIndices.CellToIndex(c)] = true;
+    //    }
 
-        if (Current.ProgramState == ProgramState.Playing)
-        {
-            map.roofGrid.Drawer.SetDirty();
-        }
-    }
+    //    if (Current.ProgramState == ProgramState.Playing)
+    //    {
+    //        map.roofGrid.Drawer.SetDirty();
+    //    }
+    //}
 
     public static ThingDef RandomExpensiveWallStuff(Faction faction, bool notVeryFlammable = true)
     {

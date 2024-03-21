@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using ReconAndDiscovery.DefOfs;
 using ReconAndDiscovery.Missions;
 using RimWorld;
 using UnityEngine;
@@ -18,7 +19,7 @@ public class SitePartWorker_PeaceTalksFaction : SitePartWorker
         var mapParent = Find.World.worldObjects.MapParentAt(map.Tile);
         var faction = mapParent.GetComponent<QuestComp_PeaceTalks>().Faction;
         //TODO: check if it works
-        var incidentParms = StorytellerUtility.DefaultParmsNow(IncidentCategoryDefOf.FactionArrival, map);
+        var incidentParms = StorytellerUtility.DefaultParmsNow(IncidentCategories.FactionArrival, map);
         incidentParms.points = Mathf.Max(incidentParms.points, 250f);
         incidentParms.points *= 2f;
         var pawnGroupMakerParms = new PawnGroupMakerParms

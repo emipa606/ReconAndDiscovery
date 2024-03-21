@@ -12,7 +12,7 @@ public class ActivatedActionDef : Def
 
     public readonly bool hasDialog = false;
 
-    public readonly List<ThingDef> spawnedThings = new List<ThingDef>();
+    public readonly List<ThingDef> spawnedThings = [];
     private ActivatedAction actionObject;
 
     private Type activatedActionClass;

@@ -1,0 +1,338 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <RuleDef>
+    <defName>RD_CrashedShip</defName>
+    <symbol>crashedShip</symbol>
+    <resolvers>
+      <li Class="ReconAndDiscovery.Maps.SymbolResolver.SymbolResolver_CrashedShip">
+        <minRectSize>(2, 2)</minRectSize>
+      </li>
+    </resolvers>
+  </RuleDef>
+  <RuleDef>
+    <defName>RD_TriangularRoom</defName>
+    <symbol>triangularRoom</symbol>
+    <resolvers>
+      <li Class="ReconAndDiscovery.Maps.SymbolResolver.SymbolResolver_TriangularRoom">
+        <minRectSize>(2, 2)</minRectSize>
+      </li>
+    </resolvers>
+  </RuleDef>
+  <RuleDef>
+    <defName>RD_InsertFurnishing</defName>
+    <symbol>insertFurnishing</symbol>
+    <resolvers>
+      <li Class="ReconAndDiscovery.Maps.SymbolResolver.SymbolResolver_InsertFurnishing">
+        <minRectSize>(1, 1)</minRectSize>
+      </li>
+    </resolvers>
+  </RuleDef>
+  <RuleDef>
+    <defName>RD_MakeMainAdventureTrigger</defName>
+    <symbol>makeMainAdventureTrigger</symbol>
+    <resolvers>
+      <li Class="ReconAndDiscovery.Maps.SymbolResolver.SymbolResolver_MakeMainAdventureTrigger">
+        <minRectSize>(0, 0)</minRectSize>
+      </li>
+    </resolvers>
+  </RuleDef>
+  <RuleDef>
+    <defName>RD_PathOfDestruction</defName>
+    <symbol>pathOfDestruction</symbol>
+    <resolvers>
+      <li Class="ReconAndDiscovery.Maps.SymbolResolver.SymbolResolver_PathOfDestruction">
+        <minRectSize>(1, 1)</minRectSize>
+      </li>
+    </resolvers>
+  </RuleDef>
+  <RuleDef>
+    <defName>RD_EdgeFence</defName>
+    <symbol>edgeFence</symbol>
+    <resolvers>
+      <li Class="ReconAndDiscovery.Maps.SymbolResolver.SymbolResolver_EdgeFence">
+        <minRectSize>(5, 5)</minRectSize>
+      </li>
+    </resolvers>
+  </RuleDef>
+  <RuleDef>
+    <defName>RD_WireOutline</defName>
+    <symbol>wireOutline</symbol>
+    <resolvers>
+      <li Class="ReconAndDiscovery.Maps.SymbolResolver.SymbolResolver_WireOutline">
+        <minRectSize>(1, 1)</minRectSize>
+      </li>
+    </resolvers>
+  </RuleDef>
+  <RuleDef>
+    <defName>RD_RoomWithDoor</defName>
+    <symbol>roomWithDoor</symbol>
+    <resolvers>
+      <li Class="ReconAndDiscovery.Maps.SymbolResolver.SymbolResolver_RoomWithDoor">
+        <minRectSize>(3, 3)</minRectSize>
+      </li>
+    </resolvers>
+  </RuleDef>
+  <RuleDef>
+    <defName>RD_WallDoor</defName>
+    <symbol>wallDoor</symbol>
+    <resolvers>
+      <li Class="ReconAndDiscovery.Maps.SymbolResolver.SymbolResolver_WallDoor">
+        <minRectSize>(1, 1)</minRectSize>
+      </li>
+    </resolvers>
+  </RuleDef>
+  <RuleDef>
+    <defName>RD_AbandonedLab</defName>
+    <symbol>abandonedLab</symbol>
+    <resolvers>
+      <li Class="ReconAndDiscovery.Maps.SymbolResolver.SymbolResolver_AbandonedLab">
+        <minRectSize>(5, 5)</minRectSize>
+      </li>
+    </resolvers>
+  </RuleDef>
+  <RuleDef>
+    <defName>RD_OldMilitaryBase</defName>
+    <symbol>oldMilitaryBase</symbol>
+    <resolvers>
+      <li Class="ReconAndDiscovery.Maps.SymbolResolver.SymbolResolver_OldMilitaryBase">
+        <minRectSize>(20, 20)</minRectSize>
+      </li>
+    </resolvers>
+  </RuleDef>
+  <RuleDef>
+    <defName>RD_NestedRoomMaze</defName>
+    <symbol>nestedRoomMaze</symbol>
+    <resolvers>
+      <li Class="ReconAndDiscovery.Maps.SymbolResolver.SymbolResolver_NestedRoomMaze">
+        <minRectSize>(3, 3)</minRectSize>
+      </li>
+    </resolvers>
+  </RuleDef>
+  <RuleDef>
+    <defName>RD_EdgeShields</defName>
+    <symbol>edgeShields</symbol>
+    <resolvers>
+      <li Class="ReconAndDiscovery.Maps.SymbolResolver.SymbolResolver_EdgeShields">
+        <minRectSize>(2, 2)</minRectSize>
+      </li>
+    </resolvers>
+  </RuleDef>
+  <RuleDef>
+    <defName>RD_OldCastle</defName>
+    <symbol>oldCastle</symbol>
+    <resolvers>
+      <li Class="ReconAndDiscovery.Maps.SymbolResolver.SymbolResolver_OldCastle">
+        <minRectSize>(2, 2)</minRectSize>
+      </li>
+    </resolvers>
+  </RuleDef>
+  <RuleDef>
+    <defName>RD_PlaceTrigger</defName>
+    <symbol>placeTrigger</symbol>
+    <resolvers>
+      <li Class="ReconAndDiscovery.Maps.SymbolResolver.SymbolResolver_PlaceTrigger">
+        <minRectSize>(1, 1)</minRectSize>
+      </li>
+    </resolvers>
+  </RuleDef>
+  <!--
+  <RuleDef>
+    <defName>RD_Storage</defName>
+    <symbol>storage</symbol>
+    <resolvers>
+      <li Class="SymbolResolver_Storage" />
+    </resolvers>
+  </RuleDef>
+  
+  <RuleDef>
+    <defName>RD_Clear</defName>
+    <symbol>clear</symbol>
+    <resolvers>
+      <li Class="SymbolResolver_Clear" />
+    </resolvers>
+  </RuleDef>
+  
+  <RuleDef>
+    <defName>RD_Barracks</defName>
+    <symbol>barracks</symbol>
+    <resolvers>
+      <li Class="SymbolResolver_Barracks">
+        <minRectSize>(2, 2)</minRectSize>
+      </li>
+    </resolvers>
+  </RuleDef>
+  
+  <RuleDef>
+    <defName>RD_AncientTemple</defName>
+    <symbol>ancientTemple</symbol>
+    <resolvers>
+      <li Class="SymbolResolver_AncientTemple">
+        <minRectSize>(6, 5)</minRectSize>
+      </li>
+    </resolvers>
+  </RuleDef>
+  
+  <RuleDef>
+    <defName>RD_AncientShrinesGroup</defName>
+    <symbol>ancientShrinesGroup</symbol>
+    <resolvers>
+      <li Class="SymbolResolver_AncientShrinesGroup">
+        <minRectSize>(4, 3)</minRectSize>
+      </li>
+    </resolvers>
+  </RuleDef>
+  
+  <RuleDef>
+    <defName>RD_AncientShrine</defName>
+    <symbol>ancientShrine</symbol>
+    <resolvers>
+      <li Class="SymbolResolver_AncientShrine">
+        <minRectSize>(4, 3)</minRectSize>
+      </li>
+    </resolvers>
+  </RuleDef>
+  
+  <RuleDef>
+    <defName>RD_AncientCryptosleepCasket</defName>
+    <symbol>ancientCryptosleepCasket</symbol>
+    <resolvers>
+      <li Class="SymbolResolver_AncientCryptosleepCasket" />
+    </resolvers>
+  </RuleDef>
+  
+  <RuleDef>
+    <defName>RD_AncientRuins</defName>
+    <symbol>ancientRuins</symbol>
+    <resolvers>
+      <li Class="SymbolResolver_AncientRuins">
+        <minRectSize>(3, 3)</minRectSize>
+      </li>
+    </resolvers>
+  </RuleDef>
+  
+  <RuleDef>
+    <defName>RD_RandomMechanoidGroup</defName>
+    <symbol>randomMechanoidGroup</symbol>
+    <resolvers>
+      <li Class="SymbolResolver_RandomMechanoidGroup" />
+    </resolvers>
+  </RuleDef>
+  
+  <RuleDef>
+    <defName>RD_Hives</defName>
+    <symbol>hives</symbol>
+    <resolvers>
+      <li Class="SymbolResolver_Hives">
+        <minRectSize>(2, 2)</minRectSize>
+      </li>
+    </resolvers>
+  </RuleDef>
+  
+  <RuleDef>
+    <defName>RD_OutdoorsCampfire</defName>
+    <symbol>outdoorsCampfire</symbol>
+    <resolvers>
+      <li Class="SymbolResolver_OutdoorsCampfire" />
+    </resolvers>
+  </RuleDef>
+  
+  <RuleDef>
+    <defName>RD_FirefoamPopper</defName>
+    <symbol>firefoamPopper</symbol>
+    <resolvers>
+      <li Class="SymbolResolver_FirefoamPopper" />
+    </resolvers>
+  </RuleDef>
+  
+  <RuleDef>
+    <defName>RD_FillWithBeds</defName>
+    <symbol>fillWithBeds</symbol>
+    <resolvers>
+      <li Class="SymbolResolver_FillWithBeds" />
+    </resolvers>
+  </RuleDef>
+  
+  <RuleDef>
+    <defName>RD_RandomGeneralGoods</defName>
+    <symbol>randomGeneralGoods</symbol>
+    <resolvers>
+      <li Class="SymbolResolver_RandomGeneralGoods" />
+    </resolvers>
+  </RuleDef>
+  
+  <RuleDef>
+    <defName>RD_PawnGroup</defName>
+    <symbol>pawnGroup</symbol>
+    <resolvers>
+      <li Class="SymbolResolver_PawnGroup" />
+    </resolvers>
+  </RuleDef>
+  
+  <RuleDef>
+    <defName>RD_EmptyRoom</defName>
+    <symbol>emptyRoom</symbol>
+    <resolvers>
+      <li Class="SymbolResolver_EmptyRoom">
+        <minRectSize>(3, 3)</minRectSize>
+      </li>
+    </resolvers>
+  </RuleDef>
+  
+  <RuleDef>
+    <defName>RD_Doors</defName>
+    <symbol>doors</symbol>
+    <resolvers>
+      <li Class="SymbolResolver_Doors" />
+    </resolvers>
+  </RuleDef>
+  
+  <RuleDef>
+    <defName>RD_EdgeSandbags</defName>
+    <symbol>edgeSandbags</symbol>
+    <resolvers>
+      <li Class="SymbolResolver_EdgeSandbags" />
+    </resolvers>
+  </RuleDef>
+  
+  <RuleDef>
+    <defName>RD_EdgeWalls</defName>
+    <symbol>edgeWalls</symbol>
+    <resolvers>
+      <li Class="SymbolResolver_EdgeWalls" />
+    </resolvers>
+  </RuleDef>
+  
+  <RuleDef>
+    <defName>RD_Roof</defName>
+    <symbol>roof</symbol>
+    <resolvers>
+      <li Class="SymbolResolver_Roof" />
+    </resolvers>
+  </RuleDef>
+  
+  <RuleDef>
+    <defName>RD_FloorFill</defName>
+    <symbol>floor</symbol>
+    <resolvers>
+      <li Class="SymbolResolver_FloorFill" />
+    </resolvers>
+  </RuleDef>
+  
+  
+  <RuleDef>
+    <defName>RD_SinglePawn</defName>
+    <symbol>pawn</symbol>
+    <resolvers>
+      <li Class="SymbolResolver_SinglePawn" />
+    </resolvers>
+  </RuleDef>
+  
+  <RuleDef>
+    <defName>RD_SingleThing</defName>
+    <symbol>thing</symbol>
+    <resolvers>
+      <li Class="SymbolResolver_SingleThing" />
+    </resolvers>
+  </RuleDef>
+  -->
+</Defs>

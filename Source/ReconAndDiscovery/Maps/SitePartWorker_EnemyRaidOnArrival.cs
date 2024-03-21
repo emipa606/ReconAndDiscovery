@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using ReconAndDiscovery.DefOfs;
 using RimWorld;
 using Verse;
 
@@ -9,7 +10,7 @@ public class SitePartWorker_EnemyRaidOnArrival : SitePartWorker
 {
     public override void PostMapGenerate(Map map)
     {
-        var incidentParms = StorytellerUtility.DefaultParmsNow(IncidentCategoryDefOf.FactionArrival, map);
+        var incidentParms = StorytellerUtility.DefaultParmsNow(IncidentCategories.FactionArrival, map);
         incidentParms.forced = true;
         if (RCellFinder.TryFindRandomPawnEntryCell(out var spawnCenter, map, 0f, false, v => v.Standable(map)))
         {

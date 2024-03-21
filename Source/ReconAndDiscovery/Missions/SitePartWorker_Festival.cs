@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using ExpandedIncidents.Settings;
+using ReconAndDiscovery.DefOfs;
 using ReconAndDiscovery.Missions.QuestComp;
 using RimWorld;
 using UnityEngine;
@@ -46,7 +47,7 @@ public class SitePartWorker_Festival : SitePartWorker
     private void MakeTradeCaravan(Faction faction, IntVec3 spot, Map map)
     {
         var incidentParms = Find.Storyteller.storytellerComps[0]
-            .GenerateParms(IncidentCategoryDefOf.OrbitalVisitor, map);
+            .GenerateParms(IncidentCategories.OrbitalVisitor, map);
         incidentParms.points = Mathf.Min(800f, incidentParms.points);
         incidentParms.spawnCenter = spot;
         incidentParms.faction = faction;

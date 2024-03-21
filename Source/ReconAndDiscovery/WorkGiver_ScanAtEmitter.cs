@@ -19,17 +19,19 @@ public class WorkGiver_ScanAtEmitter : WorkGiver_Scanner
             select def;
         foreach (var singleDef in enumerable)
         {
-            bool Predicate(Thing x)
-            {
-                return ((HoloEmitter)x).GetComp<CompHoloEmitter>().SimPawn == null && p.CanReserve(x);
-            }
-
             var holoEmitter = (HoloEmitter)GenClosest.ClosestThingReachable(p.Position, p.Map,
                 ThingRequest.ForDef(singleDef), PathEndMode.InteractionCell, TraverseParms.For(p), 9999f,
                 Predicate);
             if (holoEmitter != null)
             {
                 return holoEmitter;
+            }
+
+            continue;
+
+            bool Predicate(Thing x)
+            {
+                return ((HoloEmitter)x).GetComp<CompHoloEmitter>().SimPawn == null && p.CanReserve(x);
             }
         }
 

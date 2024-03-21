@@ -51,7 +51,7 @@ public class JobDriver_LayDown_Scyther : JobDriver_LayDown
                 return;
             }
 
-            var injuriesTendable = GetActor().health.hediffSet.GetInjuriesTendable();
+            var injuriesTendable = GetActor().health.hediffSet.GetHediffsTendable();
             if (!injuriesTendable.Any())
             {
                 return;
@@ -60,7 +60,7 @@ public class JobDriver_LayDown_Scyther : JobDriver_LayDown
             var hediff_Injury = injuriesTendable.RandomElement();
             hediff_Injury.Heal(Rand.RangeInclusive(1, 3));
         };
-        toil.AddEndCondition(() => !GetActor().health.hediffSet.GetInjuriesTendable().Any()
+        toil.AddEndCondition(() => !GetActor().health.hediffSet.GetHediffsTendable().Any()
             ? JobCondition.Succeeded
             : JobCondition.Ongoing);
         yield return toil;

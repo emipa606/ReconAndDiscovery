@@ -68,7 +68,7 @@ public class CompTeleporter : ThingComp
     {
         CameraJumper.TryJump(CameraJumper.GetWorldTarget(parent));
         Find.WorldSelector.ClearSelection();
-        var tile = parent.Map.Tile;
+        _ = parent.Map.Tile;
         Find.WorldTargeter.BeginTargeting(ChoseWorldTarget, true, TargeterMouseAttachment, true);
     }
 
@@ -92,14 +92,6 @@ public class CompTeleporter : ThingComp
             Current.Game.CurrentMap = map;
             var targeter = Find.Targeter;
 
-            void ActionWhenFinished()
-            {
-                if (Find.Maps.Contains(myMap))
-                {
-                    Current.Game.CurrentMap = myMap;
-                }
-            }
-
             var targetParams = new TargetingParameters
             {
                 canTargetPawns = true,
@@ -117,6 +109,14 @@ public class CompTeleporter : ThingComp
                 }
             }, null, ActionWhenFinished, TargeterMouseAttachment);
             return true;
+
+            void ActionWhenFinished()
+            {
+                if (Find.Maps.Contains(myMap))
+                {
+                    Current.Game.CurrentMap = myMap;
+                }
+            }
         }
 
         Messages.Message("RD_YouCannotLock".Translate(),

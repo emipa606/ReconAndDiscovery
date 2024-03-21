@@ -80,12 +80,12 @@ public class SymbolResolver_NestedRoomMaze : RimWorld.BaseGen.SymbolResolver
     {
         var array = new char[3];
         char[] source =
-        {
+        [
             'N',
             'S',
             'E',
             'W'
-        };
+        ];
         array[0] = source.RandomElement();
         array[1] = source.RandomElement();
         if (array[1] == array[0])

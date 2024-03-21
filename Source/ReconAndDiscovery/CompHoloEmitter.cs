@@ -80,7 +80,7 @@ public class CompHoloEmitter : ThingComp
 
                 holoEmitter.GetComp<CompHoloEmitter>().SimPawn = null;
                 pawn = actingPawn;
-                parent.Map.areaManager.AllAreas.Remove(pawn.playerSettings.AreaRestriction);
+                parent.Map.areaManager.AllAreas.Remove(pawn.playerSettings.AreaRestrictionInPawnCurrentMap);
                 MakeValidAllowedZone();
                 break;
             }
@@ -174,8 +174,8 @@ public class CompHoloEmitter : ThingComp
             area_Allowed[parent.Map.cellIndices.CellToIndex(c)] = true;
         }
 
-        area_Allowed.SetLabel("RD_HoloEmitterAreaFor".Translate(pawn.Named("PAWN"))); //"HoloEmitter area for {0}."
-        pawn.playerSettings.AreaRestriction = area_Allowed;
+        area_Allowed.BaseLabel = "RD_HoloEmitterAreaFor".Translate(pawn.Named("PAWN")); //"HoloEmitter area for {0}."
+        pawn.playerSettings.AreaRestrictionInPawnCurrentMap = area_Allowed;
     }
 
     public override void CompTickRare()

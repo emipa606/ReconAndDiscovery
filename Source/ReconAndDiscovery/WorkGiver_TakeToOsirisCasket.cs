@@ -18,17 +18,19 @@ public class WorkGiver_TakeToOsirisCasket : WorkGiver_Scanner
             select def;
         foreach (var singleDef in enumerable)
         {
-            bool Predicate(Thing x)
-            {
-                return !((Building_CryptosleepCasket)x).HasAnyContents && p.CanReserve(x);
-            }
-
             var building_CryptosleepCasket = (Building_CryptosleepCasket)GenClosest.ClosestThingReachable(
                 p.Position, p.Map, ThingRequest.ForDef(singleDef), PathEndMode.InteractionCell,
                 TraverseParms.For(p), 9999f, Predicate);
             if (building_CryptosleepCasket != null)
             {
                 return building_CryptosleepCasket;
+            }
+
+            continue;
+
+            bool Predicate(Thing x)
+            {
+                return !((Building_CryptosleepCasket)x).HasAnyContents && p.CanReserve(x);
             }
         }
 
@@ -37,11 +39,6 @@ public class WorkGiver_TakeToOsirisCasket : WorkGiver_Scanner
             select def;
         foreach (var singleDef2 in enumerable)
         {
-            bool Predicate2(Thing x)
-            {
-                return !((Building_CryptosleepCasket)x).HasAnyContents && p.CanReserve(x);
-            }
-
             var building_CryptosleepCasket2 =
                 (Building_CryptosleepCasket)GenClosest.ClosestThingReachable
                 (p.Position, p.Map, ThingRequest.ForDef(singleDef2),
@@ -51,6 +48,13 @@ public class WorkGiver_TakeToOsirisCasket : WorkGiver_Scanner
             {
                 return building_CryptosleepCasket2;
             }
+
+            continue;
+
+            bool Predicate2(Thing x)
+            {
+                return !((Building_CryptosleepCasket)x).HasAnyContents && p.CanReserve(x);
+            }
         }
 
         return null;
@@ -58,7 +62,7 @@ public class WorkGiver_TakeToOsirisCasket : WorkGiver_Scanner
 
     public override Job JobOnThing(Pawn pawn, Thing t, bool forced = false)
     {
-        if (!(t is Corpse corpse))
+        if (t is not Corpse corpse)
         {
             return null;
         }

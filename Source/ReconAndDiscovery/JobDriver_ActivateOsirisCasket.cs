@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using ReconAndDiscovery.DefOfs;
 using RimWorld;
 using Verse;
 using Verse.AI;
@@ -44,11 +45,11 @@ public class JobDriver_ActivateOsirisCasket : JobDriver
             initAction = delegate
             {
                 GenExplosion.DoExplosion(Casket.Position, Casket.Map, 50f, DamageDefOf.EMP, Casket,
-                    -1, -1f, SoundDefOf.EnergyShield_Broken);
+                    -1, -1f, Sounds.EnergyShield_Broken);
                 Casket.GetComp<CompOsiris>().HealContained();
                 Casket.Map.weatherManager.TransitionTo(WeatherDef.Named("Rain"));
                 var incidentParms =
-                    StorytellerUtility.DefaultParmsNow(IncidentCategoryDefOf.FactionArrival, Casket.Map);
+                    StorytellerUtility.DefaultParmsNow(IncidentCategories.FactionArrival, Casket.Map);
                 incidentParms.forced = true;
                 incidentParms.target = Casket.Map;
                 var qi = new QueuedIncident(

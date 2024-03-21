@@ -16,7 +16,7 @@ public class GenStep_ScatteredManhunters : GenStep
         var list = new List<Pawn>();
         for (var i = 0; i < 50; i++)
         {
-            if (!ManhunterPackIncidentUtility.TryFindManhunterAnimalKind(pointsRange.RandomInRange, map.Tile,
+            if (!AggressiveAnimalIncidentUtility.TryFindAggressiveAnimalKind(pointsRange.RandomInRange, map.Tile,
                     out var pawnKindDef))
             {
                 return;

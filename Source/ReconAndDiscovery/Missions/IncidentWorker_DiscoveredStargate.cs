@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using ReconAndDiscovery.DefOfs;
 using RimWorld;
 using RimWorld.Planet;
 using Verse;
@@ -19,33 +20,34 @@ public class IncidentWorker_DiscoveredStargate : IncidentWorker
 
         return randomChance switch
         {
-            < 0.25 => new List<SitePart>
-            {
+            < 0.25 =>
+            [
                 new SitePart(site, SiteDefOfReconAndDiscovery.RD_AbandonedCastle,
                     SiteDefOfReconAndDiscovery.RD_AbandonedCastle.Worker.GenerateDefaultParams(
                         StorytellerUtility.DefaultSiteThreatPointsNow(), tile, faction)) { hidden = true }
-            },
-            < 0.5 => new List<SitePart>
-            {
+            ],
+            < 0.5 =>
+            [
                 new SitePart(site, SiteDefOfReconAndDiscovery.RD_AbandonedColony,
                     SiteDefOfReconAndDiscovery.RD_AbandonedColony.Worker.GenerateDefaultParams(
                         StorytellerUtility.DefaultSiteThreatPointsNow(), tile, faction)) { hidden = true }
-            },
-            < 0.75 => new List<SitePart>
-            {
+            ],
+            < 0.75 =>
+            [
                 new SitePart(site, SitePartDefOf.PreciousLump,
                     SitePartDefOf.PreciousLump.Worker.GenerateDefaultParams(
                         StorytellerUtility.DefaultSiteThreatPointsNow(), tile, faction)) { hidden = true }
-            },
-            _ => new List<SitePart>
-            {
-                new SitePart(site, SitePartDefOf.Outpost,
-                    SitePartDefOf.Outpost.Worker.GenerateDefaultParams(
+            ],
+            _ =>
+            [
+                new SitePart(site, SiteParts.Outpost,
+                    SiteParts.Outpost.Worker.GenerateDefaultParams(
                         StorytellerUtility.DefaultSiteThreatPointsNow(), tile, faction)) { hidden = true },
-                new SitePart(site, SitePartDefOf.Turrets,
-                    SitePartDefOf.Turrets.Worker.GenerateDefaultParams(
+
+                new SitePart(site, SiteParts.Turrets,
+                    SiteParts.Turrets.Worker.GenerateDefaultParams(
                         StorytellerUtility.DefaultSiteThreatPointsNow(), tile, faction)) { hidden = true }
-            }
+            ]
         };
     }
 

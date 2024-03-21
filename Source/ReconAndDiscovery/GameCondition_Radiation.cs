@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using ExpandedIncidents.Settings;
+using ReconAndDiscovery.DefOfs;
 using RimWorld;
 using UnityEngine;
 using Verse;
@@ -50,13 +51,13 @@ public class GameCondition_Radiation : GameCondition
                     partDef = DefDatabase<BodyPartDef>.GetNamed("Lung");
                     break;
                 case < 0.4f:
-                    partDef = BodyPartDefOf.Stomach;
+                    partDef = BodyParts.Stomach;
                     break;
                 case < 0.6f:
-                    partDef = BodyPartDefOf.Liver;
+                    partDef = BodyParts.Liver;
                     break;
                 case < 0.8f:
-                    partDef = BodyPartDefOf.Brain;
+                    partDef = BodyParts.Brain;
                     break;
             }
         }
@@ -102,8 +103,7 @@ public class GameCondition_Radiation : GameCondition
 
     private bool IsProtectedAt(Map map, IntVec3 c)
     {
-        var affectedMaps = AffectedMaps;
-        bool result;
+        _ = AffectedMaps;
         var room = c.GetRoom(map);
         if (room == null)
         {

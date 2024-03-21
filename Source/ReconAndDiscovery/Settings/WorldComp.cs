@@ -2,12 +2,8 @@ using RimWorld.Planet;
 
 namespace ExpandedIncidents.Settings;
 
-internal class WorldComp : WorldComponent
+internal class WorldComp(World world) : WorldComponent(world)
 {
-    public WorldComp(World world) : base(world)
-    {
-    }
-
     public override void FinalizeInit()
     {
         base.FinalizeInit();

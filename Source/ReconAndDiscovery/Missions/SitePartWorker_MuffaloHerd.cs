@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using ReconAndDiscovery.DefOfs;
 using RimWorld;
 using Verse;
 
@@ -10,7 +11,7 @@ public class SitePartWorker_MuffaloHerd : SitePartWorker
     private void QueueFactionArrival(Faction faction, Map map)
     {
         //TODO: check if it works
-        var incidentParms = StorytellerUtility.DefaultParmsNow(IncidentCategoryDefOf.FactionArrival, map);
+        var incidentParms = StorytellerUtility.DefaultParmsNow(IncidentCategories.FactionArrival, map);
         incidentParms.forced = true;
         if (RCellFinder.TryFindRandomPawnEntryCell(out var spawnCenter, map, 0f, false, v => v.Standable(map)))
         {
@@ -78,7 +79,7 @@ public class SitePartWorker_MuffaloHerd : SitePartWorker
             return;
         }
 
-        var incidentParms = StorytellerUtility.DefaultParmsNow(IncidentCategoryDefOf.FactionArrival, map);
+        var incidentParms = StorytellerUtility.DefaultParmsNow(IncidentCategories.FactionArrival, map);
         incidentParms.forced = true;
         incidentParms.points = 100f;
 

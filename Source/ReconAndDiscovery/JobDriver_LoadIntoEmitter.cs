@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using ReconAndDiscovery.DefOfs;
 using ReconAndDiscovery.Things;
 using RimWorld;
 using Verse;
@@ -31,7 +32,7 @@ public class JobDriver_LoadIntoEmitter : JobDriver
         var list = new List<Trait>();
         foreach (var trait in generatePawn.story.traits.allTraits)
         {
-            if (trait.def == TraitDefOf.Psychopath || trait.def == TraitDefOf.Cannibal ||
+            if (trait.def == TraitDefOf.Psychopath || trait.def == Traits.Cannibal ||
                 trait.def == TraitDefOf.Pyromaniac)
             {
                 list.Add(trait);
