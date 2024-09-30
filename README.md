@@ -1,4 +1,4 @@
-# ReconAndDiscovery
+# [Recon And Discovery (Continued)](https://steamcommunity.com/sharedfiles/filedetails/?id=2035131107)
 
 ![Image](https://i.imgur.com/buuPQel.png)
 
@@ -14,15 +14,13 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=935948526
 - New new icons for quest sites, provided by IceMaverick
 - Harmony and Hugslib dependencies removed
 - Added settings for incident baseChances
-- Added support for https://steamcommunity.com/sharedfiles/filedetails/?id=2451324814][SYR] Trait Value
+- Added support for [[SYR] Trait Value](https://steamcommunity.com/sharedfiles/filedetails/?id=2451324814)
 
-- Most of the issues with the mod is now fixed by Garethp, for full info see https://github.com/emipa606/ReconAndDiscovery/blob/main/Source/Progress.md]Progress
+- Most of the issues with the mod is now fixed by Garethp, for full info see [Progress](https://github.com/emipa606/ReconAndDiscovery/blob/main/Source/Progress.md)
 
 ![Image](https://i.imgur.com/pufA0kM.png)
-
 	
 ![Image](https://i.imgur.com/Z4GOv8H.png)
-
 
 New Sites!
 
@@ -89,13 +87,12 @@ Stargate raids: A stargate allows you to jump into the heart of another location
 
 -  See if the the error persists if you just have this mod and its requirements active.
 -  If not, try adding your other mods until it happens again.
--  Post your error-log using https://steamcommunity.com/workshop/filedetails/?id=818773962]HugsLib or the standalone https://steamcommunity.com/sharedfiles/filedetails/?id=2873415404]Uploader and command Ctrl+F12
+-  Post your error-log using [HugsLib](https://steamcommunity.com/workshop/filedetails/?id=818773962) or the standalone [Uploader](https://steamcommunity.com/sharedfiles/filedetails/?id=2873415404) and command Ctrl+F12
 -  For best support, please use the Discord-channel for error-reporting.
 -  Do not report errors by making a discussion-thread, I get no notification of that.
 -  If you have the solution for a problem, please post it to the GitHub repository.
--  Use https://github.com/RimSort/RimSort/releases/latest]RimSort to sort your mods
+-  Use [RimSort](https://github.com/RimSort/RimSort/releases/latest) to sort your mods
 
 
 
-https://steamcommunity.com/sharedfiles/filedetails/changelog/2035131107]![Image](https://img.shields.io/github/v/release/emipa606/ReconAndDiscovery?label=latest%20version&style=plastic&color=9f1111&labelColor=black)
-
+[![Image](https://img.shields.io/github/v/release/emipa606/ReconAndDiscovery?label=latest%20version&style=plastic&color=9f1111&labelColor=black)](https://steamcommunity.com/sharedfiles/filedetails/changelog/2035131107)
