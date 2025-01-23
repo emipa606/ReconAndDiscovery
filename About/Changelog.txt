@@ -1,5 +1,8 @@
 # Changelog for ReconAndDiscovery
 
+1.5.2 - Fixed herd migration spawning before the map is unfogged
+
+
 1.5.1 - Updated reference to the continued version of [SYR] Trait Value
 
 

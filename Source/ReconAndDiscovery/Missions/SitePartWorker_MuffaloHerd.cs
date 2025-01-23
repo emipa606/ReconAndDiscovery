@@ -2,12 +2,17 @@
 using System.Linq;
 using ReconAndDiscovery.DefOfs;
 using RimWorld;
+using RimWorld.Planet;
 using Verse;
 
 namespace ReconAndDiscovery.Missions;
 
 public class SitePartWorker_MuffaloHerd : SitePartWorker
 {
+    private Map currentMap;
+
+    private bool spawned;
+
     private void QueueFactionArrival(Faction faction, Map map)
     {
         //TODO: check if it works
@@ -71,15 +76,29 @@ public class SitePartWorker_MuffaloHerd : SitePartWorker
     public override void PostMapGenerate(Map map)
     {
         base.PostMapGenerate(map);
-
-        MakeMuffalo(map);
+        currentMap = map;
+        spawned = false;
         QueueArrivals(map);
+    }
+
+    public override void SitePartWorkerTick(SitePart sitePart)
+    {
+        base.SitePartWorkerTick(sitePart);
+
+        if (spawned)
+        {
+            return;
+        }
+
+        spawned = true;
+
+        MakeMuffalo(currentMap);
         if (!Rand.Chance(0.05f))
         {
             return;
         }
 
-        var incidentParms = StorytellerUtility.DefaultParmsNow(IncidentCategories.FactionArrival, map);
+        var incidentParms = StorytellerUtility.DefaultParmsNow(IncidentCategories.FactionArrival, currentMap);
         incidentParms.forced = true;
         incidentParms.points = 100f;
 
