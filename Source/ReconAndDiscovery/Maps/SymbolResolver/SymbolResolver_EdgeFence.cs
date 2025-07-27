@@ -10,10 +10,7 @@ public class SymbolResolver_EdgeFence : RimWorld.BaseGen.SymbolResolver
     {
         var map = BaseGen.globalSettings.map;
         var rect = rp.rect;
-        if (rp.wallStuff == null)
-        {
-            rp.wallStuff = BaseGenUtility.RandomCheapWallStuff(Faction.OfPlayer);
-        }
+        rp.wallStuff ??= BaseGenUtility.RandomCheapWallStuff(Faction.OfPlayer);
 
         var num = -1;
         foreach (var loc in rect.EdgeCells)

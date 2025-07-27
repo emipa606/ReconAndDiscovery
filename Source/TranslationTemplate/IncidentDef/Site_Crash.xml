@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: Crashed Ship -->
+  <RD_CrashedShip.label>Crashed Ship</RD_CrashedShip.label>
+  <!-- EN: Starship down -->
+  <RD_CrashedShip.letterLabel>Starship down</RD_CrashedShip.letterLabel>
+  <!-- EN: Our comms console detected a distress call from a ship shortly before it crashed! Other factions may try to loot the wreck, so you will only have a few days to visit the site! -->
+  <RD_CrashedShip.letterText>Our comms console detected a distress call from a ship shortly before it crashed! Other factions may try to loot the wreck, so you will only have a few days to visit the site!</RD_CrashedShip.letterText>
+</LanguageData>

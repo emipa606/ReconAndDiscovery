@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ReconAndDiscovery.Triggers.ActivatedActionDef Name="BaseActivatedAction">
+    <defName>RD_BaseActivatedAction</defName>
+    <activatedActionClass>ReconAndDiscovery.Triggers.ActivatedAction</activatedActionClass>
+    <numThingsToSpawn>0~0</numThingsToSpawn>
+    <spawnedThingStackSize>1~1</spawnedThingStackSize>
+    <spawnedThings>
+      <li>Silver</li>
+    </spawnedThings>
+    <numPawnsToSpawn>0~0</numPawnsToSpawn>
+    <pawnKinds>
+    </pawnKinds>
+    <effectRadius>1</effectRadius>
+    <hasDialog>false</hasDialog>
+    <dialogText>
+    </dialogText>
+  </ReconAndDiscovery.Triggers.ActivatedActionDef>
+  <ReconAndDiscovery.Triggers.ActivatedActionDef Name="LuciferiumGas" ParentName="BaseActivatedAction">
+    <defName>RD_LuciferiumGas</defName>
+    <activatedActionClass>ReconAndDiscovery.Triggers.ActivatedAction_LuciferiumGas</activatedActionClass>
+    <numThingsToSpawn>1~1</numThingsToSpawn>
+    <spawnedThingStackSize>4~7</spawnedThingStackSize>
+    <spawnedThings>
+      <li>Luciferium</li>
+    </spawnedThings>
+    <numPawnsToSpawn>-2~1</numPawnsToSpawn>
+    <pawnKinds>
+      <li>AncientSoldier</li>
+    </pawnKinds>
+    <effectRadius>3</effectRadius>
+    <hasDialog>true</hasDialog>
+    <dialogText>A cloud of red vapour wafts out, catching everyone nearby. Clearly this base had experimented with aerosolled luciferium</dialogText>
+  </ReconAndDiscovery.Triggers.ActivatedActionDef>
+  <ReconAndDiscovery.Triggers.ActivatedActionDef Name="PsionicLandmine" ParentName="BaseActivatedAction">
+    <defName>RD_PsionicLandmine</defName>
+    <activatedActionClass>ReconAndDiscovery.Triggers.ActivatedAction_PsionicLandmine</activatedActionClass>
+    <numThingsToSpawn>0~0</numThingsToSpawn>
+    <spawnedThingStackSize>0~0</spawnedThingStackSize>
+    <spawnedThings>
+    </spawnedThings>
+    <effectRadius>12</effectRadius>
+    <hasDialog>true</hasDialog>
+  </ReconAndDiscovery.Triggers.ActivatedActionDef>
+  <ReconAndDiscovery.Triggers.ActivatedActionDef Name="SmallGold" ParentName="BaseActivatedAction">
+    <defName>RD_SmallGold</defName>
+    <numThingsToSpawn>1~2</numThingsToSpawn>
+    <spawnedThingStackSize>20~90</spawnedThingStackSize>
+    <spawnedThings>
+      <li>Gold</li>
+    </spawnedThings>
+  </ReconAndDiscovery.Triggers.ActivatedActionDef>
+  <ReconAndDiscovery.Triggers.ActivatedActionDef Name="SmallSilver" ParentName="BaseActivatedAction">
+    <defName>RD_SmallSilver</defName>
+    <numThingsToSpawn>1~2</numThingsToSpawn>
+    <spawnedThingStackSize>80~300</spawnedThingStackSize>
+    <spawnedThings>
+      <li>Silver</li>
+    </spawnedThings>
+  </ReconAndDiscovery.Triggers.ActivatedActionDef>
+  <ReconAndDiscovery.Triggers.ActivatedActionDef Name="MadAnimal" ParentName="BaseActivatedAction">
+    <defName>RD_MadAnimal</defName>
+    <numThingsToSpawn>-1~1</numThingsToSpawn>
+    <spawnedThingStackSize>10~60</spawnedThingStackSize>
+    <spawnedThings>
+      <li>Silver</li>
+    </spawnedThings>
+    <numPawnsToSpawn>1~3</numPawnsToSpawn>
+    <pawnKinds>
+      <li>Megascarab</li>
+      <li>Bear_Grizzly</li>
+      <li>Cougar</li>
+      <li>Lynx</li>
+      <li>Spelopede</li>
+      <li>Megaspider</li>
+      <li>Cobra</li>
+      <li>Boomalope</li>
+      <li>Wolf_Timber</li>
+      <li>Fox_Red</li>
+      <li>Warg</li>
+      <li>Elephant</li>
+    </pawnKinds>
+  </ReconAndDiscovery.Triggers.ActivatedActionDef>
+</Defs>

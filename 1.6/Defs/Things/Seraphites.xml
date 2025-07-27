@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="DrugPillBase">
+    <defName>RD_Seraphites</defName>
+    <label>seraphites</label>
+    <description>An experimental strain of self-replicating luciferium nanites. They have similar advantages to luciferium itself, but as they self-replicate form consumed resources they do not lead to addiction, and indeed will cure an outstanding luciferium addiction.</description>
+    <graphicData>
+      <texPath>Things/Items/Seraphites</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <rotatable>false</rotatable>
+    <statBases>
+      <MarketValue>1000</MarketValue>
+      <Mass>0.01</Mass>
+    </statBases>
+    <techLevel>Spacer</techLevel>
+    <tradeability>None</tradeability>
+    <ingestible>
+      <drugCategory>Medical</drugCategory>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>RD_Seraphites</hediffDef>
+          <severity>1.00</severity>
+          <doToGeneratedPawnIfAddicted>false</doToGeneratedPawnIfAddicted>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <comps>
+      <li Class="CompProperties_Drug">
+        <chemical>Luciferium</chemical>
+        <addictiveness>1.00</addictiveness>
+        <needLevelOffset>1.00</needLevelOffset>
+        <listOrder>1010</listOrder>
+      </li>
+    </comps>
+  </ThingDef>
+  <HediffDef>
+    <defName>RD_Seraphites</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>seraphites</label>
+    <description>seraphites</description>
+    <defaultLabelColor>(0.5,0.5,0.9)</defaultLabelColor>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <maxSeverity>1.0</maxSeverity>
+    <comps>
+      <li Class="HediffCompProperties_HealPermanentWounds" />
+      <li Class="ReconAndDiscovery.Things.HediffCompProperties_Seraphites" />
+    </comps>
+    <stages>
+      <li>
+        <hungerRateFactor>1.5</hungerRateFactor>
+        <painFactor>0.8</painFactor>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.10</offset>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>0.05</offset>
+          </li>
+          <li>
+            <capacity>Sight</capacity>
+            <offset>0.15</offset>
+          </li>
+          <li>
+            <capacity>BloodFiltration</capacity>
+            <offset>0.70</offset>
+          </li>
+          <li>
+            <capacity>BloodPumping</capacity>
+            <offset>0.15</offset>
+          </li>
+          <li>
+            <capacity>Metabolism</capacity>
+            <offset>0.20</offset>
+          </li>
+          <li>
+            <capacity>Breathing</capacity>
+            <offset>0.10</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+</Defs>

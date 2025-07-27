@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: crashed ship -->
+  <RD_CrashedShip.label>crashed ship</RD_CrashedShip.label>
+  <!-- EN: The approximate place a ship came down. -->
+  <RD_CrashedShip.description>The approximate place a ship came down.</RD_CrashedShip.description>
+  <!-- EN: raid -->
+  <RD_EnemyRaidOnArrival.label>raid</RD_EnemyRaidOnArrival.label>
+  <!-- EN: An enemy faction will arrive here imminently. -->
+  <RD_EnemyRaidOnArrival.description>An enemy faction will arrive here imminently.</RD_EnemyRaidOnArrival.description>
+  <!-- EN: mechanoids -->
+  <RD_MechanoidForces.label>mechanoids</RD_MechanoidForces.label>
+  <!-- EN: A mechanoid hive has forces active here. -->
+  <RD_MechanoidForces.description>A mechanoid hive has forces active here.</RD_MechanoidForces.description>
+  <!-- EN: medical emergency -->
+  <RD_MedicalEmergency.label>medical emergency</RD_MedicalEmergency.label>
+  <!-- EN: There is an urgent need for medical assistance here. -->
+  <RD_MedicalEmergency.description>There is an urgent need for medical assistance here.</RD_MedicalEmergency.description>
+  <!-- EN: rare beasts -->
+  <RD_RareBeasts.label>rare beasts</RD_RareBeasts.label>
+  <!-- EN: Rare, unusual animals roam near here. -->
+  <RD_RareBeasts.description>Rare, unusual animals roam near here.</RD_RareBeasts.description>
+  <!-- EN: manhunters -->
+  <RD_ScatteredManhunters.label>manhunters</RD_ScatteredManhunters.label>
+  <!-- EN: Trapped animals going crazy. -->
+  <RD_ScatteredManhunters.description>Trapped animals going crazy.</RD_ScatteredManhunters.description>
+  <!-- EN: treasure -->
+  <RD_ScatteredTreasure.label>treasure</RD_ScatteredTreasure.label>
+  <!-- EN: Some scattered valuables. -->
+  <RD_ScatteredTreasure.description>Some scattered valuables.</RD_ScatteredTreasure.description>
+</LanguageData>

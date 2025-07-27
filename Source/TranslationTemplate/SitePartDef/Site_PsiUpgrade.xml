@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: Abandoned military facility -->
+  <RD_PsiMachine.label>Abandoned military facility</RD_PsiMachine.label>
+  <!-- EN: The rumoured location of the psychic warriors' base. -->
+  <RD_PsiMachine.description>The rumoured location of the psychic warriors' base.</RD_PsiMachine.description>
+  <!-- EN: computer -->
+  <RD_SitePart_WarIdol.label>computer</RD_SitePart_WarIdol.label>
+  <!-- EN: A psionic emanator, used by advanced military organisations for psychic warfare. -->
+  <RD_SitePart_WarIdol.description>A psionic emanator, used by advanced military organisations for psychic warfare.</RD_SitePart_WarIdol.description>
+</LanguageData>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <SitePartDef>
+    <defName>RD_AbandonedColony</defName>
+    <label>abandoned colony</label>
+    <description>An abandoned colony.</description>
+    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+    <expandingIconTexture>World/WorldObjects/Expanding/DestroyedSettlement</expandingIconTexture>
+  </SitePartDef>
+  <GenStepDef>
+    <defName>RD_AbandonedColony</defName>
+    <linkWithSite>RD_AbandonedColony</linkWithSite>
+    <order>500</order>
+    <genStep Class="GenStep_Outpost">
+      <allowGeneratingThronerooms>true</allowGeneratingThronerooms>
+      <settlementDontGeneratePawns>true</settlementDontGeneratePawns>
+      <allowGeneratingFarms>true</allowGeneratingFarms>
+      <generateLoot>true</generateLoot>
+    </genStep>
+  </GenStepDef>
+  <IncidentDef>
+    <defName>RD_AbandonedColonyAdventure</defName>
+    <label>abandoned colony</label>
+    <category>Misc</category>
+    <targetTags>
+      <li>Caravan</li>
+    </targetTags>
+    <workerClass>ReconAndDiscovery.Missions.IncidentWorker_AbandonedColony</workerClass>
+    <baseChance>1.5</baseChance>
+    <letterLabel>Ghost town</letterLabel>
+    <letterText>Your caravan has come across an abandoned colony.</letterText>
+    <letterDef>PositiveEvent</letterDef>
+    <minRefireDays>90</minRefireDays>
+  </IncidentDef>
+  <SitePartDef>
+    <defName>RD_HoloDisk</defName>
+    <label>holodisk</label>
+    <description>There is a holodisk here.</description>
+    <workerClass>ReconAndDiscovery.Maps.SitePartWorker_HoloDisk</workerClass>
+    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+    <expandingIconTexture>World/WorldObjects/Expanding/Sites/Manhunters</expandingIconTexture>
+    <applyFactionColorToSiteTexture>false</applyFactionColorToSiteTexture>
+    <showFactionInInspectString>false</showFactionInInspectString>
+    <badEvenIfNoMap>true</badEvenIfNoMap>
+    <requiresFaction>false</requiresFaction>
+  </SitePartDef>
+  <SitePartDef>
+    <defName>RD_Stargate</defName>
+    <label>stargate</label>
+    <description>Thehis site contains a stargate.</description>
+    <workerClass>ReconAndDiscovery.Maps.SitePartWorker_Stargate</workerClass>
+    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+    <expandingIconTexture>World/WorldObjects/Stargate</expandingIconTexture>
+    <applyFactionColorToSiteTexture>false</applyFactionColorToSiteTexture>
+    <showFactionInInspectString>false</showFactionInInspectString>
+    <badEvenIfNoMap>true</badEvenIfNoMap>
+    <requiresFaction>false</requiresFaction>
+  </SitePartDef>
+</Defs>

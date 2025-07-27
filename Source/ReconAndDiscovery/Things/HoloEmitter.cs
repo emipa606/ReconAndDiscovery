@@ -32,10 +32,7 @@ public class HoloEmitter : Building, IThingHolder
     public override void TickRare()
     {
         base.TickRare();
-        if (innerContainer == null)
-        {
-            innerContainer = new ThingOwner<Thing>(this, false);
-        }
+        innerContainer ??= new ThingOwner<Thing>(this, false);
 
         var enumerable = from t in innerContainer
             where t is Corpse

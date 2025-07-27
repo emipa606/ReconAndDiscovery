@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: Faulty generator -->
+  <RD_QuakesQuest.label>Faulty generator</RD_QuakesQuest.label>
+  <!-- EN: The source of the tremors. -->
+  <RD_QuakesQuest.description>The source of the tremors.</RD_QuakesQuest.description>
+  <!-- EN: generator -->
+  <RD_SitePart_FaultyGenerator.label>generator</RD_SitePart_FaultyGenerator.label>
+  <!-- EN: A generator! -->
+  <RD_SitePart_FaultyGenerator.description>A generator!</RD_SitePart_FaultyGenerator.description>
+</LanguageData>

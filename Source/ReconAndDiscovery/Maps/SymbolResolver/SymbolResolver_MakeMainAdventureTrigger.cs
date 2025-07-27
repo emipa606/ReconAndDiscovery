@@ -23,7 +23,7 @@ public class SymbolResolver_MakeMainAdventureTrigger : RimWorld.BaseGen.SymbolRe
             select t;
         if (!source.Any())
         {
-            var allRooms = map.regionGrid.allRooms;
+            var allRooms = map.regionGrid.AllRooms;
             if (allRooms.Count == 0)
             {
                 RaD_Mod.LogError("Could not find contained room for adventure trigger!");

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: tradefair -->
+  <RD_TradeFair.label>tradefair</RD_TradeFair.label>
+  <!-- EN: Trade Fair -->
+  <RD_TradeFair.letterLabel>Trade Fair</RD_TradeFair.letterLabel>
+  <!-- EN: {0} are hosting a trade fair. Your people are invited to attend. -->
+  <RD_TradeFair.letterText>{0} are hosting a trade fair. Your people are invited to attend.</RD_TradeFair.letterText>
+</LanguageData>

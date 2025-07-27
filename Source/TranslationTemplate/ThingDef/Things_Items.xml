@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: Devilcream -->
+  <RD_Devilcream.label>Devilcream</RD_Devilcream.label>
+  <!-- EN: The milk of devillos. Naturally very rich, and it keeps much longer than muffalo milk. -->
+  <RD_Devilcream.description>The milk of devillos. Naturally very rich, and it keeps much longer than muffalo milk.</RD_Devilcream.description>
+  <!-- EN: HoloDisk -->
+  <RD_HoloDisk.label>HoloDisk</RD_HoloDisk.label>
+  <!-- EN: An AI core pre-loaded with the persona of a technical genius. -->
+  <RD_HoloDisk.description>An AI core pre-loaded with the persona of a technical genius.</RD_HoloDisk.description>
+  <!-- EN: Mote -->
+  <RD_Mote_Laurel.label>Mote</RD_Mote_Laurel.label>
+</LanguageData>

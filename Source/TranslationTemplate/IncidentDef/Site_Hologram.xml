@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: abandoned colony -->
+  <RD_AbandonedColonyAdventure.label>abandoned colony</RD_AbandonedColonyAdventure.label>
+  <!-- EN: Ghost town -->
+  <RD_AbandonedColonyAdventure.letterLabel>Ghost town</RD_AbandonedColonyAdventure.letterLabel>
+  <!-- EN: Your caravan has come across an abandoned colony. -->
+  <RD_AbandonedColonyAdventure.letterText>Your caravan has come across an abandoned colony.</RD_AbandonedColonyAdventure.letterText>
+</LanguageData>

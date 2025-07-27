@@ -10,7 +10,7 @@ namespace ReconAndDiscovery.Maps;
 
 public class SitePartWorker_PeaceTalksFaction : SitePartWorker
 {
-    public FloatRange casualtiesRange = new FloatRange(400f, 1000f);
+    public FloatRange casualtiesRange = new(400f, 1000f);
 
     public override void PostMapGenerate(Map map)
     {
@@ -48,7 +48,7 @@ public class SitePartWorker_PeaceTalksFaction : SitePartWorker
             list.Add(faction.leader);
         }
 
-        LordJob lordJob = new LordJob_DefendBase(faction, intVec);
+        LordJob lordJob = new LordJob_DefendBase(faction, intVec, 0);
         LordMaker.MakeNewLord(faction, lordJob, map, list);
     }
 }

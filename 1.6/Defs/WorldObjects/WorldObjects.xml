@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!--<WorldObjectDef>
+    <defName>RD_WorldAdventure</defName>
+    <label>adventure</label>
+    <description>A mystery waiting to be explored.</description>
+    <worldObjectClass>ReconAndDiscovery.WorldAdventure</worldObjectClass>
+    <texture>WorldObjects/AdventureSymbol</texture>
+    <expandingIcon>true</expandingIcon>
+    <expandingIconTexture>WorldObjects/AdventureSymbol</expandingIconTexture>
+    <expandingIconPriority>5</expandingIconPriority>
+  </WorldObjectDef> 
+  -->
+  <WorldObjectDef>
+    <defName>RD_Adventure</defName>
+    <worldObjectClass>Site</worldObjectClass>
+    <expandingIcon>true</expandingIcon>
+    <expandingIconPriority>70</expandingIconPriority>
+    <comps>
+      <li Class="WorldObjectCompProperties_Timeout" />
+      <li Class="WorldObjectCompProperties_TimedForcedExit" />
+      <li Class="WorldObjectCompProperties_ItemStashContents" />
+      <li Class="WorldObjectCompProperties_FormCaravan" />
+      <li Class="WorldObjectCompProperties_TimedDetectionRaids" />
+    </comps>
+  </WorldObjectDef>
+  <WorldObjectDef>
+    <defName>RD_AdventureMedical</defName>
+    <worldObjectClass>Site</worldObjectClass>
+    <expandingIcon>true</expandingIcon>
+    <expandingIconPriority>70</expandingIconPriority>
+    <comps>
+      <li Class="WorldObjectCompProperties_Timeout" />
+      <li Class="WorldObjectCompProperties_TimedForcedExit" />
+      <li Class="WorldObjectCompProperties_ItemStashContents" />
+      <li Class="WorldObjectCompProperties_FormCaravan" />
+      <li Class="ReconAndDiscovery.Missions.WorldObjectCompProperties_MedicalEmergency" />
+      <li Class="WorldObjectCompProperties_TimedDetectionRaids" />
+    </comps>
+  </WorldObjectDef>
+  <WorldObjectDef>
+    <defName>RD_AdventurePeaceTalks</defName>
+    <worldObjectClass>Site</worldObjectClass>
+    <expandingIcon>true</expandingIcon>
+    <expandingIconPriority>70</expandingIconPriority>
+    <comps>
+      <li Class="WorldObjectCompProperties_Timeout" />
+      <li Class="WorldObjectCompProperties_TimedForcedExit" />
+      <li Class="WorldObjectCompProperties_ItemStashContents" />
+      <li Class="WorldObjectCompProperties_FormCaravan" />
+      <li Class="ReconAndDiscovery.Missions.WorldObjectCompProperties_PeaceTalks" />
+      <li Class="WorldObjectCompProperties_TimedDetectionRaids" />
+    </comps>
+  </WorldObjectDef>
+  <WorldObjectDef>
+    <defName>RD_AdventureDestroyThing</defName>
+    <worldObjectClass>Site</worldObjectClass>
+    <expandingIcon>true</expandingIcon>
+    <expandingIconPriority>70</expandingIconPriority>
+    <comps>
+      <li Class="WorldObjectCompProperties_Timeout" />
+      <li Class="WorldObjectCompProperties_TimedForcedExit" />
+      <li Class="WorldObjectCompProperties_FormCaravan" />
+      <li Class="WorldObjectCompProperties_TimedDetectionRaids" />
+      <li Class="ReconAndDiscovery.Missions.WorldObjectCompProperties_DestroyThing" />
+      <li Class="WorldObjectCompProperties_TimedDetectionRaids" />
+    </comps>
+  </WorldObjectDef>
+  <WorldObjectDef>
+    <defName>RD_AdventureThingCounter</defName>
+    <worldObjectClass>Site</worldObjectClass>
+    <expandingIcon>true</expandingIcon>
+    <expandingIconPriority>70</expandingIconPriority>
+    <comps>
+      <li Class="WorldObjectCompProperties_FormCaravan" />
+      <li Class="WorldObjectCompProperties_Timeout" />
+      <li Class="WorldObjectCompProperties_TimedForcedExit" />
+      <li Class="ReconAndDiscovery.Missions.WorldObjectCompProperties_CountThings" />
+      <li Class="WorldObjectCompProperties_TimedDetectionRaids" />
+    </comps>
+  </WorldObjectDef>
+  <WorldObjectDef>
+    <defName>RD_FestivalMap</defName>
+    <worldObjectClass>Site</worldObjectClass>
+    <expandingIcon>true</expandingIcon>
+    <expandingIconPriority>70</expandingIconPriority>
+    <comps>
+      <li Class="WorldObjectCompProperties_Timeout" />
+      <li Class="WorldObjectCompProperties_TimedForcedExit" />
+      <li Class="WorldObjectCompProperties_ItemStashContents" />
+      <li Class="WorldObjectCompProperties_FormCaravan" />
+      <li Class="WorldObjectCompProperties_TimedDetectionRaids" />
+      <li Class="ReconAndDiscovery.Missions.QuestComp.Festival_Properties" />
+    </comps>
+  </WorldObjectDef>
+</Defs>

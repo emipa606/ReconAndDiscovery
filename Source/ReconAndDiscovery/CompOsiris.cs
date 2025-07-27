@@ -123,7 +123,7 @@ public class CompOsiris : ThingComp
 
     private static void FixPawnRelationships(Pawn p)
     {
-        foreach (var pawn in PawnsFinder.AllCaravansAndTravelingTransportPods_Alive)
+        foreach (var pawn in PawnsFinder.AllMapsCaravansAndTravellingTransporters_Alive)
         {
             if (pawn == p)
             {

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: abandoned castle -->
+  <RD_AbandonedCastle.label>abandoned castle</RD_AbandonedCastle.label>
+  <!-- EN: A long-disused medieval castle. -->
+  <RD_AbandonedCastle.description>A long-disused medieval castle.</RD_AbandonedCastle.description>
+  <!-- EN: osiris casket -->
+  <RD_OsirisCasket.label>osiris casket</RD_OsirisCasket.label>
+  <!-- EN: There is an Osiris Casket found here. -->
+  <RD_OsirisCasket.description>There is an Osiris Casket found here.</RD_OsirisCasket.description>
+  <!-- EN: weather god -->
+  <RD_WeatherSat.label>weather god</RD_WeatherSat.label>
+  <!-- EN: A weather control AI is stationed here. -->
+  <RD_WeatherSat.description>A weather control AI is stationed here.</RD_WeatherSat.description>
+</LanguageData>

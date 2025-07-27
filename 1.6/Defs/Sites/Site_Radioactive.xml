@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <IncidentDef>
+    <defName>RD_QuestRadiation</defName>
+    <label>questradiation</label>
+    <category>Misc</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>ReconAndDiscovery.Missions.IncidentWorker_QuestRadiation</workerClass>
+    <letterLabel>Nuclear waste release</letterLabel>
+    <letterText>Nuclear waste has been uncovered nearby. Radioactive dust will continue to blow over the region until the problem is fixed. Fortunately, Psychoid is not only resistant to radiation, it is also able to sequester harmful radioisotopes when grown. A large crop of about 250 psychoid plants, grown at the site and given a day to root properly, should fix the issue.</letterText>
+    <letterDef>NegativeEvent</letterDef>
+    <baseChance>0.15</baseChance>
+    <minRefireDays>50</minRefireDays>
+    <earliestDay>45</earliestDay>
+    <chanceFactorByPopulationCurve>
+      <points>
+        <li>(4,0)</li>
+        <li>(8,1)</li>
+      </points>
+    </chanceFactorByPopulationCurve>
+  </IncidentDef>
+  <SitePartDef>
+    <defName>RD_SiteRadiationQuest</defName>
+    <label>Source of radioactive dust</label>
+    <description>The source of the radioactive dust.</description>
+    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+    <expandingIconTexture>World/WorldObjects/RadioactiveDust</expandingIconTexture>
+    <forceExitAndRemoveMapCountdownDurationDays>15</forceExitAndRemoveMapCountdownDurationDays>
+  </SitePartDef>
+  <SitePartDef>
+    <defName>RD_SitePart_RadioactiveDust</defName>
+    <label>radioactive dust</label>
+    <description>Radioactive dust!</description>
+    <workerClass>ReconAndDiscovery.Maps.SitePartWorker_RadioactiveDust</workerClass>
+    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+    <expandingIconTexture>World/WorldObjects/RadioactiveDust</expandingIconTexture>
+    <applyFactionColorToSiteTexture>false</applyFactionColorToSiteTexture>
+    <showFactionInInspectString>false</showFactionInInspectString>
+    <badEvenIfNoMap>true</badEvenIfNoMap>
+    <requiresFaction>false</requiresFaction>
+  </SitePartDef>
+</Defs>

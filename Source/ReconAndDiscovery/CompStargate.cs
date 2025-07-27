@@ -140,9 +140,6 @@ public class CompStargate : ThingComp
                 MakeLink(site);
                 return true;
             }
-
-            Messages.Message("RD_StargateNoEvidence".Translate(), MessageTypeDefOf.RejectInput);
-            return false;
         }
 
         Messages.Message("RD_StargateNoEvidence".Translate(), MessageTypeDefOf.RejectInput);

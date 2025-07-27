@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: discover stargates -->
+  <RD_DiscoverStargates.label>discover stargates</RD_DiscoverStargates.label>
+  <!-- EN: researching -->
+  <RD_DiscoverStargates.gerund>researching</RD_DiscoverStargates.gerund>
+  <!-- EN: researching -->
+  <RD_DiscoverStargates.verb>researching</RD_DiscoverStargates.verb>
+  <!-- EN: scan corpse at emitter -->
+  <RD_LoadIntoEmitter.label>scan corpse at emitter</RD_LoadIntoEmitter.label>
+  <!-- EN: booting -->
+  <RD_LoadIntoEmitter.gerund>booting</RD_LoadIntoEmitter.gerund>
+  <!-- EN: booting -->
+  <RD_LoadIntoEmitter.verb>booting</RD_LoadIntoEmitter.verb>
+  <!-- EN: milk animals -->
+  <RD_MandatoryMilk.label>milk animals</RD_MandatoryMilk.label>
+  <!-- EN: milking -->
+  <RD_MandatoryMilk.gerund>milking</RD_MandatoryMilk.gerund>
+  <!-- EN: milk -->
+  <RD_MandatoryMilk.verb>milk</RD_MandatoryMilk.verb>
+  <!-- EN: Praying -->
+  <RD_PrayAtObject.label>Praying</RD_PrayAtObject.label>
+  <!-- EN: praying -->
+  <RD_PrayAtObject.gerund>praying</RD_PrayAtObject.gerund>
+  <!-- EN: praying -->
+  <RD_PrayAtObject.verb>praying</RD_PrayAtObject.verb>
+  <!-- EN: Sacrificing animal -->
+  <RD_PsychicPrayer.label>Sacrificing animal</RD_PsychicPrayer.label>
+  <!-- EN: performing battle prayer -->
+  <RD_PsychicPrayer.gerund>performing battle prayer</RD_PsychicPrayer.gerund>
+  <!-- EN: performing battle prayer -->
+  <RD_PsychicPrayer.verb>performing battle prayer</RD_PsychicPrayer.verb>
+  <!-- EN: Sacrificing animal -->
+  <RD_SacrificeAt.label>Sacrificing animal</RD_SacrificeAt.label>
+  <!-- EN: sacrificing -->
+  <RD_SacrificeAt.gerund>sacrificing</RD_SacrificeAt.gerund>
+  <!-- EN: sacrificing -->
+  <RD_SacrificeAt.verb>sacrificing</RD_SacrificeAt.verb>
+  <!-- EN: scan corpse at emitter -->
+  <RD_ScanCorpseAtEmitter.label>scan corpse at emitter</RD_ScanCorpseAtEmitter.label>
+  <!-- EN: scanning -->
+  <RD_ScanCorpseAtEmitter.gerund>scanning</RD_ScanCorpseAtEmitter.gerund>
+  <!-- EN: scan -->
+  <RD_ScanCorpseAtEmitter.verb>scan</RD_ScanCorpseAtEmitter.verb>
+  <!-- EN: take corpse to casket -->
+  <RD_TakeCorpseToCasket.label>take corpse to casket</RD_TakeCorpseToCasket.label>
+  <!-- EN: storing -->
+  <RD_TakeCorpseToCasket.gerund>storing</RD_TakeCorpseToCasket.gerund>
+  <!-- EN: store -->
+  <RD_TakeCorpseToCasket.verb>store</RD_TakeCorpseToCasket.verb>
+</LanguageData>

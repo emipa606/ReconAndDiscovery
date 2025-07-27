@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: Abandoned lab -->
+  <RD_SeraphitesQuest.label>Abandoned lab</RD_SeraphitesQuest.label>
+  <!-- EN: The rumoured location of the luciferium cure. -->
+  <RD_SeraphitesQuest.description>The rumoured location of the luciferium cure.</RD_SeraphitesQuest.description>
+  <!-- EN: computer -->
+  <RD_SitePart_Computer.label>computer</RD_SitePart_Computer.label>
+  <!-- EN: A computer! -->
+  <RD_SitePart_Computer.description>A computer!</RD_SitePart_Computer.description>
+</LanguageData>

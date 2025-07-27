@@ -8,7 +8,7 @@ namespace ReconAndDiscovery.Maps;
 
 public class SitePartWorker_MedicalEmergency : SitePartWorker
 {
-    public FloatRange casualtiesRange = new FloatRange(400f, 1000f);
+    public FloatRange casualtiesRange = new(400f, 1000f);
 
     public override void PostMapGenerate(Map map)
     {
@@ -42,7 +42,7 @@ public class SitePartWorker_MedicalEmergency : SitePartWorker
                 GenSpawn.Spawn(pawn, intVec2, map, Rot4.Random);
             }
 
-            var lordJob = new LordJob_DefendBase(faction, baseCenter);
+            var lordJob = new LordJob_DefendBase(faction, baseCenter, 0);
             LordMaker.MakeNewLord(faction, lordJob, map, list);
         }
     }

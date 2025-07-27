@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: questradiation -->
+  <RD_QuestRadiation.label>questradiation</RD_QuestRadiation.label>
+  <!-- EN: Nuclear waste release -->
+  <RD_QuestRadiation.letterLabel>Nuclear waste release</RD_QuestRadiation.letterLabel>
+  <!-- EN: Nuclear waste has been uncovered nearby. Radioactive dust will continue to blow over the region until the problem is fixed. Fortunately, Psychoid is not only resistant to radiation, it is also able to sequester harmful radioisotopes when grown. A large crop of about 250 psychoid plants, grown at the site and given a day to root properly, should fix the issue. -->
+  <RD_QuestRadiation.letterText>Nuclear waste has been uncovered nearby. Radioactive dust will continue to blow over the region until the problem is fixed. Fortunately, Psychoid is not only resistant to radiation, it is also able to sequester harmful radioisotopes when grown. A large crop of about 250 psychoid plants, grown at the site and given a day to root properly, should fix the issue.</RD_QuestRadiation.letterText>
+</LanguageData>

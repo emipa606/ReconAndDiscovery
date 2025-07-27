@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: AI persona core -->
+  <RD_AIPersonaCore.label>AI persona core</RD_AIPersonaCore.label>
+  <!-- EN: A hyper-advanced computer core that houses a superhumanlike artificial intelligence. In its isolated state, the core is dormant. Installed in a proper support structure, however, it can become a mind of frightening power. -->
+  <RD_AIPersonaCore.description>A hyper-advanced computer core that houses a superhumanlike artificial intelligence. In its isolated state, the core is dormant. Installed in a proper support structure, however, it can become a mind of frightening power.</RD_AIPersonaCore.description>
+  <!-- EN: exotic matter -->
+  <RD_ExoticMatter.label>exotic matter</RD_ExoticMatter.label>
+  <!-- EN: The negative mass of this material allows for faster than light travel via the Alcubierre warp method, and is also used to control artificial wormholes Packed in a handy, slightly heavier, container allowing storage on the floor! -->
+  <RD_ExoticMatter.description>The negative mass of this material allows for faster than light travel via the Alcubierre warp method, and is also used to control artificial wormholes Packed in a handy, slightly heavier, container allowing storage on the floor!</RD_ExoticMatter.description>
+  <!-- EN: osiris AI -->
+  <RD_OsirisAI.label>osiris AI</RD_OsirisAI.label>
+  <!-- EN: A special AI construct that directs GilterWorld Osiris caskets as they bring back the dead. -->
+  <RD_OsirisAI.description>A special AI construct that directs GilterWorld Osiris caskets as they bring back the dead.</RD_OsirisAI.description>
+</LanguageData>

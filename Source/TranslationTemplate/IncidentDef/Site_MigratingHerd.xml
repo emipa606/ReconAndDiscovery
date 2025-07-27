@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: muffalo herd migration -->
+  <RD_MuffaloHerdMigration.label>muffalo herd migration</RD_MuffaloHerdMigration.label>
+  <!-- EN: muffalo mass instanty -->
+  <RD_MuffaloMassInsanity.label>muffalo mass instanty</RD_MuffaloMassInsanity.label>
+  <!-- EN: muffalo mass instant (warning)y -->
+  <RD_MuffaloMassInsanityWarning.label>muffalo mass instant (warning)y</RD_MuffaloMassInsanityWarning.label>
+</LanguageData>

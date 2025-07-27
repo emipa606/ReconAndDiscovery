@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: Activating Osiris casket. -->
+  <RD_ActivateOsirisCasket.reportString>Activating Osiris casket.</RD_ActivateOsirisCasket.reportString>
+  <!-- EN: Searching for stargates. -->
+  <RD_DiscoverStargates.reportString>Searching for stargates.</RD_DiscoverStargates.reportString>
+  <!-- EN: Booting Hologram. -->
+  <RD_LoadIntoEmitter.reportString>Booting Hologram.</RD_LoadIntoEmitter.reportString>
+  <!-- EN: carefully milking TargetA. -->
+  <RD_MandatoryMilk.reportString>carefully milking TargetA.</RD_MandatoryMilk.reportString>
+  <!-- EN: Negotiating. -->
+  <RD_Negotiate.reportString>Negotiating.</RD_Negotiate.reportString>
+  <!-- EN: Praying. -->
+  <RD_PrayAtObject.reportString>Praying.</RD_PrayAtObject.reportString>
+  <!-- EN: Performing battle prayer. -->
+  <RD_PsychicPrayer.reportString>Performing battle prayer.</RD_PsychicPrayer.reportString>
+  <!-- EN: Making sacrifice. -->
+  <RD_SacrificeAtAltar.reportString>Making sacrifice.</RD_SacrificeAtAltar.reportString>
+  <!-- EN: HoloScanning body. -->
+  <RD_ScanAtEmitter.reportString>HoloScanning body.</RD_ScanAtEmitter.reportString>
+  <!-- EN: Storing body in casket. -->
+  <RD_TakeToOsirisCasket.reportString>Storing body in casket.</RD_TakeToOsirisCasket.reportString>
+  <!-- EN: Entering Stargate. -->
+  <RD_TravelThroughStargate.reportString>Entering Stargate.</RD_TravelThroughStargate.reportString>
+  <!-- EN: using computer. -->
+  <RD_UseComputer.reportString>using computer.</RD_UseComputer.reportString>
+</LanguageData>

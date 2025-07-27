@@ -36,10 +36,9 @@ public class IncidentWorker_MuffaloMassInsanity : IncidentWorker
         }
 
         string text = "LetterLabelAnimalInsanityMultiple".Translate() + ": " + animalDef.LabelCap;
-        string text2 = "AnimalInsanityMultiple".Translate(new NamedArgument[]
-        {
+        string text2 = "AnimalInsanityMultiple".Translate([
             animalDef.label
-        });
+        ]);
         Find.LetterStack.ReceiveLetter(text, text2, LetterDefOf.NegativeEvent);
         if (map == Find.CurrentMap)
         {

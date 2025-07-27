@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: abandoned colony -->
+  <RD_AbandonedColony.label>abandoned colony</RD_AbandonedColony.label>
+  <!-- EN: An abandoned colony. -->
+  <RD_AbandonedColony.description>An abandoned colony.</RD_AbandonedColony.description>
+  <!-- EN: holodisk -->
+  <RD_HoloDisk.label>holodisk</RD_HoloDisk.label>
+  <!-- EN: There is a holodisk here. -->
+  <RD_HoloDisk.description>There is a holodisk here.</RD_HoloDisk.description>
+  <!-- EN: stargate -->
+  <RD_Stargate.label>stargate</RD_Stargate.label>
+  <!-- EN: Thehis site contains a stargate. -->
+  <RD_Stargate.description>Thehis site contains a stargate.</RD_Stargate.description>
+</LanguageData>

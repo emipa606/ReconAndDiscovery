@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: teleport anaphylaxis -->
+  <RD_Anaphylaxis.label>teleport anaphylaxis</RD_Anaphylaxis.label>
+  <!-- EN: teleport anaphylaxis -->
+  <RD_Anaphylaxis.description>teleport anaphylaxis</RD_Anaphylaxis.description>
+  <!-- EN: painful -->
+  <RD_Anaphylaxis.stages.painful.label>painful</RD_Anaphylaxis.stages.painful.label>
+  <!-- EN: debilitating -->
+  <RD_Anaphylaxis.stages.debilitating.label>debilitating</RD_Anaphylaxis.stages.debilitating.label>
+  <!-- EN: fatal -->
+  <RD_Anaphylaxis.stages.fatal.label>fatal</RD_Anaphylaxis.stages.fatal.label>
+  <!-- EN: Battle prayer -->
+  <RD_BattlePrayer.label>Battle prayer</RD_BattlePrayer.label>
+  <!-- EN: Battle prayer -->
+  <RD_BattlePrayer.description>Battle prayer</RD_BattlePrayer.description>
+  <!-- EN: neuro-optimised -->
+  <RD_Neuro-optimised.label>neuro-optimised</RD_Neuro-optimised.label>
+  <!-- EN: neuro-optimised -->
+  <RD_Neuro-optimised.description>neuro-optimised</RD_Neuro-optimised.description>
+  <!-- EN: psychic interference -->
+  <RD_PsychicAttack.label>psychic interference</RD_PsychicAttack.label>
+  <!-- EN: psychic interference -->
+  <RD_PsychicAttack.description>psychic interference</RD_PsychicAttack.description>
+  <!-- EN: radiation sickness -->
+  <RD_RadiationSickness.label>radiation sickness</RD_RadiationSickness.label>
+  <!-- EN: radiation sickness -->
+  <RD_RadiationSickness.description>radiation sickness</RD_RadiationSickness.description>
+</LanguageData>

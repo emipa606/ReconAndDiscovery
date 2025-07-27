@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <MapGeneratorDef ParentName="MapCommonBase">
+    <defName>RD_CrashedShipMapGenerator</defName>
+  </MapGeneratorDef>
+  <MapGeneratorDef ParentName="MapCommonBase">
+    <defName>RD_OldCastleMapGenerator</defName>
+  </MapGeneratorDef>
+  <MapGeneratorDef ParentName="MapCommonBase">
+    <defName>RD_AbandonedLabMapGenerator</defName>
+  </MapGeneratorDef>
+  <MapGeneratorDef ParentName="MapCommonBase">
+    <defName>RD_AbandonedMilitaryBaseGenerator</defName>
+  </MapGeneratorDef>
+  <!-- Generate ship -->
+  <GenStepDef>
+    <defName>RD_ScatterFaction</defName>
+    <order>4000</order>
+    <genStep Class="ReconAndDiscovery.Maps.GenStep_ScatterFaction">
+    </genStep>
+  </GenStepDef>
+  <GenStepDef>
+    <defName>RD_ThirdPartyRaid</defName>
+    <order>4000</order>
+    <genStep Class="ReconAndDiscovery.Maps.GenStep_ThirdPartyRaid">
+    </genStep>
+  </GenStepDef>
+</Defs>

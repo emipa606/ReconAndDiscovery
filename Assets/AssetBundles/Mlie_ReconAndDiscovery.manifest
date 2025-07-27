@@ -1,0 +1,78 @@
+ManifestFileVersion: 0
+CRC: 3480566525
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 06bb00657dea4ced4b4e3b028f8c0036
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 06bb00657dea4ced4b4e3b028f8c0036
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Data/Mlie.ReconAndDiscovery/Textures/Things/Animate/Nitralope/Nitralope_southm.png
+- Assets/Data/Mlie.ReconAndDiscovery/Textures/Things/Buildings/Stargate_north.png
+- Assets/Data/Mlie.ReconAndDiscovery/Textures/Things/Animate/Nitralope/Nitralope_south.png
+- Assets/Data/Mlie.ReconAndDiscovery/Textures/Things/Motes/Laurel.png
+- Assets/Data/Mlie.ReconAndDiscovery/Textures/Things/Animate/Devillo/Devillo1Pack_north.png
+- Assets/Data/Mlie.ReconAndDiscovery/Textures/Things/Animate/Devillo/Devillo_south.png
+- Assets/Data/Mlie.ReconAndDiscovery/Textures/Things/ReprogrammedScyther/ReprogrammedScyther_Head_Alpha_north.png
+- Assets/Data/Mlie.ReconAndDiscovery/Textures/Things/Animate/Nitralope/Nitralope_north.png
+- Assets/Data/Mlie.ReconAndDiscovery/Textures/Things/Weapons/GattlingLaser.png
+- Assets/Data/Mlie.ReconAndDiscovery/Textures/Things/Animate/Devillo/Devillo_north.png
+- Assets/Data/Mlie.ReconAndDiscovery/Textures/Things/Items/Devilcream.png
+- Assets/Data/Mlie.ReconAndDiscovery/Textures/Things/Animate/Devillo/Devillo0Pack_north.png
+- Assets/Data/Mlie.ReconAndDiscovery/Textures/Things/Buildings/HoloEmitter.png
+- Assets/Data/Mlie.ReconAndDiscovery/Textures/Things/ReprogrammedScyther/ReprogrammedScyther_Head_Alpha_south.png
+- Assets/Data/Mlie.ReconAndDiscovery/Textures/Things/Animate/Devillo/Devillo2Pack_east.png
+- Assets/Data/Mlie.ReconAndDiscovery/Textures/Things/Buildings/PsionicEmanator.png
+- Assets/Data/Mlie.ReconAndDiscovery/Textures/World/WorldObjects/MuffaloMigrate.png
+- Assets/Data/Mlie.ReconAndDiscovery/Textures/Things/Items/OsirisCore.png
+- Assets/Data/Mlie.ReconAndDiscovery/Textures/Things/Animate/Devillo/Devillo0Pack_east.png
+- Assets/Data/Mlie.ReconAndDiscovery/Textures/World/WorldObjects/MechanoidForces.png
+- Assets/Data/Mlie.ReconAndDiscovery/Textures/Things/Buildings/WeatherSat.png
+- Assets/Data/Mlie.ReconAndDiscovery/Textures/Things/Animate/Devillo/Devillo1_north.png
+- Assets/Data/Mlie.ReconAndDiscovery/Textures/World/WorldObjects/Stargate.png
+- Assets/Data/Mlie.ReconAndDiscovery/Textures/World/WorldObjects/AbandonedLab.png
+- Assets/Data/Mlie.ReconAndDiscovery/Textures/Things/Buildings/Teleporter.png
+- Assets/Data/Mlie.ReconAndDiscovery/Textures/UI/TeleportSymbol.png
+- Assets/Data/Mlie.ReconAndDiscovery/Textures/World/WorldObjects/CrashedShip.png
+- Assets/Data/Mlie.ReconAndDiscovery/Textures/Things/Animate/Devillo/Devillo_east.png
+- Assets/Data/Mlie.ReconAndDiscovery/Textures/Things/Animate/Devillo/Devillo2Pack_north.png
+- Assets/Data/Mlie.ReconAndDiscovery/Textures/Things/Buildings/PortableGenerator.png
+- Assets/Data/Mlie.ReconAndDiscovery/Textures/World/WorldObjects/MilitaryFacility.png
+- Assets/Data/Mlie.ReconAndDiscovery/Textures/Things/Buildings/OsirisCasket_east.png
+- Assets/Data/Mlie.ReconAndDiscovery/Textures/World/WorldObjects/RadioactiveDust.png
+- Assets/Data/Mlie.ReconAndDiscovery/Textures/Things/Animate/Devillo/Devillo1Pack_east.png
+- Assets/Data/Mlie.ReconAndDiscovery/Textures/Things/Buildings/Deflector.png
+- Assets/Data/Mlie.ReconAndDiscovery/Textures/Things/Buildings/Stargate_east.png
+- Assets/Data/Mlie.ReconAndDiscovery/Textures/Things/Buildings/OsirisCasket_north.png
+- Assets/Data/Mlie.ReconAndDiscovery/Textures/Things/Buildings/Stargate_south.png
+- Assets/Data/Mlie.ReconAndDiscovery/Textures/Things/Animate/Nitralope/Nitralope_east.png
+- Assets/Data/Mlie.ReconAndDiscovery/Textures/UI/TeleportMouseAttachment.png
+- Assets/Data/Mlie.ReconAndDiscovery/Textures/Things/Projectile/Projectile_Gattling.png
+- Assets/Data/Mlie.ReconAndDiscovery/Textures/Things/Animate/Devillo/Devillo0_east.png
+- Assets/Data/Mlie.ReconAndDiscovery/Textures/Things/Animate/Devillo/Devillo0_north.png
+- Assets/Data/Mlie.ReconAndDiscovery/Textures/Things/Animate/Devillo/Devillo1_east.png
+- Assets/Data/Mlie.ReconAndDiscovery/Textures/UI/StargateSymbol.png
+- Assets/Data/Mlie.ReconAndDiscovery/Textures/Things/Items/Seraphites.png
+- Assets/Data/Mlie.ReconAndDiscovery/Textures/Things/Buildings/QuestComputerTerminal.png
+- Assets/Data/Mlie.ReconAndDiscovery/Textures/Things/Animate/Devillo/Devillo0_south.png
+- Assets/Data/Mlie.ReconAndDiscovery/Textures/Things/ReprogrammedScyther/ReprogrammedScyther_Head_Alpha_east.png
+- Assets/Data/Mlie.ReconAndDiscovery/Textures/Things/Animate/Nitralope/Nitralope_northm.png
+- Assets/Data/Mlie.ReconAndDiscovery/Textures/Things/Animate/Devillo/Devillo2_north.png
+- Assets/Data/Mlie.ReconAndDiscovery/Textures/Things/Animate/Devillo/DevilloPack_north.png
+- Assets/Data/Mlie.ReconAndDiscovery/Textures/Things/Animate/Devillo/DevilloPack_east.png
+- Assets/Data/Mlie.ReconAndDiscovery/Textures/Things/Animate/Devillo/Devillo1_south.png
+- Assets/Data/Mlie.ReconAndDiscovery/Textures/Things/Buildings/PlantSonicator.png
+- Assets/Data/Mlie.ReconAndDiscovery/Textures/Things/Animate/Nitralope/Nitralope_eastm.png
+- Assets/Data/Mlie.ReconAndDiscovery/Textures/Things/Items/ExoticMatter.png
+- Assets/Data/Mlie.ReconAndDiscovery/Textures/Things/Animate/Devillo/Devillo2_south.png
+- Assets/Data/Mlie.ReconAndDiscovery/Textures/Things/Animate/Devillo/Devillo2_east.png
+Dependencies: []

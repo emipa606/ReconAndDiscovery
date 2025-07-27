@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <JobDef>
+    <defName>RD_UseComputer</defName>
+    <driverClass>ReconAndDiscovery.JobDriver_UseComputer</driverClass>
+    <reportString>using computer.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>RD_TakeToOsirisCasket</defName>
+    <driverClass>ReconAndDiscovery.JobDriver_TakeBodyToOsirisCasket</driverClass>
+    <reportString>Storing body in casket.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>RD_MandatoryMilk</defName>
+    <driverClass>ReconAndDiscovery.JobDriver_MandatoryMilk</driverClass>
+    <reportString>carefully milking TargetA.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>RD_PrayAtObject</defName>
+    <driverClass>ReconAndDiscovery.JobDriver_PrayAtObject</driverClass>
+    <reportString>Praying.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>RD_SacrificeAtAltar</defName>
+    <driverClass>ReconAndDiscovery.JobDriver_SacrificeAtAltar</driverClass>
+    <reportString>Making sacrifice.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>RD_PsychicPrayer</defName>
+    <driverClass>ReconAndDiscovery.JobDriver_BattlePrayer</driverClass>
+    <reportString>Performing battle prayer.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>RD_ActivateOsirisCasket</defName>
+    <driverClass>ReconAndDiscovery.JobDriver_ActivateOsirisCasket</driverClass>
+    <reportString>Activating Osiris casket.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>RD_ScanAtEmitter</defName>
+    <driverClass>ReconAndDiscovery.JobDriver_ScanAtEmitter</driverClass>
+    <reportString>HoloScanning body.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>RD_LoadIntoEmitter</defName>
+    <driverClass>ReconAndDiscovery.JobDriver_LoadIntoEmitter</driverClass>
+    <reportString>Booting Hologram.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>RD_Negotiate</defName>
+    <driverClass>ReconAndDiscovery.JobDriver_Negotiate</driverClass>
+    <reportString>Negotiating.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>RD_DiscoverStargates</defName>
+    <driverClass>ReconAndDiscovery.JobDriver_DiscoverStargates</driverClass>
+    <reportString>Searching for stargates.</reportString>
+  </JobDef>
+  <JobDef>
+    <defName>RD_TravelThroughStargate</defName>
+    <driverClass>ReconAndDiscovery.JobDriver_TravelThroughStargate</driverClass>
+    <reportString>Entering Stargate.</reportString>
+  </JobDef>
+</Defs>

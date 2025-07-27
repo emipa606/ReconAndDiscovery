@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <SitePartDef>
+    <defName>RD_AbandonedCastle</defName>
+    <label>abandoned castle</label>
+    <description>A long-disused medieval castle.</description>
+    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+    <expandingIconTexture>World/WorldObjects/Expanding/DestroyedSettlement</expandingIconTexture>
+  </SitePartDef>
+  <GenStepDef>
+    <defName>RD_AbandonedCastle</defName>
+    <linkWithSite>RD_AbandonedCastle</linkWithSite>
+    <order>500</order>
+    <genStep Class="ReconAndDiscovery.Maps.GenStep_OldCastle">
+    </genStep>
+  </GenStepDef>
+  <IncidentDef>
+    <defName>RD_QuestOsiris</defName>
+    <label>osirisquest</label>
+    <category>Misc</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>ReconAndDiscovery.Missions.IncidentWorker_OsirisCasket</workerClass>
+    <baseChance>0.3</baseChance>
+    <minRefireDays>90</minRefireDays>
+    <chanceFactorByPopulationCurve>
+      <points>
+        <li>(3,0)</li>
+        <li>(9,1)</li>
+      </points>
+    </chanceFactorByPopulationCurve>
+  </IncidentDef>
+  <SitePartDef>
+    <defName>RD_OsirisCasket</defName>
+    <label>osiris casket</label>
+    <description>There is an Osiris Casket found here.</description>
+    <workerClass>ReconAndDiscovery.Maps.SitePartWorker_Osiris</workerClass>
+    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+    <expandingIconTexture>World/WorldObjects/Expanding/Sites/Manhunters</expandingIconTexture>
+    <applyFactionColorToSiteTexture>false</applyFactionColorToSiteTexture>
+    <showFactionInInspectString>false</showFactionInInspectString>
+    <badEvenIfNoMap>true</badEvenIfNoMap>
+    <requiresFaction>false</requiresFaction>
+  </SitePartDef>
+  <SitePartDef>
+    <defName>RD_WeatherSat</defName>
+    <label>weather god</label>
+    <description>A weather control AI is stationed here.</description>
+    <workerClass>ReconAndDiscovery.Maps.SitePartWorker_WeatherSat</workerClass>
+    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+    <expandingIconTexture>World/WorldObjects/Expanding/Sites/Manhunters</expandingIconTexture>
+    <applyFactionColorToSiteTexture>false</applyFactionColorToSiteTexture>
+    <showFactionInInspectString>false</showFactionInInspectString>
+    <badEvenIfNoMap>true</badEvenIfNoMap>
+    <requiresFaction>false</requiresFaction>
+  </SitePartDef>
+</Defs>

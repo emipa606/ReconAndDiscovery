@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: seraphitelab -->
+  <RD_SeraphitesLab.label>seraphitelab</RD_SeraphitesLab.label>
+  <!-- EN: Rumour -->
+  <RD_SeraphitesLab.letterLabel>Rumour</RD_SeraphitesLab.letterLabel>
+  <!-- EN: {0}, seeing that {1} is addicted to luciferum, has told us that a cure was under development near here. The lab has since been abandoned, but its location is now marked on our map. -->
+  <RD_SeraphitesLab.letterText>{0}, seeing that {1} is addicted to luciferum, has told us that a cure was under development near here. The lab has since been abandoned, but its location is now marked on our map.</RD_SeraphitesLab.letterText>
+</LanguageData>

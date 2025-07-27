@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <SitePartDef>
+    <defName>RD_PsiMachine</defName>
+    <label>Abandoned military facility</label>
+    <description>The rumoured location of the psychic warriors' base.</description>
+    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+    <expandingIconTexture>World/WorldObjects/MilitaryFacility</expandingIconTexture>
+  </SitePartDef>
+  <GenStepDef>
+    <defName>RD_MilitaryBasePsiUpgrade</defName>
+    <linkWithSite>RD_PsiMachine</linkWithSite>
+    <order>2000</order>
+    <genStep Class="ReconAndDiscovery.Maps.GenStep_MilitaryBase">
+    </genStep>
+  </GenStepDef>
+  <SitePartDef>
+    <defName>RD_SitePart_WarIdol</defName>
+    <label>computer</label>
+    <description>A psionic emanator, used by advanced military organisations for psychic warfare.</description>
+    <workerClass>ReconAndDiscovery.Maps.SitePartWorker_PsionicEmanator</workerClass>
+    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+    <expandingIconTexture>World/WorldObjects/Expanding/Sites/Manhunters</expandingIconTexture>
+    <applyFactionColorToSiteTexture>false</applyFactionColorToSiteTexture>
+    <showFactionInInspectString>false</showFactionInInspectString>
+    <badEvenIfNoMap>true</badEvenIfNoMap>
+    <requiresFaction>false</requiresFaction>
+  </SitePartDef>
+  <IncidentDef>
+    <defName>RD_WarIdol</defName>
+    <label>war idol</label>
+    <category>Misc</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>ReconAndDiscovery.Missions.IncidentWorker_WarIdol</workerClass>
+    <letterLabel>Rumour</letterLabel>
+    <letterText>{0} tells us that a group of hi-tech warriors who used psychics as weapons used to live near here. Given {1}'s abilities, {0} wonders if we might find something useful in their old base.</letterText>
+    <letterDef>PositiveEvent</letterDef>
+    <baseChance>10</baseChance>
+    <minRefireDays>15</minRefireDays>
+    <chanceFactorByPopulationCurve>
+      <points>
+        <li>(3,0)</li>
+        <li>(6,1)</li>
+      </points>
+    </chanceFactorByPopulationCurve>
+  </IncidentDef>
+</Defs>

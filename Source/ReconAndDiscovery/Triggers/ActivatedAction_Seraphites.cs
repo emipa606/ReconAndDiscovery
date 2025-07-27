@@ -87,11 +87,13 @@ public class ActivatedAction_Seraphites : ActivatedAction
                                 continue;
                             }
 
-                            if (thing is Pawn pawn)
+                            if (thing is not Pawn pawn)
                             {
-                                var hediff = HediffMaker.MakeHediff(HediffDef.Named("FibrousMechanites"), pawn);
-                                pawn.health.AddHediff(hediff);
+                                continue;
                             }
+
+                            var hediff = HediffMaker.MakeHediff(HediffDef.Named("FibrousMechanites"), pawn);
+                            pawn.health.AddHediff(hediff);
                         }
                     }
 

@@ -11,13 +11,13 @@ namespace ReconAndDiscovery.Missions;
 
 public class QuestComp_MedicalEmergency : WorldObjectComp, IThingHolder
 {
-    private static readonly List<Thing> tmpRewards = new List<Thing>();
+    private static readonly List<Thing> tmpRewards = new();
 
     private bool active;
 
     public Faction DownedFaction;
 
-    private List<Pawn> injured = new List<Pawn>();
+    private List<Pawn> injured = new();
 
     public int maxPawns;
 
@@ -111,10 +111,7 @@ public class QuestComp_MedicalEmergency : WorldObjectComp, IThingHolder
             return;
         }
 
-        if (DownedFaction == null)
-        {
-            DownedFaction = Find.FactionManager.RandomNonHostileFaction(false, false, true, TechLevel.Spacer);
-        }
+        DownedFaction ??= Find.FactionManager.RandomNonHostileFaction(false, false, true, TechLevel.Spacer);
 
         if (injured.NullOrEmpty())
         {
@@ -133,7 +130,7 @@ public class QuestComp_MedicalEmergency : WorldObjectComp, IThingHolder
                     continue;
                 }
 
-                var lordJob = new LordJob_DefendBase(DownedFaction, pawn.Position);
+                var lordJob = new LordJob_DefendBase(DownedFaction, pawn.Position, 0);
                 var list = new List<Pawn> { pawn };
                 LordMaker.MakeNewLord(DownedFaction, lordJob, mapParent.Map, list);
             }
@@ -223,10 +220,9 @@ public class QuestComp_MedicalEmergency : WorldObjectComp, IThingHolder
                 }
 
                 Find.LetterStack.ReceiveLetter("RD_LetterLabelPawnsLostDueToMapCountdown".Translate(),
-                    "RD_LetterPawnsLostDueToMapCountdown".Translate(new NamedArgument[]
-                    {
+                    "RD_LetterPawnsLostDueToMapCountdown".Translate([
                         stringBuilder.ToString().TrimEndNewlines()
-                    }), LetterDefOf.ThreatSmall, new GlobalTargetInfo(mapParent.Tile));
+                    ]), LetterDefOf.ThreatSmall, new GlobalTargetInfo(mapParent.Tile));
             }
 
             list2.Clear();
@@ -298,10 +294,7 @@ public class QuestComp_MedicalEmergency : WorldObjectComp, IThingHolder
             }
 
             pawn.SetFactionDirect(faction);
-            if (faction.leader == null)
-            {
-                faction.leader = pawn;
-            }
+            faction.leader ??= pawn;
         }
 
         faction.TryAffectGoodwillWith(Faction.OfPlayer, 100);

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: improvised turret bullet -->
+  <RD_Bullet_GattlingLaser.label>improvised turret bullet</RD_Bullet_GattlingLaser.label>
+  <!-- EN: gattling laser -->
+  <RD_GattlingLaser.label>gattling laser</RD_GattlingLaser.label>
+  <!-- EN: A ship's gattling laser, fused to a turret base. Designed for space combat, it is vicious and powerful and has extraordinary range, but as its usual targets are larger than houses it is terribly inaccurate. -->
+  <RD_GattlingLaser.description>A ship's gattling laser, fused to a turret base. Designed for space combat, it is vicious and powerful and has extraordinary range, but as its usual targets are larger than houses it is terribly inaccurate.</RD_GattlingLaser.description>
+  <!-- EN: Gattling Laser -->
+  <RD_Gun_GattlingLaser.label>Gattling Laser</RD_Gun_GattlingLaser.label>
+  <!-- EN: Jury-rigged gun attached to a turret. -->
+  <RD_Gun_GattlingLaser.description>Jury-rigged gun attached to a turret.</RD_Gun_GattlingLaser.description>
+  <!-- EN: Gattling Laser -->
+  <RD_Gun_GattlingLaser.verbs.Verb_Shoot.label>Gattling Laser</RD_Gun_GattlingLaser.verbs.Verb_Shoot.label>
+  <!-- EN: holo-emitter -->
+  <RD_HolographicEmitter.label>holo-emitter</RD_HolographicEmitter.label>
+  <!-- EN: A holo-Emitter. Used on light, fast ships to simulate useful crew members if they are recovered just after death. The body is destroyed on scanning. -->
+  <RD_HolographicEmitter.description>A holo-Emitter. Used on light, fast ships to simulate useful crew members if they are recovered just after death. The body is destroyed on scanning.</RD_HolographicEmitter.description>
+  <!-- EN: osiris casket -->
+  <RD_OsirisCasket.label>osiris casket</RD_OsirisCasket.label>
+  <!-- EN: An advanced GlitterWorld cryptosleep casket that instructs an army of Luciferium nanites to heal wounds, cure illnesses, reverse ageing and even revive the dead. Though heavy, the AI, which separates it from other caskets, is light and recoverable. -->
+  <RD_OsirisCasket.description>An advanced GlitterWorld cryptosleep casket that instructs an army of Luciferium nanites to heal wounds, cure illnesses, reverse ageing and even revive the dead. Though heavy, the AI, which separates it from other caskets, is light and recoverable.</RD_OsirisCasket.description>
+  <!-- EN: portable generator -->
+  <RD_PortableGenerator.label>portable generator</RD_PortableGenerator.label>
+  <!-- EN: A portable chemfuel-driven generator with a small power cell, designed for power provision away from home. -->
+  <RD_PortableGenerator.description>A portable chemfuel-driven generator with a small power cell, designed for power provision away from home.</RD_PortableGenerator.description>
+  <!-- EN: war idol -->
+  <RD_PsionicEmanator.label>war idol</RD_PsionicEmanator.label>
+  <!-- EN: This device can be used by psychics to broadcast a psychic battle ward, improving allies' concentration and reflexes. It can also broadcast the psychic shock of an animal's death to enemies. -->
+  <RD_PsionicEmanator.description>This device can be used by psychics to broadcast a psychic battle ward, improving allies' concentration and reflexes. It can also broadcast the psychic shock of an animal's death to enemies.</RD_PsionicEmanator.description>
+  <!-- EN: computerTerminal -->
+  <RD_QuestComputerTerminal.label>computerTerminal</RD_QuestComputerTerminal.label>
+  <!-- EN: A computer terminal. Who knows what secrets lie within its sprawling file system? -->
+  <RD_QuestComputerTerminal.description>A computer terminal. Who knows what secrets lie within its sprawling file system?</RD_QuestComputerTerminal.description>
+  <!-- EN: stargate -->
+  <RD_Stargate.label>stargate</RD_Stargate.label>
+  <!-- EN: A gateway allowing for instant travel to another such device via the folding of spacetime around a contained core of exotic matter. A skiled engineer can collect the exotic matter when deconstructing such a device. Links are one way by nature, and for two gates to be linked, each much redirect to the other in accordance with the physical law of narrative control, described by most leaders in the field as "nonsense". -->
+  <RD_Stargate.description>A gateway allowing for instant travel to another such device via the folding of spacetime around a contained core of exotic matter. A skiled engineer can collect the exotic matter when deconstructing such a device. Links are one way by nature, and for two gates to be linked, each much redirect to the other in accordance with the physical law of narrative control, described by most leaders in the field as "nonsense".</RD_Stargate.description>
+  <!-- EN: teleporter -->
+  <RD_Teleporter.label>teleporter</RD_Teleporter.label>
+  <!-- EN: A glittertech teleportation panel. It can beam people and animals in from anywhere on the planet, but due to crash damage cannot send. -->
+  <RD_Teleporter.description>A glittertech teleportation panel. It can beam people and animals in from anywhere on the planet, but due to crash damage cannot send.</RD_Teleporter.description>
+  <!-- EN: weather idol -->
+  <RD_WeatherSat.label>weather idol</RD_WeatherSat.label>
+  <!-- EN: This strange device seems to read the desires of colonists nearby and change the weather accordingly. -->
+  <RD_WeatherSat.description>This strange device seems to read the desires of colonists nearby and change the weather accordingly.</RD_WeatherSat.description>
+</LanguageData>

@@ -8,15 +8,12 @@ public class SymbolResolver_WallDoor : RimWorld.BaseGen.SymbolResolver
 {
     public override void Resolve(ResolveParams rp)
     {
-        if (rp.rect.Width > 1 && rp.rect.Height > 1)
+        if (rp.rect is { Width: > 1, Height: > 1 })
         {
             return;
         }
 
-        if (rp.wallStuff == null)
-        {
-            rp.wallStuff = BaseGenUtility.RandomCheapWallStuff(Faction.OfPlayer);
-        }
+        rp.wallStuff ??= BaseGenUtility.RandomCheapWallStuff(Faction.OfPlayer);
 
         var randomCell = rp.rect.RandomCell;
         TryPlaceDoor(randomCell);

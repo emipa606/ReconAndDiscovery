@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <SitePartDef>
+    <defName>RD_MuffaloMigration</defName>
+    <label>muffalo migration</label>
+    <description>A large herd of muffalo are migrating through this region.</description>
+    <workerClass>ReconAndDiscovery.Missions.SitePartWorker_MuffaloHerd</workerClass>
+    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+    <expandingIconTexture>World/WorldObjects/MuffaloMigrate</expandingIconTexture>
+    <forceExitAndRemoveMapCountdownDurationDays>2</forceExitAndRemoveMapCountdownDurationDays>
+    <disallowsAutomaticDetectionTimerStart>true</disallowsAutomaticDetectionTimerStart>
+  </SitePartDef>
+  <IncidentDef>
+    <defName>RD_MuffaloMassInsanityWarning</defName>
+    <label>muffalo mass instant (warning)y</label>
+    <category>Misc</category>
+    <targetTags>
+      <li>Map_TempIncident</li>
+    </targetTags>
+    <workerClass>ReconAndDiscovery.Missions.IncidentWorker_MuffaloMassInsanityWarning</workerClass>
+    <baseChance>0.00</baseChance>
+    <minRefireDays>30</minRefireDays>
+  </IncidentDef>
+  <IncidentDef>
+    <defName>RD_MuffaloMassInsanity</defName>
+    <label>muffalo mass instanty</label>
+    <category>Misc</category>
+    <targetTags>
+      <li>Map_TempIncident</li>
+    </targetTags>
+    <workerClass>ReconAndDiscovery.Missions.IncidentWorker_MuffaloMassInsanity</workerClass>
+    <baseChance>0.01</baseChance>
+    <minRefireDays>30</minRefireDays>
+  </IncidentDef>
+  <IncidentDef>
+    <defName>RD_MuffaloHerdMigration</defName>
+    <label>muffalo herd migration</label>
+    <category>Misc</category>
+    <targetTags>
+      <!--TODO: check if it works-->
+      <li>World</li>
+    </targetTags>
+    <workerClass>ReconAndDiscovery.Missions.IncidentWorker_MuffaloHerd</workerClass>
+    <baseChance>1.8</baseChance>
+    <minRefireDays>15</minRefireDays>
+  </IncidentDef>
+</Defs>

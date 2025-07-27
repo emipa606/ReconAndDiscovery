@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="OrganicProductBase">
+    <defName>RD_Devilcream</defName>
+    <label>Devilcream</label>
+    <description>The milk of devillos. Naturally very rich, and it keeps much longer than muffalo milk.</description>
+    <graphicData>
+      <texPath>Things/Items/Devilcream</texPath>
+    </graphicData>
+    <socialPropernessMatters>true</socialPropernessMatters>
+    <statBases>
+      <MarketValue>6.5</MarketValue>
+      <Mass>0.05</Mass>
+      <Nutrition>0.16</Nutrition>
+      <MaxHitPoints>60</MaxHitPoints>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_FoodPoisonable">
+      </li>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>28</daysToRotStart>
+        <rotDestroys>true</rotDestroys>
+      </li>
+    </comps>
+    <ingestible>
+      <preferability>RawTasty</preferability>
+      <foodType>AnimalProduct, Fluid</foodType>
+    </ingestible>
+    <thingCategories>
+      <li>AnimalProductRaw</li>
+    </thingCategories>
+  </ThingDef>
+  <ThingDef ParentName="ResourceBase">
+    <defName>RD_HoloDisk</defName>
+    <label>HoloDisk</label>
+    <description>An AI core pre-loaded with the persona of a technical genius.</description>
+    <graphicData>
+      <texPath>Things/Item/Special/AIPersonaCore</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Metal_Drop</soundDrop>
+    <stackLimit>1</stackLimit>
+    <useHitPoints>true</useHitPoints>
+    <statBases>
+      <MarketValue>7000</MarketValue>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Mass>2</Mass>
+    </statBases>
+    <thingCategories>
+      <li>Items</li>
+    </thingCategories>
+    <drawGUIOverlay>false</drawGUIOverlay>
+    <tradeTags>
+      <li>Exotic</li>
+    </tradeTags>
+  </ThingDef>
+  <ThingDef ParentName="MoteBase">
+    <defName>RD_Mote_Laurel</defName>
+    <graphicData>
+      <texPath>Things/Motes/Laurel</texPath>
+    </graphicData>
+    <altitudeLayer>MetaOverlays</altitudeLayer>
+    <mote>
+      <fadeInTime>0.1</fadeInTime>
+      <solidTime>1.0</solidTime>
+      <fadeOutTime>0.5</fadeOutTime>
+    </mote>
+  </ThingDef>
+</Defs>

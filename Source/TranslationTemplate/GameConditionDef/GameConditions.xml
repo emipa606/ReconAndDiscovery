@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: radiation -->
+  <RD_Radiation.label>radiation</RD_Radiation.label>
+  <!-- EN: The air contains radioactive fallout. This will be hazardous to all life in the area. -->
+  <RD_Radiation.description>The air contains radioactive fallout. This will be hazardous to all life in the area.</RD_Radiation.description>
+  <!-- EN: radiation levels have returned to normal. -->
+  <RD_Radiation.endMessage>radiation levels have returned to normal.</RD_Radiation.endMessage>
+  <!-- EN: The wind has carried radioactive dust across the area. The heightened radiation levels increase the risks of severe illness even indoors, unless deep underground, enclosed in a room with a thick rock roof. You may wish to consider leaving the area until the effect has passed. -->
+  <RD_Radiation.letterText>The wind has carried radioactive dust across the area. The heightened radiation levels increase the risks of severe illness even indoors, unless deep underground, enclosed in a room with a thick rock roof. You may wish to consider leaving the area until the effect has passed.</RD_Radiation.letterText>
+  <!-- EN: flashstorm -->
+  <RD_TargetedStorm.label>flashstorm</RD_TargetedStorm.label>
+  <!-- EN: Extreme amounts of lightning are hitting a small region. -->
+  <RD_TargetedStorm.description>Extreme amounts of lightning are hitting a small region.</RD_TargetedStorm.description>
+  <!-- EN: The flashstorm is over. -->
+  <RD_TargetedStorm.endMessage>The flashstorm is over.</RD_TargetedStorm.endMessage>
+  <!-- EN: Extreme amounts of lightning are hitting a small region. -->
+  <RD_TargetedStorm.letterText>Extreme amounts of lightning are hitting a small region.</RD_TargetedStorm.letterText>
+  <!-- EN: tremors -->
+  <RD_Tremors.label>tremors</RD_Tremors.label>
+  <!-- EN: Occasional quakes are collapsing roofed areas. -->
+  <RD_Tremors.description>Occasional quakes are collapsing roofed areas.</RD_Tremors.description>
+  <!-- EN: The tremors have ended. -->
+  <RD_Tremors.endMessage>The tremors have ended.</RD_Tremors.endMessage>
+  <!-- EN: A geological disturbance is causing tremors in the area. The roof in some areas may collapse. While this is merely an inconvenience in artificial structures, it can be very dangerous under mountains. -->
+  <RD_Tremors.letterText>A geological disturbance is causing tremors in the area. The roof in some areas may collapse. While this is merely an inconvenience in artificial structures, it can be very dangerous under mountains.</RD_Tremors.letterText>
+</LanguageData>

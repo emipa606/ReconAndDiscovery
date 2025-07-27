@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <IncidentDef>
+    <defName>RD_PeaceTalks</defName>
+    <label>peace talks</label>
+    <category>Misc</category>
+    <targetTags>
+      <li>World</li>
+    </targetTags>
+    <workerClass>ReconAndDiscovery.Missions.IncidentWorker_PeaceTalks</workerClass>
+    <letterLabel>Peace Talks</letterLabel>
+    <letterText>{0}, the leader of {1}, has invited you to peace talks at an abandoned castle near here. You have {2} days to respond.</letterText>
+    <letterDef>PositiveEvent</letterDef>
+    <baseChance>1.5</baseChance>
+    <minRefireDays>10</minRefireDays>
+    <chanceFactorByPopulationCurve>
+      <points>
+        <li>(2,0)</li>
+        <li>(5,1)</li>
+      </points>
+    </chanceFactorByPopulationCurve>
+  </IncidentDef>
+  <SitePartDef>
+    <defName>RD_PeaceTalks</defName>
+    <label>peace talks</label>
+    <description>A venue for talks with another faction.</description>
+    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+    <expandingIconTexture>World/WorldObjects/Expanding/PeaceTalks</expandingIconTexture>
+  </SitePartDef>
+  <GenStepDef>
+    <defName>RD_OldCastle_Talks</defName>
+    <linkWithSite>RD_PeaceTalks</linkWithSite>
+    <order>500</order>
+    <genStep Class="ReconAndDiscovery.Maps.GenStep_OldCastle">
+    </genStep>
+  </GenStepDef>
+  <SitePartDef>
+    <defName>RD_PeaceTalksFaction</defName>
+    <label>peace talks faction</label>
+    <description>A faction has invited you for peace talks.</description>
+    <workerClass>ReconAndDiscovery.Maps.SitePartWorker_PeaceTalksFaction</workerClass>
+    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+    <expandingIconTexture>World/WorldObjects/Expanding/PeaceTalks</expandingIconTexture>
+    <applyFactionColorToSiteTexture>true</applyFactionColorToSiteTexture>
+    <showFactionInInspectString>true</showFactionInInspectString>
+    <badEvenIfNoMap>false</badEvenIfNoMap>
+    <requiresFaction>true</requiresFaction>
+    <disallowsAutomaticDetectionTimerStart>true</disallowsAutomaticDetectionTimerStart>
+  </SitePartDef>
+</Defs>

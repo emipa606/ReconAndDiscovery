@@ -9,15 +9,9 @@ public class SymbolResolver_CrashedShip : RimWorld.BaseGen.SymbolResolver
 {
     public override void Resolve(ResolveParams rp)
     {
-        if (rp.wallStuff == null)
-        {
-            rp.wallStuff = ThingDefOf.Steel;
-        }
+        rp.wallStuff ??= ThingDefOf.Steel;
 
-        if (rp.floorDef == null)
-        {
-            rp.floorDef = BaseGenUtility.CorrespondingTerrainDef(rp.wallStuff, true);
-        }
+        rp.floorDef ??= BaseGenUtility.CorrespondingTerrainDef(rp.wallStuff, true);
 
         var resolveParams = rp;
         var resolveParams2 = rp;

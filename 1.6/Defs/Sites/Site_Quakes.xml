@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <IncidentDef>
+    <defName>RD_QuestQuakes</defName>
+    <label>faultygenerator</label>
+    <category>Misc</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>ReconAndDiscovery.Missions.IncidentWorker_FaultyGenerator</workerClass>
+    <letterLabel>Faulty generator</letterLabel>
+    <letterText>A fault with an unmaintained generator is causing local tremors. The tremors will eventually pass, but in order to speed this up you will have to deconstruct, or otherwise destroy, the generator.</letterText>
+    <letterDef>NegativeEvent</letterDef>
+    <baseChance>0.8</baseChance>
+    <minRefireDays>20</minRefireDays>
+    <chanceFactorByPopulationCurve>
+      <points>
+        <li>(2,0)</li>
+        <li>(5,1)</li>
+      </points>
+    </chanceFactorByPopulationCurve>
+  </IncidentDef>
+  <SitePartDef>
+    <defName>RD_QuakesQuest</defName>
+    <label>Faulty generator</label>
+    <description>The source of the tremors.</description>
+    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+    <expandingIconTexture>World/WorldObjects/Expanding/Sites/ConditionCauser</expandingIconTexture>
+  </SitePartDef>
+  <SitePartDef>
+    <defName>RD_SitePart_FaultyGenerator</defName>
+    <label>generator</label>
+    <description>A generator!</description>
+    <workerClass>ReconAndDiscovery.Maps.SitePartWorker_Generator</workerClass>
+    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+    <expandingIconTexture>World/WorldObjects/Expanding/Sites/ConditionCauser</expandingIconTexture>
+    <applyFactionColorToSiteTexture>false</applyFactionColorToSiteTexture>
+    <showFactionInInspectString>false</showFactionInInspectString>
+    <badEvenIfNoMap>true</badEvenIfNoMap>
+    <requiresFaction>false</requiresFaction>
+  </SitePartDef>
+</Defs>

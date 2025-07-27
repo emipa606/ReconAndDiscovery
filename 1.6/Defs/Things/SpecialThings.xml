@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef>
+    <defName>RD_RectActionTrigger</defName>
+    <label>RectActionTrigger</label>
+    <category>Ethereal</category>
+    <thingClass>ReconAndDiscovery.Triggers.RectActionTrigger</thingClass>
+    <drawerType>None</drawerType>
+    <tickerType>Normal</tickerType>
+  </ThingDef>
+</Defs>

@@ -2,7 +2,14 @@
   "Continued": true,
   "CanAdd": "0",
   "CanRemove": "2",
-  "PreviewVersion": "1.5",
+  "PreviewVersion": "1.6",
   "SocialImageSet": true,
-  "SearchTags": "missions"
+  "SearchTags": "missions",
+  "Patches": false,
+  "Defs": true,
+  "Assemblies": true,
+  "LinesOfCode": 291584,
+  "LinesOfXML": 102577,
+  "CodeBaseSize": 88,
+  "LastXmlCleaning": "2025-07-27T20:17:37.5339226+02:00"
 }

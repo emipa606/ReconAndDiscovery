@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: returned from the dead -->
+  <RD_ReturnedFromTheDeadBad.stages.returned_from_the_dead.label>returned from the dead</RD_ReturnedFromTheDeadBad.stages.returned_from_the_dead.label>
+  <!-- EN: I died. I actually died. It's all so terrifyingly fragile! -->
+  <RD_ReturnedFromTheDeadBad.stages.returned_from_the_dead.description>I died. I actually died. It's all so terrifyingly fragile!</RD_ReturnedFromTheDeadBad.stages.returned_from_the_dead.description>
+  <!-- EN: returned from the dead -->
+  <RD_ReturnedFromTheDeadGood.stages.returned_from_the_dead.label>returned from the dead</RD_ReturnedFromTheDeadGood.stages.returned_from_the_dead.label>
+  <!-- EN: I died and lived to tell the tale! How cool is that?! -->
+  <RD_ReturnedFromTheDeadGood.stages.returned_from_the_dead.description>I died and lived to tell the tale! How cool is that?!</RD_ReturnedFromTheDeadGood.stages.returned_from_the_dead.description>
+</LanguageData>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: faultygenerator -->
+  <RD_QuestQuakes.label>faultygenerator</RD_QuestQuakes.label>
+  <!-- EN: Faulty generator -->
+  <RD_QuestQuakes.letterLabel>Faulty generator</RD_QuestQuakes.letterLabel>
+  <!-- EN: A fault with an unmaintained generator is causing local tremors. The tremors will eventually pass, but in order to speed this up you will have to deconstruct, or otherwise destroy, the generator. -->
+  <RD_QuestQuakes.letterText>A fault with an unmaintained generator is causing local tremors. The tremors will eventually pass, but in order to speed this up you will have to deconstruct, or otherwise destroy, the generator.</RD_QuestQuakes.letterText>
+</LanguageData>

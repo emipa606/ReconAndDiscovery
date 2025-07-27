@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: seraphites -->
+  <RD_Seraphites.label>seraphites</RD_Seraphites.label>
+  <!-- EN: An experimental strain of self-replicating luciferium nanites. They have similar advantages to luciferium itself, but as they self-replicate form consumed resources they do not lead to addiction, and indeed will cure an outstanding luciferium addiction. -->
+  <RD_Seraphites.description>An experimental strain of self-replicating luciferium nanites. They have similar advantages to luciferium itself, but as they self-replicate form consumed resources they do not lead to addiction, and indeed will cure an outstanding luciferium addiction.</RD_Seraphites.description>
+  <!-- EN: Take {0} -->
+  <RD_Seraphites.ingestible.ingestCommandString>Take {0}</RD_Seraphites.ingestible.ingestCommandString>
+  <!-- EN: Taking {0}. -->
+  <RD_Seraphites.ingestible.ingestReportString>Taking {0}.</RD_Seraphites.ingestible.ingestReportString>
+</LanguageData>

@@ -9,11 +9,11 @@ namespace ReconAndDiscovery.Maps;
 
 public static class MapGenUtility
 {
-    private static readonly List<IntVec3> DoorPosList = new List<IntVec3>();
+    private static readonly List<IntVec3> DoorPosList = new();
 
     private static List<ThingStuffPair> weapons;
 
-    private static readonly List<GenStepDef> customGenSteps = new List<GenStepDef>();
+    private static readonly List<GenStepDef> customGenSteps = new();
 
     public static void AddGenStep(GenStepDef step)
     {
@@ -59,10 +59,7 @@ public static class MapGenUtility
             rs.wallMaterial = BaseGenUtility.RandomCheapWallStuff(faction);
         }
 
-        if (rs.floorMaterial == null)
-        {
-            rs.floorMaterial = BaseGenUtility.CorrespondingTerrainDef(rs.wallMaterial, true);
-        }
+        rs.floorMaterial ??= BaseGenUtility.CorrespondingTerrainDef(rs.wallMaterial, true);
 
         if (rs.floorMaterial == null)
         {
@@ -125,10 +122,7 @@ public static class MapGenUtility
             rp.wallStuff = BaseGenUtility.RandomCheapWallStuff(faction);
         }
 
-        if (rp.floorDef == null)
-        {
-            rp.floorDef = BaseGenUtility.CorrespondingTerrainDef(rp.wallStuff, true);
-        }
+        rp.floorDef ??= BaseGenUtility.CorrespondingTerrainDef(rp.wallStuff, true);
 
         if (rp.floorDef == null)
         {
@@ -198,10 +192,7 @@ public static class MapGenUtility
 
     private static void TileArea(Map map, CellRect rect, TerrainDef floorMaterial = null, float floorIntegrity = 1f)
     {
-        if (floorMaterial == null)
-        {
-            floorMaterial = BaseGenUtility.RandomBasicFloorDef(Faction.OfMechanoids);
-        }
+        floorMaterial ??= BaseGenUtility.RandomBasicFloorDef(Faction.OfMechanoids);
 
         for (var i = rect.minX; i <= rect.maxX; i++)
         {
@@ -240,11 +231,8 @@ public static class MapGenUtility
 
     private static void RandomAddDoor(IntVec3 start, Map map, int extent, bool horizontal, ThingDef material = null)
     {
-        if (material == null)
-        {
-            material = BaseGenUtility.RandomCheapWallStuff(
-                Find.FactionManager.RandomNonHostileFaction(false, false, true, TechLevel.Spacer));
-        }
+        material ??= BaseGenUtility.RandomCheapWallStuff(
+            Find.FactionManager.RandomNonHostileFaction(false, false, true, TechLevel.Spacer));
 
         var num = Rand.RangeInclusive(0, extent);
         if (horizontal)
@@ -372,11 +360,8 @@ public static class MapGenUtility
 
     private static void TryMakeDoor(IntVec3 c, Map map, ThingDef doorStuff = null)
     {
-        if (doorStuff == null)
-        {
-            doorStuff = BaseGenUtility.RandomCheapWallStuff(
-                Find.FactionManager.RandomNonHostileFaction(false, false, true, TechLevel.Spacer));
-        }
+        doorStuff ??= BaseGenUtility.RandomCheapWallStuff(
+            Find.FactionManager.RandomNonHostileFaction(false, false, true, TechLevel.Spacer));
 
         var thingList = c.GetThingList(map);
         foreach (var thing in thingList)

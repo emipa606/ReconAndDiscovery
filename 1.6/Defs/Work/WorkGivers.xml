@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <WorkGiverDef>
+    <defName>RD_TakeCorpseToCasket</defName>
+    <label>take corpse to casket</label>
+    <giverClass>ReconAndDiscovery.WorkGiver_TakeToOsirisCasket</giverClass>
+    <workType>Hauling</workType>
+    <verb>store</verb>
+    <gerund>storing</gerund>
+    <priorityInType>90</priorityInType>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+  </WorkGiverDef>
+  <WorkGiverDef>
+    <defName>RD_ScanCorpseAtEmitter</defName>
+    <label>scan corpse at emitter</label>
+    <giverClass>ReconAndDiscovery.WorkGiver_ScanAtEmitter</giverClass>
+    <workType>Hauling</workType>
+    <verb>scan</verb>
+    <gerund>scanning</gerund>
+    <priorityInType>90</priorityInType>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+  </WorkGiverDef>
+  <WorkGiverDef>
+    <defName>RD_DiscoverStargates</defName>
+    <label>discover stargates</label>
+    <giverClass>ReconAndDiscovery.WorkGiver_DiscoverStargates</giverClass>
+    <workType>Research</workType>
+    <verb>researching</verb>
+    <gerund>researching</gerund>
+    <priorityInType>20</priorityInType>
+  </WorkGiverDef>
+  <WorkGiverDef>
+    <defName>RD_PrayAtObject</defName>
+    <label>Praying</label>
+    <giverClass>ReconAndDiscovery.WorkGiver_PrayAtObject</giverClass>
+    <workType>Research</workType>
+    <verb>praying</verb>
+    <gerund>praying</gerund>
+    <priorityInType>10</priorityInType>
+  </WorkGiverDef>
+  <WorkGiverDef>
+    <defName>RD_SacrificeAt</defName>
+    <label>Sacrificing animal</label>
+    <giverClass>ReconAndDiscovery.WorkGiver_Sacrifice</giverClass>
+    <workType>Hauling</workType>
+    <verb>sacrificing</verb>
+    <gerund>sacrificing</gerund>
+    <priorityInType>0</priorityInType>
+  </WorkGiverDef>
+  <WorkGiverDef>
+    <defName>RD_PsychicPrayer</defName>
+    <label>Sacrificing animal</label>
+    <giverClass>ReconAndDiscovery.WorkGiver_PsychicPrayer</giverClass>
+    <workType>Research</workType>
+    <verb>performing battle prayer</verb>
+    <gerund>performing battle prayer</gerund>
+    <priorityInType>0</priorityInType>
+  </WorkGiverDef>
+  <WorkGiverDef>
+    <defName>RD_MandatoryMilk</defName>
+    <label>milk animals</label>
+    <giverClass>ReconAndDiscovery.WorkGiver_MandatoryMilk</giverClass>
+    <workType>Handling</workType>
+    <verb>milk</verb>
+    <gerund>milking</gerund>
+    <priorityInType>100</priorityInType>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+  </WorkGiverDef>
+  <WorkGiverDef>
+    <defName>RD_LoadIntoEmitter</defName>
+    <label>scan corpse at emitter</label>
+    <giverClass>ReconAndDiscovery.WorkGiver_LoadIntoEmitter</giverClass>
+    <workType>Hauling</workType>
+    <verb>booting</verb>
+    <gerund>booting</gerund>
+    <priorityInType>90</priorityInType>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+  </WorkGiverDef>
+</Defs>

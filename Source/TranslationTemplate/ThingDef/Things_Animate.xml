@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: devillo -->
+  <RD_Devillo.label>devillo</RD_Devillo.label>
+  <!-- EN: A lab-developed muffalo strain that secretes devilstrand fiber into its fur. Its milk, devilcream, is especially rich. -->
+  <RD_Devillo.description>A lab-developed muffalo strain that secretes devilstrand fiber into its fur. Its milk, devilcream, is especially rich.</RD_Devillo.description>
+  <!-- EN: devillo -->
+  <RD_Devillo.verbs.Verb_MeleeAttackDamage.label>devillo</RD_Devillo.verbs.Verb_MeleeAttackDamage.label>
+  <!-- EN: nitralope -->
+  <RD_Nitralope.label>nitralope</RD_Nitralope.label>
+  <!-- EN: A boomalope variant, in which the chemical sac is filled with rocket grade chemfuel, which can be drained and used without causing harm or discomfort to the animal. Due to the extraordinary volatility of this chemical, the nitralope has a low tolerance for hot weather, with gases forming in its sacs at temperatures over 35 degrees celsius. It must also be milked regularly, as it may overfill and explode otherwise. Like its close relative, it produces a large, dangerous explosion on death. -->
+  <RD_Nitralope.description>A boomalope variant, in which the chemical sac is filled with rocket grade chemfuel, which can be drained and used without causing harm or discomfort to the animal. Due to the extraordinary volatility of this chemical, the nitralope has a low tolerance for hot weather, with gases forming in its sacs at temperatures over 35 degrees celsius. It must also be milked regularly, as it may overfill and explode otherwise. Like its close relative, it produces a large, dangerous explosion on death.</RD_Nitralope.description>
+  <!-- EN: nitralope -->
+  <RD_Nitralope.verbs.Verb_MeleeAttackDamage.label>nitralope</RD_Nitralope.verbs.Verb_MeleeAttackDamage.label>
+</LanguageData>

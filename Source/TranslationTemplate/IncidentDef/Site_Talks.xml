@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: peace talks -->
+  <RD_PeaceTalks.label>peace talks</RD_PeaceTalks.label>
+  <!-- EN: Peace Talks -->
+  <RD_PeaceTalks.letterLabel>Peace Talks</RD_PeaceTalks.letterLabel>
+  <!-- EN: {0}, the leader of {1}, has invited you to peace talks at an abandoned castle near here. You have {2} days to respond. -->
+  <RD_PeaceTalks.letterText>{0}, the leader of {1}, has invited you to peace talks at an abandoned castle near here. You have {2} days to respond.</RD_PeaceTalks.letterText>
+</LanguageData>

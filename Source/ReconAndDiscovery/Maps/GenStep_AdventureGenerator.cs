@@ -6,7 +6,7 @@ namespace ReconAndDiscovery.Maps;
 
 public class GenStep_AdventureGenerator : GenStep
 {
-    private readonly Dictionary<string, float> randomRoomEvents = new Dictionary<string, float>();
+    private readonly Dictionary<string, float> randomRoomEvents = new();
     protected AdventureWorker adventure = null;
 
     protected CellRect adventureRegion;

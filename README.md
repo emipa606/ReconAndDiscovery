@@ -24,8 +24,7 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=935948526
 
 New Sites!
 
-- Crashed ships: What will you find inside? A wealth of treasures? A crew in need of help? A horde of flesh-eating ♥♥♥♥♥hillas? All three!? It's probably all three.
-Whatever it is, be quick, because you're not the only one who saw the ship come down.
+- Crashed ships: What will you find inside? A wealth of treasures? A crew in need of help?
 
 -Lost labs: There's a rumour going around that luciferium addiction can be cured. Did the scientists here succeed, or will you get a dose of half-crazed nanites, sick of being poked and prodded?
 
@@ -43,17 +42,17 @@ Big Rewards!
 
 Hi-tech rewards from missions: Don't read on if you don't want to spoil the mysteries!
 
-- Holo-emitters: Scan HoloDisks taken of people of extraordinary talent, or scan the brains of the recently dead to revive them holographically. Transfer a colonist instantly to a new emitter across the map! The convenience! the immortality! The unfortunate nudity as all their clothes fall off! Just remember, they can't step out of range of their emitter ever again.
+- Holo-emitters: Scan HoloDisks taken of people of extraordinary talent, or scan the brains of the recently dead to revive them holographically. Transfer a colonist instantly to a new emitter across the map! The convenience! the immortality!
 
 -Teleporters: Slow to charge, but able to recover any living creature from anywhere on the planet. How will you use it? To rescue your people at the last minute? Or to slowly fill a deep, dark cave with your confused, hungry enemies?
 
 -Deflectors: Sick of your food all rotting because Randy decided to heat wave your solar flare? Or loosing your best doctor to electrical disturbances because they happen to be a hologram? Protect a small area of your colony from such disruptions by installing a salvaged defector dish!
 
-Gattling Lasers: Built for space combat, these weapons will roast your enemies, and indeed anything else in between or within several yards. Just don't expect to recover much from the bodies, and be ready to fight the huge fire this will start.
+Gattling Lasers: Built for space combat, these weapons will roast your enemies, and indeed anything else in between or within several yards.
 
-Devillo: Large, horned intelligent genetically engineered muffalo that secrete devilstrand into their wool. Their milk, devilcream, is also extraordinarily rich and nutritious (and, I will grant, stupidly named- look, these things only exist because GracieRocket like highland cows).
+Devillo: Large, horned intelligent genetically engineered muffalo that secrete devilstrand into their wool. Their milk, devilcream, is also extraordinarily rich and nutritious
 
-Osiris Caskets: An advanced Cryptosleep casket design, these caskets direct an army of luciferium nanites to restore health, reverse ageing and even to revive the recently dead, if at the cost of developing an addiction to the nanites. The power drain while active is extraordinary, and the EM field tends to cause hairs to stand on end, storms, to spontaneously begin, and power surges, so make sure you've got enough juice for your mad gothic experiments! Also I can't, or more honestly don't want to, stop colonists from putting their dead cats in here.
+Osiris Caskets: An advanced Cryptosleep casket design, these caskets direct an army of luciferium nanites to restore health, reverse ageing and even to revive the recently dead, if at the cost of developing an addiction to the nanites. The power drain while active is extraordinary, and the EM field tends to cause hairs to stand on end, storms, to spontaneously begin, and power surges, so make sure you've got enough juice for your mad gothic experiments! 
 
 Seraphites: A self-replicating luciferium nanite. Could these little blue pills cure the worst cravings of your colonists?
 
@@ -87,7 +86,7 @@ Stargate raids: A stargate allows you to jump into the heart of another location
 
 -  See if the the error persists if you just have this mod and its requirements active.
 -  If not, try adding your other mods until it happens again.
--  Post your error-log using [HugsLib](https://steamcommunity.com/workshop/filedetails/?id=818773962) or the standalone [Uploader](https://steamcommunity.com/sharedfiles/filedetails/?id=2873415404) and command Ctrl+F12
+-  Post your error-log using the [Log Uploader](https://steamcommunity.com/sharedfiles/filedetails/?id=2873415404) or the standalone [Uploader](https://steamcommunity.com/sharedfiles/filedetails/?id=2873415404) and command Ctrl+F12
 -  For best support, please use the Discord-channel for error-reporting.
 -  Do not report errors by making a discussion-thread, I get no notification of that.
 -  If you have the solution for a problem, please post it to the GitHub repository.

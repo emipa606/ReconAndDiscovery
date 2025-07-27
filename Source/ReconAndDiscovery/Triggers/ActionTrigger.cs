@@ -29,7 +29,7 @@ public class ActionTrigger : Thing
         base.ExposeData();
     }
 
-    public override void Tick()
+    protected override void Tick()
     {
         Pawn pawn = null;
         if (!this.IsHashIntervalTick(20))

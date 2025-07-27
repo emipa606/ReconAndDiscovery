@@ -32,14 +32,14 @@ public class CompHoloEmitter : ThingComp
         SimPawn.Corpse.Destroy();
     }
 
-    public override void PostDeSpawn(Map map)
+    public override void PostDeSpawn(Map map, DestroyMode mode = DestroyMode.Vanish)
     {
         if (pawn is { Spawned: true })
         {
-            pawn.DeSpawn();
+            pawn.DeSpawn(mode);
         }
 
-        base.PostDeSpawn(map);
+        base.PostDeSpawn(map, mode);
     }
 
     public override IEnumerable<FloatMenuOption> CompFloatMenuOptions(Pawn actingPawn)

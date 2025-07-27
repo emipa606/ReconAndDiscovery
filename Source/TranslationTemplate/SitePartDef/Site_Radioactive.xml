@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: radioactive dust -->
+  <RD_SitePart_RadioactiveDust.label>radioactive dust</RD_SitePart_RadioactiveDust.label>
+  <!-- EN: Radioactive dust! -->
+  <RD_SitePart_RadioactiveDust.description>Radioactive dust!</RD_SitePart_RadioactiveDust.description>
+  <!-- EN: Source of radioactive dust -->
+  <RD_SiteRadiationQuest.label>Source of radioactive dust</RD_SiteRadiationQuest.label>
+  <!-- EN: The source of the radioactive dust. -->
+  <RD_SiteRadiationQuest.description>The source of the radioactive dust.</RD_SiteRadiationQuest.description>
+</LanguageData>
